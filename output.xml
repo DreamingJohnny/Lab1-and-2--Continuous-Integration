@@ -1,22 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-13T16:10:38.587063" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-13T21:09:18.473537" rpa="false" schemaversion="5">
 <suite id="s1" name="Generic Test Step" source="c:\Users\wille\Documents\github repos\Lab1-Continuous-Integration\generic_test_step.robot">
-<test id="s1-t1" name="Valid Login" line="8">
-<kw name="Open Browser To Login Page" owner="keywords">
+<test id="s1-t1" name="Valid browser and page" line="8">
+<kw name="Open Browser To Page" owner="keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-13T16:10:38.853346" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/wille/Documents/github%20repos/Lab1-Continuous-Integration/Homepage/jurap.html'.</msg>
+<msg time="2025-02-13T21:09:18.673145" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/wille/Documents/github%20repos/Lab1-Continuous-Integration/Homepage/jurap.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-13T16:10:38.853070" elapsed="1.438168"/>
+<status status="PASS" start="2025-02-13T21:09:18.672880" elapsed="1.210585"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-13T21:09:19.888091" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-02-13T21:09:19.883801" elapsed="0.004539"/>
 </kw>
 <arg>${url_demo}</arg>
 <arg>${browser}</arg>
-<status status="PASS" start="2025-02-13T16:10:38.852235" elapsed="1.439238"/>
+<arg>${title_demo}</arg>
+<status status="PASS" start="2025-02-13T21:09:18.672099" elapsed="1.216391"/>
 </kw>
-<status status="PASS" start="2025-02-13T16:10:38.851513" elapsed="1.440727"/>
+<kw name="Click Login" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-13T21:09:19.889873" level="INFO">Clicking element 'login-nav'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T21:09:19.889517" elapsed="0.053735"/>
+</kw>
+<arg>${login_button}</arg>
+<status status="PASS" start="2025-02-13T21:09:19.889029" elapsed="0.054425"/>
+</kw>
+<kw name="Input Credentials" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-13T21:09:19.944794" level="INFO">Typing text 'test' into text field 'login-username'.</msg>
+<arg>${username_space}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T21:09:19.944491" elapsed="0.059740"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-13T21:09:20.004776" level="INFO">Typing text 'testtest' into text field 'login-password'.</msg>
+<arg>${password_space}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T21:09:20.004492" elapsed="0.045832"/>
+</kw>
+<arg>${valid_username}</arg>
+<arg>${login_username_text_box}</arg>
+<arg>${valid_password}</arg>
+<arg>${login_password_text_box}</arg>
+<status status="PASS" start="2025-02-13T21:09:19.943931" elapsed="0.106568"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-13T21:09:20.051149" level="INFO">Clicking element 'xpath=/html/body/main/article[3]/section/form/button'.</msg>
+<arg>xpath=/html/body/main/article[3]/section/form/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T21:09:20.050906" elapsed="0.036342"/>
+</kw>
+<status status="PASS" start="2025-02-13T21:09:18.671504" elapsed="1.416252"/>
 </test>
-<status status="PASS" start="2025-02-13T16:10:38.590454" elapsed="1.703105"/>
+<status status="PASS" start="2025-02-13T21:09:18.476858" elapsed="1.611772"/>
 </suite>
 <statistics>
 <total>

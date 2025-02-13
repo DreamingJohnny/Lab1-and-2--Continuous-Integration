@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-13T15:06:02.638746" rpa="false" schemaversion="5">
+<suite id="s1" name="Generic Test Step" source="c:\Users\wille\Documents\github repos\Lab1-Continuous-Integration\generic_test_step.robot">
+<test id="s1-t1" name="Valid Login" line="10">
+<kw name="Open Browser To Login Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-13T15:06:02.874784" level="INFO">Opening browser 'chrome' to base url 'file:///Homepagejurap.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-13T15:06:02.874470" elapsed="1.327912"/>
+</kw>
+<arg>${url_demo}</arg>
+<arg>${browser}</arg>
+<status status="PASS" start="2025-02-13T15:06:02.873726" elapsed="1.329052"/>
+</kw>
+<status status="PASS" start="2025-02-13T15:06:02.873154" elapsed="1.330179"/>
+</test>
+<status status="PASS" start="2025-02-13T15:06:02.642070" elapsed="1.562508"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Generic Test Step" id="s1" pass="1" fail="0" skip="0">Generic Test Step</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

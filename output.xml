@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-13T15:06:02.638746" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-13T16:10:38.587063" rpa="false" schemaversion="5">
 <suite id="s1" name="Generic Test Step" source="c:\Users\wille\Documents\github repos\Lab1-Continuous-Integration\generic_test_step.robot">
-<test id="s1-t1" name="Valid Login" line="10">
-<kw name="Open Browser To Login Page">
+<test id="s1-t1" name="Valid Login" line="8">
+<kw name="Open Browser To Login Page" owner="keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-13T15:06:02.874784" level="INFO">Opening browser 'chrome' to base url 'file:///Homepagejurap.html'.</msg>
+<msg time="2025-02-13T16:10:38.853346" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/wille/Documents/github%20repos/Lab1-Continuous-Integration/Homepage/jurap.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-13T15:06:02.874470" elapsed="1.327912"/>
+<status status="PASS" start="2025-02-13T16:10:38.853070" elapsed="1.438168"/>
 </kw>
 <arg>${url_demo}</arg>
 <arg>${browser}</arg>
-<status status="PASS" start="2025-02-13T15:06:02.873726" elapsed="1.329052"/>
+<status status="PASS" start="2025-02-13T16:10:38.852235" elapsed="1.439238"/>
 </kw>
-<status status="PASS" start="2025-02-13T15:06:02.873154" elapsed="1.330179"/>
+<status status="PASS" start="2025-02-13T16:10:38.851513" elapsed="1.440727"/>
 </test>
-<status status="PASS" start="2025-02-13T15:06:02.642070" elapsed="1.562508"/>
+<status status="PASS" start="2025-02-13T16:10:38.590454" elapsed="1.703105"/>
 </suite>
 <statistics>
 <total>

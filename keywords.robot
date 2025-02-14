@@ -28,3 +28,10 @@ Registration
 Setup Suite
     Open Browser To Page    ${url_demo}    ${browser}    ${title_demo} 
     Registration
+
+Teardown Suite
+    Click Specific Button    ${logout_button}
+    Sleep    3
+    Handle Alert    action=DISMISS
+    Sleep    3
+    Close Browser

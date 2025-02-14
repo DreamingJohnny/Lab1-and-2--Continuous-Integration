@@ -19,6 +19,8 @@ verifying_messege = "Verifying credentials..."
 reg_button = "xpath=/html/body/header/div/nav/ul/li[2]/a"
 reg_username_text_box = "reg-username"
 reg_password_text_box = "reg-password"
+logout_button = "logout-link"
+
 
 
 

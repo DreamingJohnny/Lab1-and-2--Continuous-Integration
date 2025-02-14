@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 Resource    keywords.robot
 Variables    variables.py
 
-Test Setup    Setup Suite   
+Test Setup    Setup Suite    ${url_demo}    ${browser}    ${title_demo}    ${valid_username}    ${reg_username_text_box}    ${valid_password}    ${reg_password_text_box}    ${reg_button}    
 Test Teardown    Teardown Suite 
 *** Test Cases ***
 Invalid browser login
@@ -17,4 +17,10 @@ Valid browser login
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   xpath=/html/body/main/article[3]/section/form/button
     Sleep    3
-    
+
+Valid browser logout
+    Click Specific Button    ${login_button}
+    Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
+    Click Element   xpath=/html/body/main/article[3]/section/form/button
+    Sleep    3
+    Logout    ${logout_button}

@@ -51,4 +51,8 @@ safari_type_t_rex_rumble = "T-Rex Rumble"
 safari_type_herbivor_tour_feeding = "Herbivore Tour with Feeding"
 safari_type_t_rex_rumble_thrill = "T-Rex Rumble eXtreme Thrill Pack"
 safari_submit_button = "xpath=/html/body/main/article[5]/section/form/button"
+#Removing from cart
+first_object_in_cart = "xpath=/html/body/main/article[6]/section/div/ul/li[1]/button"
+second_object_in_cart = "xpath=/html/body/main/article[6]/section/div/ul/li[2]/button"
+
 

@@ -45,7 +45,7 @@ Buy A Ticket
     Click Button    ${button_two}
     Handle Alert    action=DISMISS
 
-Buy More Then One Ticket
+Buy More Than One Ticket
     [Arguments]    ${cat}    ${type}    ${amount}    ${type_field}    ${cat_field}    ${input_counter}    ${button_one}    ${button_two}    ${value}
     Click Specific Button    ${button_one}
     Sleep    5

@@ -10,7 +10,7 @@ Invalid browser login
     Click Specific Button    ${login_button}
     Input Credentials    ${invalid_username}    ${login_username_text_box}    ${invalid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
-    Message Should Be Visible    ${error_message_element_demo}    ${error_message_demo}    ${standard_timeout}    ${verifying_messege}
+    Message Should Be Visible    ${error_message_element_demo}    ${error_message_demo}    ${standard_timeout}    ${verifying_message}
 
 Valid browser login
     Click Specific Button    ${login_button}
@@ -44,7 +44,7 @@ Booking 2 regular adult ticket
     Click Element   ${login_submit_button}
     Sleep    5
     #the third variable is how many additional tickets you want to buy
-    Buy More Then One Ticket    ${regular_ticket}    ${adult_ticket_type}    ${1}    ${ticker_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${starting_value}
+    Buy More Than One Ticket    ${regular_ticket}    ${adult_ticket_type}    ${1}    ${ticker_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${starting_value}
     Click Element   ${cart_nav_button}
     Sleep    5
     Click Element    ${pro_to_checkout_button}

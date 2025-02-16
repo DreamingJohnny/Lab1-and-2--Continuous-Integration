@@ -5,14 +5,14 @@ current_directory = os.getcwd().replace('\\', '/')
 browser = "chrome"
 url_demo = f"file:///{current_directory}/Homepage\jurap.html"
 title_demo = "Jura-Stina-Kalle Park"
-#Login specifiks
+#Login specifics
 login_button = "login-nav"
 login_username_text_box = "login-username"
 login_password_text_box = "login-password"
 #Valid login
 valid_username = "testUser2"
 valid_password = "testPassword2"
-verifying_messege = "Verifying credentials..."
+verifying_message = "Verifying credentials..."
 login_submit_button = "xpath=/html/body/main/article[3]/section/form/button"
 #Invalid login
 invalid_username = "XXXXXXXX"
@@ -41,7 +41,7 @@ add_to_cart_button = "xpath=/html/body/main/article[4]/section/form/button"
 input_of_ticket_counter = "id=ticket-quantity"
 cart_nav_button = "xpath=/html/body/header/div/nav/ul/li[6]"
 pro_to_checkout_button = "xpath=/html/body/main/article[6]/section/button"
-#Buying safaris
+#Booking safaris
 safari_button = "xpath=/html/body/header/div/nav/ul/li[5]/a"
 safari_date_field = "id=safari-date"
 date_for_booking = "002025-02-20"

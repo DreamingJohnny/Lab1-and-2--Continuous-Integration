@@ -51,3 +51,18 @@ Booking 2 regular adult ticket
     Sleep    5
     Handle Alert    action=DISMISS
     Sleep    5
+
+Booking Safari
+    Click Specific Button    ${login_button}
+    Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
+    Click Element   ${login_submit_button}
+    Sleep    5
+    Buy A Ticket    ${vip_ticket}    ${senior_ticket_type}    ${ticker_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${starting_value}
+    Sleep    5
+    Book safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}
+    Click Element   ${cart_nav_button}
+    Sleep    5
+    Click Element    ${pro_to_checkout_button}
+    Sleep    5
+    Handle Alert    action=DISMISS
+    Sleep    5

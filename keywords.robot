@@ -56,7 +56,19 @@ Buy More Then One Ticket
     END 
     Sleep    5
     Click Button    ${button_two}
-    Handle Alert    action=DISMISS 
+    Handle Alert    action=DISMISS
+Book safari
+    [Arguments]    ${saf_button}    ${saf_date_field}    ${date}    ${saf_type_field}    ${saf_type}    ${saf_sub_button}
+    Click Element    ${saf_button}
+    Sleep    5
+    #When booking remember to always put six numer in the year slot and start with two 00 as Max has failed in his programing ;)
+    Input Text    ${saf_date_field}    ${date}
+    Sleep    5    
+    Select From List By Value    ${saf_type_field}    ${saf_type}
+    Sleep    5
+    Click Element    ${saf_sub_button}
+    Sleep    5
+    Handle Alert    action=DISMISS
 
 #Setup and Teardown
 Setup Suite

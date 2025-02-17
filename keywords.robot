@@ -36,7 +36,7 @@ Increase value
     [Arguments]    ${input_id}    ${direction}
     Press Keys  ${input_id}  ${direction} 
 Buy A Ticket
-    [Arguments]    ${cat}    ${type}    ${type_field}    ${cat_field}    ${input_counter}    ${button_one}    ${button_two}    ${value}
+    [Arguments]    ${cat}    ${type}    ${type_field}    ${cat_field}    ${input_counter}    ${button_one}    ${button_two}
     Click Specific Button    ${button_one}
     Sleep    5
     Select From List By Value    ${type_field}    ${type} 
@@ -46,7 +46,7 @@ Buy A Ticket
     Handle Alert    action=DISMISS
 
 Buy More Then One Ticket
-    [Arguments]    ${cat}    ${type}    ${amount}    ${type_field}    ${cat_field}    ${input_counter}    ${button_one}    ${button_two}    ${value}
+    [Arguments]    ${cat}    ${type}    ${amount}    ${type_field}    ${cat_field}    ${input_counter}    ${button_one}    ${button_two}
     Click Specific Button    ${button_one}
     Sleep    5
     Select From List By Value    ${type_field}    ${type} 

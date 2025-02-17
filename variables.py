@@ -27,7 +27,6 @@ reg_submit_button = "xpath=/html/body/main/article[2]/section/form/button"
 #Misc
 standard_timeout = "5s"
 logout_button = "logout-link"
-starting_value = 1
 #Buying tickets
 buy_ticket_button = "xpath=/html/body/header/div/nav/ul/li[4]/a"
 ticker_type_field = "xpath=/html/body/main/article[4]/section/form/select[1]"

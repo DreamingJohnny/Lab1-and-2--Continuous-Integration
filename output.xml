@@ -181,7 +181,7 @@
 <arg>${add_to_cart_button}</arg>
 <status status="PASS" start="2025-02-17T11:21:08.364221" elapsed="10.206319"/>
 </kw>
-<kw name="Buy A Ticket" owner="keywords">
+<kw name="Buy More Then One Ticket" owner="keywords">
 <kw name="Click Specific Button" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
 <msg time="2025-02-17T11:21:18.573827" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[4]/a'.</msg>
@@ -319,7 +319,6 @@
 <arg>${add_to_cart_button}</arg>
 <status status="PASS" start="2025-02-17T11:21:28.811633" elapsed="10.535545"/>
 </kw>
-<kw name="Book safari" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
 <msg time="2025-02-17T11:21:39.349031" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[5]/a'.</msg>
 <arg>${saf_button}</arg>

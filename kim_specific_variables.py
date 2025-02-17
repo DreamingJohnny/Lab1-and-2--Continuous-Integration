@@ -14,7 +14,7 @@ kim_number_of_VIP_child_tickets = 2
 kim_expected_ticket_cost_total = "$270"
 
 #Kim's safari bookings
-kim_safari_date = "2025-02-22"
+kim_safari_date = "002025-02-22"
 kim_expected_vacation_cost_total = "$670"
 
 # TODO Discuss with WV if we can organize the variables in variables.py for easier use,

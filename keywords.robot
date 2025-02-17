@@ -57,7 +57,7 @@ Buy More Than One Ticket
     Sleep    5
     Click Button    ${button_two}
     Handle Alert    action=DISMISS
-Book safari
+Book Safari
     [Arguments]    ${saf_button}    ${saf_date_field}    ${date}    ${saf_type_field}    ${saf_type}    ${saf_sub_button}
     Click Element    ${saf_button}
     Sleep    5
@@ -71,10 +71,18 @@ Book safari
     Handle Alert    action=DISMISS
 
 Check Shopping Cart Total
-    [Arguments]    ${expected_total}    ${cart_nav_button}    ${cart_total_xpath}
-    Click Specific Button    ${cart_nav_button}
+    [Arguments]    ${expected_total}    ${cart_tab}    ${cart_total_xpath}
+    Click Specific Button    ${cart_tab}
 	${actual_text}    Get Text    ${cart_total_xpath}
 	Should Contain    ${actual_text}    ${expected_total}
+
+Check Booking Dates
+    [Arguments]    ${expected_date}    ${cart_tab}    ${cart_item_container_xpath}
+	Click Specific Button    ${cart_tab}
+	#Check if there are items
+	#If there are items check if they have dates in them
+	#If they have dates, compare those to 
+
 
 
 #Setup and Teardown

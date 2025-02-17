@@ -5,14 +5,14 @@ current_directory = os.getcwd().replace('\\', '/')
 browser = "chrome"
 url_demo = f"file:///{current_directory}/Homepage\jurap.html"
 title_demo = "Jura-Stina-Kalle Park"
-#Login specifiks
+#Login specifics
 login_button = "login-nav"
 login_username_text_box = "login-username"
 login_password_text_box = "login-password"
 #Valid login
 valid_username = "testUser2"
 valid_password = "testPassword2"
-verifying_messege = "Verifying credentials..."
+verifying_message = "Verifying credentials..."
 login_submit_button = "xpath=/html/body/main/article[3]/section/form/button"
 #Invalid login
 invalid_username = "XXXXXXXX"
@@ -29,7 +29,7 @@ standard_timeout = "5s"
 logout_button = "logout-link"
 #Buying tickets
 buy_ticket_button = "xpath=/html/body/header/div/nav/ul/li[4]/a"
-ticker_type_field = "xpath=/html/body/main/article[4]/section/form/select[1]"
+ticket_type_field = "xpath=/html/body/main/article[4]/section/form/select[1]"
 adult_ticket_type = "Adult"
 child_ticket_type = "Child"
 senior_ticket_type = "Senior"
@@ -40,7 +40,7 @@ add_to_cart_button = "xpath=/html/body/main/article[4]/section/form/button"
 input_of_ticket_counter = "id=ticket-quantity"
 cart_nav_button = "xpath=/html/body/header/div/nav/ul/li[6]"
 pro_to_checkout_button = "xpath=/html/body/main/article[6]/section/button"
-#Buying safaris
+#Booking safaris
 safari_button = "xpath=/html/body/header/div/nav/ul/li[5]/a"
 safari_date_field = "id=safari-date"
 date_for_booking = "002025-02-20"
@@ -53,5 +53,11 @@ safari_submit_button = "xpath=/html/body/main/article[5]/section/form/button"
 #Removing from cart
 first_object_in_cart = "xpath=/html/body/main/article[6]/section/div/ul/li[1]/button"
 second_object_in_cart = "xpath=/html/body/main/article[6]/section/div/ul/li[2]/button"
+
+#Shopping cart
+#TODO: Check, is it necessary to have xpath= in the beginning here to help the system read it?
+cart_total_xpath = "xpath=//*[@id=\"cart-total\"]"
+
+cart_tab_xpath = "xpath=//*[@id=\"cart-nav\"]"
 
 

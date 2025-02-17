@@ -36,17 +36,17 @@ Increase value
     [Arguments]    ${input_id}    ${direction}
     Press Keys  ${input_id}  ${direction} 
 Buy A Ticket
-    [Arguments]    ${cat}    ${type}    ${type_field}    ${cat_field}    ${input_counter}    ${button_one}    ${button_two}    ${value}
-    Click Specific Button    ${button_one}
+    [Arguments]    ${cat}    ${type}    ${type_field}    ${cat_field}    ${input_counter}    ${buy_ticket_button}    ${add_to_cart_button}
+    Click Specific Button    ${buy_ticket_button}
     Sleep    5
     Select From List By Value    ${type_field}    ${type} 
     Select From List By Value    ${cat_field}    ${cat}
     Sleep    5
-    Click Button    ${button_two}
+    Click Button    ${add_to_cart_button}
     Handle Alert    action=DISMISS
 
 Buy More Than One Ticket
-    [Arguments]    ${cat}    ${type}    ${amount}    ${type_field}    ${cat_field}    ${input_counter}    ${button_one}    ${button_two}    ${value}
+    [Arguments]    ${cat}    ${type}    ${amount}    ${type_field}    ${cat_field}    ${input_counter}    ${button_one}    ${button_two}
     Click Specific Button    ${button_one}
     Sleep    5
     Select From List By Value    ${type_field}    ${type} 
@@ -69,6 +69,13 @@ Book safari
     Click Element    ${saf_sub_button}
     Sleep    5
     Handle Alert    action=DISMISS
+
+Check Shopping Cart Total
+    [Arguments]    ${expected_total}    ${cart_nav_button}    ${cart_total_xpath}
+    Click Specific Button    ${cart_nav_button}
+	${actual_text}    Get Text    ${cart_total_xpath}
+	Should Contain    ${actual_text}    ${expected_total}
+
 
 #Setup and Teardown
 Setup Suite

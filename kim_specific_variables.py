@@ -1,12 +1,21 @@
-#Kim login info
-kim_username = "KimSvensson"
-kim_password = "gatan_dar_jag_vaxte_upp"
+#Kim's user info
+kim_username = "kimSvensson"
+kim_password = "gatanDarJagVaxteUpp"
 
-kim_number_of_adults = 2
-# the types of ticket should probably become a part of the more generic variables script.
-kim_ticket_type_adult = "Adult"
-# we could do the interpretation that only the children's tickets would need to be VIP, if they can go on the safaris themselves
-# otherwise, they might save by only having one adult come with on the safaris.
-kim_ticket_category = "VIP Ticket"
-kim_number_of_children = 2
-kim_ticket_type_children = "Adult"
+#Kim's tickets
+# TODO Look into these variables being grouped more easily into something?
+
+# I chose to interpret it as Kim, to save money,
+# decides to only have one parent escort the children on the Safaris,
+# this is mostly to make the assignement a bit more interesting.
+kim_number_of_regular_adult_tickets = 1
+kim_number_of_VIP_adult_tickets = 1
+kim_number_of_VIP_child_tickets = 2
+kim_expected_ticket_cost_total = "$270"
+
+#Kim's safari bookings
+kim_safari_date = "2025-02-22"
+kim_expected_vacation_cost_total = "$670"
+
+# TODO Discuss with WV if we can organize the variables in variables.py for easier use,
+# might involve deciding on a naming convention as well.

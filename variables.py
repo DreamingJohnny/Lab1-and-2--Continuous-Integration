@@ -30,7 +30,7 @@ logout_button = "logout-link"
 starting_value = 1
 #Buying tickets
 buy_ticket_button = "xpath=/html/body/header/div/nav/ul/li[4]/a"
-ticker_type_field = "xpath=/html/body/main/article[4]/section/form/select[1]"
+ticket_type_field = "xpath=/html/body/main/article[4]/section/form/select[1]"
 adult_ticket_type = "Adult"
 child_ticket_type = "Child"
 senior_ticket_type = "Senior"
@@ -54,5 +54,11 @@ safari_submit_button = "xpath=/html/body/main/article[5]/section/form/button"
 #Removing from cart
 first_object_in_cart = "xpath=/html/body/main/article[6]/section/div/ul/li[1]/button"
 second_object_in_cart = "xpath=/html/body/main/article[6]/section/div/ul/li[2]/button"
+
+#Shopping cart
+#TODO: Check, is it necessary to have xpath= in the beginning here to help the system read it?
+cart_total_xpath = "xpath=//*[@id=\"cart-total\"]"
+
+cart_tab_xpath = "xpath=//*[@id=\"cart-nav\"]"
 
 

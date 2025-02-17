@@ -17,7 +17,6 @@ Valid browser login
 
 # Johan Ahlsten
 Buy one regular adult ticket one VIP adult ticket and two VIP child tickets
-    
 	#TODO Look into how to move this to a separate function, so that I won't need to repeat it.
     Click Specific Button    ${login_button}
 	Input Credentials    ${kim_username}    ${login_username_text_box}    ${kim_password}    ${login_password_text_box}
@@ -29,11 +28,18 @@ Buy one regular adult ticket one VIP adult ticket and two VIP child tickets
     Buy More Than One Ticket    ${vip_ticket}    ${child_ticket_type}    1    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}
 	Check Shopping Cart Total    ${kim_expected_ticket_cost_total}    ${cart_tab_xpath}    ${cart_total_xpath}
 
-#Book three weekend safaris
-#    Book safari    ${safari_button}    ${safari_date_field}    ${kim_safari_date}    $saf_type_field    $saf_type    $saf_sub_button
+Book three weekend safaris
+    #TODO Look into how to move this to a separate function, so that I won't need to repeat it.
+    Click Specific Button    ${login_button}
+	Input Credentials    ${kim_username}    ${login_username_text_box}    ${kim_password}    ${login_password_text_box}
+    Click Element    ${login_submit_button}
+	Sleep    3
 
-# Check price
-
-# Buy tickets
-
+    #TODO Much the same here, see how much of this we can break out into keywords or similar
+    Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}
+    Buy A Ticket    ${vip_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}
+    Buy More Than One Ticket    ${vip_ticket}    ${child_ticket_type}    1    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}
 	
+    Book safari    ${safari_button}    ${safari_date_field}    ${kim_safari_date}    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}
+	Book safari    ${safari_button}    ${safari_date_field}    ${kim_safari_date}    ${safari_type_field}    ${safari_type_t_rex_rumble_thrill}    ${safari_submit_button}
+    Check Shopping Cart Total    ${kim_expected_vacation_cost_total}    ${cart_tab_xpath}    ${cart_total_xpath}

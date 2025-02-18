@@ -60,4 +60,8 @@ cart_total_xpath = "xpath=//*[@id=\"cart-total\"]"
 
 cart_tab_xpath = "xpath=//*[@id=\"cart-nav\"]"
 
+cart_list_xpath = "xpath=//*[@id=\"cart-details\"]/ul/li"
+
+proceed_to_checkout_button = "xpath=//*[@id=\"checkout-button\"]"
+
 

@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    .venv/Lib/site-packages/robot/libraries/Collections.py
 
 *** Keywords ***
 Open Browser To Page
@@ -93,15 +94,82 @@ The User Is Logged In To Their Account
 	# TODO: Need to add way to check that they logged in correctly here.
 
 The User Buys Tickets For Their Family
-    [Arguments]    
-The User Proceeds To The Cart
-    [Arguments]    
+    [Arguments]        ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
+	...    ${adult_ticket_type}    ${child_ticket_type}    ${ticket_type_field}
+	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${add_to_cart_button}
+	
+	Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}
+	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    
+	...    ${add_to_cart_button}
+    
+	Buy A Ticket    ${vip_ticket}    ${adult_ticket_type}    ${ticket_type_field}
+	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    
+	...    ${add_to_cart_button}
+    
+	# TODO: Look into how to have the number one here be sent through in some way, instead of appearing here.
+	Buy More Than One Ticket    ${vip_ticket}    ${child_ticket_type}    1
+	...    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}
+	...    ${buy_ticket_button}    ${add_to_cart_button}
+
+The User Proceeds To The Cart    
+    [Arguments]    ${cart_nav_button}
+    # TODO: Look @ this with help, should this keyword be here? If it just wraps another?
+    # If yes, why not take in variables of the page straight to this script?
+	Click Specific Button    ${cart_nav_button}
+
 
 The The Total Price Is Correct
-    [Arguments]
-	Check Shopping Cart Total    $expected_total    $cart_tab    $cart_total_xpath
+    [Arguments]    ${cart_tab_xpath}    ${kim_expected_ticket_cost_total}    ${cart_total_xpath}
+	Check Shopping Cart Total    ${kim_expected_ticket_cost_total}    ${cart_tab_xpath}    ${cart_total_xpath}
+
 The User Purchases The Tickets
-    [Arguments]    
+    [Arguments]    ${cart_tab_xpath}    ${proceed_to_checkout_button}
+	Click Specific Button    ${cart_tab_xpath}
+	Click Specific Button    ${proceed_to_checkout_button}
+	# So, if we don't handle the popup here, but instead does that in the next step? We need to check so that works.
+
+The User Purchases The Safaris
+    [Arguments]    ${cart_tab_xpath}    ${proceed_to_checkout_button}
+	Click Specific Button    ${cart_tab_xpath}
+	Click Specific Button    ${proceed_to_checkout_button}
+
+The Price In The Popup Is Correct
+    [Arguments]    ${expected_cost_total}
+	${alert_text}    Handle Alert
+	Should Contain    ${alert_text}    ${expected_cost_total}
+
+The User Books Weekend Safaris For Their Family
+    [Arguments]    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
+	...    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}
+	...    ${safari_type_t_rex_rumble_thrill}
+	Book Safari    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
+	...    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}
+	Book Safari    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
+	...    ${safari_type_field}    ${safari_type_t_rex_rumble_thrill}    ${safari_submit_button}
+
+
+The Date Of The Safari Bookings Are Correct
+    [Arguments]    ${cart_list_xpath}    ${cart_tab_xpath}    ${safari_keyword_1}
+	...    ${safari_keyword_2}    ${expected_safari_date}
+
+    Click Specific Button    ${cart_tab_xpath}
+
+    ${elements}    Get WebElements    ${cart_list_xpath}
+    
+    ${filtered_items}    Create List
+    FOR    ${el}    IN    @{elements}
+        ${text}    Get Text    ${el}
+		# If statement appends element to list if element-text contains either of the two keywords 
+        IF    $safari_keyword_1 in $text or $safari_keyword_2 in $text 
+            Append To List    ${filtered_items}    ${text}
+        END
+    END
+
+    Should Not Be Empty    ${filtered_items}    No items found with first-string!
+
+    FOR    ${item}    IN    @{filtered_items}
+        Should Contain    ${item}    ${expected_safari_date}
+    END
 
 #Setup and Teardown
 Setup Suite

@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    .venv/Lib/site-packages/robot/libraries/OperatingSystem.py
 Resource    keywords.robot
 
 Variables    variables.py
@@ -15,45 +16,45 @@ Valid browser login
     Click Element    ${login_submit_button}
 	Sleep    3
 
+
+
+User sees the correct price on tickets in cart
+    Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
+	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
+    When The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}    ${adult_ticket_type}    ${child_ticket_type}    ${ticket_type_field}
+	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${add_to_cart_button}
+    Then The The Total Price Is Correct    ${cart_tab_xpath}    ${kim_expected_ticket_cost_total}    ${cart_total_xpath}
+
 # (by Johan Ahlsten)
 User purchase tickets for their family	#TODO Look into how to move this to a separate function, so that I won't need to repeat it.
     Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
 	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
-    When The User Buys Tickets For Their Family    
-    And The User Proceeds To The Cart    ${cart_nav_button}
-    And The The Total Price Is Correct
-	Then The User Purchases The Tickets
+    When The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}    ${adult_ticket_type}    ${child_ticket_type}    ${ticket_type_field}
+	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${add_to_cart_button}
+	And The User Purchases The Tickets    ${cart_tab_xpath}    ${proceed_to_checkout_button}
+	Then The Price In The Popup Is Correct    ${kim_expected_ticket_cost_total}
+    # So, to begin with, look at total price? Later on, will want to look at other things here as well yeah? Will want to break out dates correct?
 
 User books weekend safaris for their family
-    Given The User Is Logged In To Their Account
-    When The User Books Weekend Safaris For Their Family
-    And The User Proceeds To The Cart    ${cart_tab_xpath}
-    And The Date Of The Bookings Are Correct
-	Then The User Purchases The Tickets
+    Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
+	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
+	And The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
+	...    ${adult_ticket_type}    ${child_ticket_type}    ${ticket_type_field}
+	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${add_to_cart_button}
+    When The User Books Weekend Safaris For Their Family    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
+	...    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}
+	...    ${safari_type_t_rex_rumble_thrill}
+    Then The Date Of The Safari Bookings Are Correct    ${cart_list_xpath}    ${cart_tab_xpath}    ${safari_type_herbivor_tour_feeding}
+	...    ${safari_type_t_rex_rumble_thrill}    ${kim_expected_safari_date}
 
-
-    Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}
-    Buy A Ticket    ${vip_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}
-    Buy More Than One Ticket    ${vip_ticket}    ${child_ticket_type}    1    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}
-	Check Shopping Cart Total    ${kim_expected_ticket_cost_total}    ${cart_tab_xpath}    ${cart_total_xpath}
-
-# (by Johan Ahlsten)
-Book three weekend safaris
-    #TODO Look into how to move this to a separate function, so that I won't need to repeat it.
-    Click Specific Button    ${login_button}
-	Input Credentials    ${kim_username}    ${login_username_text_box}    ${kim_password}    ${login_password_text_box}
-    Click Element    ${login_submit_button}
-	Sleep    3
-
-    #TODO Much the same here, see how much of this we can break out into keywords or similar
-    Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}
-    Buy A Ticket    ${vip_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}
-    Buy More Than One Ticket    ${vip_ticket}    ${child_ticket_type}    1    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}
-	
-    Book Safari    ${safari_button}    ${safari_date_field}    ${kim_safari_date}    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}
-	Book Safari    ${safari_button}    ${safari_date_field}    ${kim_safari_date}    ${safari_type_field}    ${safari_type_t_rex_rumble_thrill}    ${safari_submit_button}
-
-    Check Booking Dates    
-    # So, setup keyword, will need to go to cart, look at what is there, if there are things there, look at date, see if date is correct.
-
-    Check Shopping Cart Total    ${kim_expected_vacation_cost_total}    ${cart_tab_xpath}    ${cart_total_xpath}
+User purchases weekend safaris for their family
+    Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
+	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
+	And The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
+	...    ${adult_ticket_type}    ${child_ticket_type}    ${ticket_type_field}
+	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${add_to_cart_button}
+    When The User Books Weekend Safaris For Their Family    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
+	...    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}
+	...    ${safari_type_t_rex_rumble_thrill}
+    And The User Purchases The Safaris    ${cart_tab_xpath}    ${proceed_to_checkout_button}
+	Then The Price In The Popup Is Correct    ${kim_expected_vacation_cost_total}

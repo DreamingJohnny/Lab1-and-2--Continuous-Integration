@@ -37,17 +37,18 @@ Increase value
     [Arguments]    ${input_id}    ${direction}
     Press Keys  ${input_id}  ${direction} 
 Buy A Ticket
-    [Arguments]    ${cat}    ${type}    ${type_field}    ${cat_field}    ${input_counter}    ${buy_ticket_button}    ${add_to_cart_button}
+    [Arguments]    ${cat}    ${type}    ${type_field}    ${cat_field}    ${input_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
     Click Specific Button    ${buy_ticket_button}
     Sleep    5
     Select From List By Value    ${type_field}    ${type} 
     Select From List By Value    ${cat_field}    ${cat}
     Sleep    5
     Click Button    ${add_to_cart_button}
-    Handle Alert    action=DISMISS
+     ${alert_text}    Handle Alert    action=DISMISS
+	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
 
 Buy More Than One Ticket
-    [Arguments]    ${cat}    ${type}    ${amount}    ${type_field}    ${cat_field}    ${input_counter}    ${button_one}    ${button_two}
+    [Arguments]    ${cat}    ${type}    ${amount}    ${type_field}    ${cat_field}    ${input_counter}    ${button_one}    ${button_two}    ${add_to_cart_message_successful}
     Click Specific Button    ${button_one}
     Sleep    5
     Select From List By Value    ${type_field}    ${type} 
@@ -57,9 +58,11 @@ Buy More Than One Ticket
     END 
     Sleep    5
     Click Button    ${button_two}
-    Handle Alert    action=DISMISS
+     ${alert_text}    Handle Alert    action=DISMISS
+	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
+
 Book Safari
-    [Arguments]    ${saf_button}    ${saf_date_field}    ${date}    ${saf_type_field}    ${saf_type}    ${saf_sub_button}
+    [Arguments]    ${saf_button}    ${saf_date_field}    ${date}    ${saf_type_field}    ${saf_type}    ${saf_sub_button}    ${add_to_cart_message_succesful}
     Click Element    ${saf_button}
     Sleep    5
     #When booking remember to always put six numer in the year slot and start with two 00 as Max has failed in his programing ;)
@@ -69,7 +72,8 @@ Book Safari
     Sleep    5
     Click Element    ${saf_sub_button}
     Sleep    5
-    Handle Alert    action=DISMISS
+     ${alert_text}    Handle Alert    action=DISMISS
+	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
 
 Check Shopping Cart Total
     [Arguments]    ${expected_total}    ${cart_tab}    ${cart_total_xpath}
@@ -77,12 +81,30 @@ Check Shopping Cart Total
 	${actual_text}    Get Text    ${cart_total_xpath}
 	Should Contain    ${actual_text}    ${expected_total}
 
-Check Booking Dates
-    [Arguments]    ${expected_date}    ${cart_tab}    ${cart_item_container_xpath}
+Check Cart Items Order Info
+    [Arguments]    ${item_to_check}    ${expected_text}    ${cart_tab}    ${cart_list_xpath}
+	
+	# The function checks all items that are list items in the cart list.
+	# It then takes those that has the text in item_to-check
+	# And makes sure all of those also contains the expected text.
 	Click Specific Button    ${cart_tab}
-	#Check if there are items
-	#If there are items check if they have dates in them
-	#If they have dates, compare those to 
+
+    ${elements}    Get WebElements    ${cart_list_xpath}
+    
+    ${filtered_items}    Create List
+    FOR    ${el}    IN    @{elements}
+        ${text}    Get Text    ${el}
+		# If statement appends the text of the element to list, if element-text contains the text we are checking for 
+        IF    $item_to_check in $text
+            Append To List    ${filtered_items}    ${text}
+        END
+    END
+
+    Should Not Be Empty    ${filtered_items}    No items found with ${item_to_check}!
+
+    FOR    ${item}    IN    @{filtered_items}
+        Should Contain    ${item}    ${expected_text}
+    END
 
 The User Is Logged In To Their Account
     [Arguments]    ${login_tab}    ${username}    ${password}    ${username_field}    ${password_field}    ${submit_login_button}
@@ -97,19 +119,20 @@ The User Buys Tickets For Their Family
     [Arguments]        ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
 	...    ${adult_ticket_type}    ${child_ticket_type}    ${ticket_type_field}
 	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${add_to_cart_button}
+	...    ${add_to_cart_message_successful}
 	
 	Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}
 	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    
-	...    ${add_to_cart_button}
+	...    ${add_to_cart_button}    ${add_to_cart_message_successful}
     
 	Buy A Ticket    ${vip_ticket}    ${adult_ticket_type}    ${ticket_type_field}
 	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    
-	...    ${add_to_cart_button}
+	...    ${add_to_cart_button}    ${add_to_cart_message_successful}
     
 	# TODO: Look into how to have the number one here be sent through in some way, instead of appearing here.
 	Buy More Than One Ticket    ${vip_ticket}    ${child_ticket_type}    1
 	...    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}
-	...    ${buy_ticket_button}    ${add_to_cart_button}
+	...    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
 
 The User Proceeds To The Cart    
     [Arguments]    ${cart_nav_button}
@@ -141,35 +164,22 @@ The Price In The Popup Is Correct
 The User Books Weekend Safaris For Their Family
     [Arguments]    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
 	...    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}
-	...    ${safari_type_t_rex_rumble_thrill}
+	...    ${safari_type_t_rex_rumble_thrill}    ${add_to_cart_message_successful}
 	Book Safari    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
 	...    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}
+	...    ${add_to_cart_message_successful}
 	Book Safari    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
 	...    ${safari_type_field}    ${safari_type_t_rex_rumble_thrill}    ${safari_submit_button}
+	...    ${add_to_cart_message_successful}
 
 
 The Date Of The Safari Bookings Are Correct
     [Arguments]    ${cart_list_xpath}    ${cart_tab_xpath}    ${safari_keyword_1}
 	...    ${safari_keyword_2}    ${expected_safari_date}
 
-    Click Specific Button    ${cart_tab_xpath}
+    Check Cart Items Order Info    ${safari_keyword_1}    ${expected_safari_date}    ${cart_tab_xpath}    ${cart_list_xpath}
+	Check Cart Items Order Info    ${safari_keyword_2}    ${expected_safari_date}    ${cart_tab_xpath}    ${cart_list_xpath}
 
-    ${elements}    Get WebElements    ${cart_list_xpath}
-    
-    ${filtered_items}    Create List
-    FOR    ${el}    IN    @{elements}
-        ${text}    Get Text    ${el}
-		# If statement appends element to list if element-text contains either of the two keywords 
-        IF    $safari_keyword_1 in $text or $safari_keyword_2 in $text 
-            Append To List    ${filtered_items}    ${text}
-        END
-    END
-
-    Should Not Be Empty    ${filtered_items}    No items found with first-string!
-
-    FOR    ${item}    IN    @{filtered_items}
-        Should Contain    ${item}    ${expected_safari_date}
-    END
 
 #Setup and Teardown
 Setup Suite

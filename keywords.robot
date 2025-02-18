@@ -83,7 +83,25 @@ Check Booking Dates
 	#If there are items check if they have dates in them
 	#If they have dates, compare those to 
 
+The User Is Logged In To Their Account
+    [Arguments]    ${login_tab}    ${username}    ${password}    ${username_field}    ${password_field}    ${submit_login_button}
+	Click Specific Button    ${login_tab}
+	Input Credentials    ${username}    ${username_field}    ${password}    ${password_field}
+	Click Specific Button    ${submit_login_button}
+	Sleep    3
 
+	# TODO: Need to add way to check that they logged in correctly here.
+
+The User Buys Tickets For Their Family
+    [Arguments]    
+The User Proceeds To The Cart
+    [Arguments]    
+
+The The Total Price Is Correct
+    [Arguments]
+	Check Shopping Cart Total    $expected_total    $cart_tab    $cart_total_xpath
+The User Purchases The Tickets
+    [Arguments]    
 
 #Setup and Teardown
 Setup Suite

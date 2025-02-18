@@ -16,12 +16,21 @@ Valid browser login
 	Sleep    3
 
 # (by Johan Ahlsten)
-Buy one regular adult ticket one VIP adult ticket and two VIP child tickets
-	#TODO Look into how to move this to a separate function, so that I won't need to repeat it.
-    Click Specific Button    ${login_button}
-	Input Credentials    ${kim_username}    ${login_username_text_box}    ${kim_password}    ${login_password_text_box}
-    Click Element    ${login_submit_button}
-	Sleep    3
+User purchase tickets for their family	#TODO Look into how to move this to a separate function, so that I won't need to repeat it.
+    Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
+	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
+    When The User Buys Tickets For Their Family    
+    And The User Proceeds To The Cart    ${cart_nav_button}
+    And The The Total Price Is Correct
+	Then The User Purchases The Tickets
+
+User books weekend safaris for their family
+    Given The User Is Logged In To Their Account
+    When The User Books Weekend Safaris For Their Family
+    And The User Proceeds To The Cart    ${cart_tab_xpath}
+    And The Date Of The Bookings Are Correct
+	Then The User Purchases The Tickets
+
 
     Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}
     Buy A Ticket    ${vip_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}

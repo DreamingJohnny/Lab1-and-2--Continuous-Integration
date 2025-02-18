@@ -15,10 +15,19 @@ kim_expected_ticket_cost_total = "$270"
 
 #Kim's safari bookings
 # TODO Fix so that the date being expected, and the date being given are the same, or resolves to the same in some way.
-kim_safari_date = "002025-03-14"
-kim_expected_safari_date = "2025-03-14"
+kim_safari_date = "002025-03-15"
+kim_expected_safari_date = "2025-03-15"
 # TODO Fix this so taht expected cost instead is the different costs added together
 kim_expected_vacation_cost_total = "$670"
 
 # TODO Discuss with WV if we can organize the variables in variables.py for easier use,
 # might involve deciding on a naming convention as well.
+
+# Items and their expected prices, to be used to check so those are correct.
+ITEM_PRICES = [
+	("Regular Adult", 50)
+	("VIP Adult", 100)
+	("Regular Child", 30)
+	("VIP Child", 60)
+	("Herbivore Tour with Feeding", 180)
+	("T-Rex Rumble eXtreme Thrill Pack", 220)]

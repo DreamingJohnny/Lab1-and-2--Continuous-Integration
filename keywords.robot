@@ -140,6 +140,10 @@ The User Proceeds To The Cart
     # If yes, why not take in variables of the page straight to this script?
 	Click Specific Button    ${cart_nav_button}
 
+The Cart Shows The Correct Prices On The Items
+    [Arguments]    ${cart_list_xpath}    ${cart_tab_xpath}    ${ITEM_PRICES}
+	Click Specific Button    ${cart_tab_xpath}
+	# So, for each item in item prices, check if it is in the cart, and if it is, check so that the price is right
 
 The The Total Price Is Correct
     [Arguments]    ${cart_tab_xpath}    ${kim_expected_ticket_cost_total}    ${cart_total_xpath}
@@ -172,14 +176,12 @@ The User Books Weekend Safaris For Their Family
 	...    ${safari_type_field}    ${safari_type_t_rex_rumble_thrill}    ${safari_submit_button}
 	...    ${add_to_cart_message_successful}
 
-
 The Date Of The Safari Bookings Are Correct
     [Arguments]    ${cart_list_xpath}    ${cart_tab_xpath}    ${safari_keyword_1}
 	...    ${safari_keyword_2}    ${expected_safari_date}
 
     Check Cart Items Order Info    ${safari_keyword_1}    ${expected_safari_date}    ${cart_tab_xpath}    ${cart_list_xpath}
 	Check Cart Items Order Info    ${safari_keyword_2}    ${expected_safari_date}    ${cart_tab_xpath}    ${cart_list_xpath}
-
 
 #Setup and Teardown
 Setup Suite

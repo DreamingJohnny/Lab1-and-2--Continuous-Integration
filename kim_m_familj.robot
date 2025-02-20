@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    .venv/Lib/site-packages/robot/libraries/OperatingSystem.py
+#Library    .venv/Lib/site-packages/robot/libraries/OperatingSystem.py
 Resource    keywords.robot
 
 Variables    variables.py

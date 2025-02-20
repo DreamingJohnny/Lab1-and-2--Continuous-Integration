@@ -9,15 +9,16 @@ Variables    kim_specific_variables.py
 Test Setup    Setup Suite    ${url_demo}    ${browser}    ${title_demo}    ${kim_username}    ${reg_username_text_box}    ${kim_password}    ${reg_password_text_box}    ${reg_button}    ${reg_submit_button}
 Test Teardown    Teardown Suite
 *** Test Cases ***
-# (by Johan Ahlsten)
+
 Valid browser login
+    [Tags]    Johan Ahlsten
     Click Specific Button    ${login_button}
 	Input Credentials    ${kim_username}    ${login_username_text_box}    ${kim_password}    ${login_password_text_box}
     Click Element    ${login_submit_button}
 	Sleep    3
 
-# (by Johan Ahlsten)
 User sees the correct price on tickets in cart
+    [Tags]    Johan Ahlsten
     Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
 	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
     When The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
@@ -26,8 +27,8 @@ User sees the correct price on tickets in cart
 	...    ${add_to_cart_message_successful}
     Then The The Total Price Is Correct    ${cart_tab_xpath}    ${kim_expected_ticket_cost_total}    ${cart_total_xpath}
 
-# (by Johan Ahlsten)
-User purchase tickets for their family	#TODO Look into how to move this to a separate function, so that I won't need to repeat it.
+User purchase tickets for their family
+    [Tags]    Johan Ahlsten
     Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
 	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
     When The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
@@ -37,8 +38,8 @@ User purchase tickets for their family	#TODO Look into how to move this to a sep
 	And The User Purchases The Tickets    ${cart_tab_xpath}    ${proceed_to_checkout_button}
 	Then The Price In The Popup Is Correct    ${kim_expected_ticket_cost_total}
 
-# (by Johan Ahlsten)
 User books weekend safaris for their family
+    [Tags]    Johan Ahlsten
     Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
 	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
 	And The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
@@ -57,6 +58,7 @@ User books weekend safaris for their family
 # So, do one that is, the price of the items is correct? Yeah,
 # So, to begin with, look at total price? Later on, will want to look at other things here as well yeah? Will want to break out dates correct?
 User sees correct prices on the orders in their cart
+    [Tags]    Johan Ahlsten
     Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
 	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
 	And The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
@@ -68,8 +70,8 @@ User sees correct prices on the orders in their cart
 	...    ${safari_type_t_rex_rumble_thrill}    ${add_to_cart_message_successful}
     Then The Cart Shows The Correct Prices On The Items    ${cart_list_xpath}    ${cart_tab_xpath}    ${ITEM_PRICES}
 
-# (by Johan Ahlsten)
 User purchases weekend safaris for their family
+    [Tags]    Johan Ahlsten
     Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
 	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
 	And The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}

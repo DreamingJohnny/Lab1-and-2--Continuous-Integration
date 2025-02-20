@@ -17,7 +17,7 @@ kim_expected_ticket_cost_total = "$270"
 # TODO Fix so that the date being expected, and the date being given are the same, or resolves to the same in some way.
 kim_safari_date = "002025-03-15"
 kim_expected_safari_date = "2025-03-15"
-# TODO Fix this so taht expected cost instead is the different costs added together
+# TODO Fix this so that expected cost instead is the different costs added together
 kim_expected_vacation_cost_total = "$670"
 
 # TODO Discuss with WV if we can organize the variables in variables.py for easier use,

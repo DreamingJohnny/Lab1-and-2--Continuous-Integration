@@ -31,12 +31,17 @@ logout_button = "logout-link"
 buy_ticket_button = "xpath=/html/body/header/div/nav/ul/li[4]/a"
 ticket_type_field = "xpath=/html/body/main/article[4]/section/form/select[1]"
 adult_ticket_type = "Adult"
+regular_adult_ticket_price = 50
 child_ticket_type = "Child"
+regular_child_ticket_price = 30
 senior_ticket_type = "Senior"
 ticket_cat_field = "xpath=/html/body/main/article[4]/section/form/select[2]"
 regular_ticket = "Regular"
 vip_ticket = "VIP"
+vip_adult_ticket_price = 100
+vip_child_ticket_price = 60
 add_to_cart_button = "xpath=/html/body/main/article[4]/section/form/button"
+add_to_cart_message_successful = "Item added to cart!"
 input_of_ticket_counter = "id=ticket-quantity"
 cart_nav_button = "xpath=/html/body/header/div/nav/ul/li[6]"
 pro_to_checkout_button = "xpath=/html/body/main/article[6]/section/button"
@@ -48,7 +53,9 @@ safari_type_field = "xpath=/html/body/main/article[5]/section/form/select"
 safari_type_herbivor_tour = "Herbivore Tour"
 safari_type_t_rex_rumble = "T-Rex Rumble"
 safari_type_herbivor_tour_feeding = "Herbivore Tour with Feeding"
+safari_herbivor_tour_feeding_price = 180
 safari_type_t_rex_rumble_thrill = "T-Rex Rumble eXtreme Thrill Pack"
+safari_t_rex_rumble_thrill_price = 220
 safari_submit_button = "xpath=/html/body/main/article[5]/section/form/button"
 #Removing from cart
 first_object_in_cart = "xpath=/html/body/main/article[6]/section/div/ul/li[1]/button"
@@ -59,5 +66,9 @@ second_object_in_cart = "xpath=/html/body/main/article[6]/section/div/ul/li[2]/b
 cart_total_xpath = "xpath=//*[@id=\"cart-total\"]"
 
 cart_tab_xpath = "xpath=//*[@id=\"cart-nav\"]"
+
+cart_list_xpath = "xpath=//*[@id=\"cart-details\"]/ul/li"
+
+proceed_to_checkout_button = "xpath=//*[@id=\"checkout-button\"]"
 
 

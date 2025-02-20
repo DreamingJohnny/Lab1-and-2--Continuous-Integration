@@ -116,7 +116,8 @@ The User Is Logged In To Their Account
 	Click Specific Button    ${submit_login_button}
 	Sleep    3
 
-	# TODO: Need to add way to check that they logged in correctly here.
+	# TODO: Need to add way to check that they logged in correctly here. 
+    # Suggestion: Logout button is visible /Kristin
 
 The User Buys Tickets For Their Family
     [Arguments]        ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}

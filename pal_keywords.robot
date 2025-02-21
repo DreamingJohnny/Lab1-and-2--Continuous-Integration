@@ -41,6 +41,7 @@ User pal enters registration credentials
     Input Credentials    ${pal_username}    ${reg_username_text_box}    ${pal_password}    ${reg_password_text_box}
 
 User pal is registered
+    [Documentation]    This keyword verifies that user pal is registerd as a user.
     ${userRegistered} =    Execute JavaScript    
     ...    let users = getUsers();
     ...    let user = users.find(item => item.username === 'StinaPalle');
@@ -48,6 +49,7 @@ User pal is registered
     Should Be True    ${userRegistered}
 
 User pal has registered
+    [Documentation]    This keyword executes and verifies user pal registration.
     Press Register button
     User pal enters registration credentials
     Press register submit button
@@ -70,10 +72,12 @@ User pal enters login credentials
     Input Credentials    ${pal_username}    ${login_username_text_box}    ${pal_password}    ${login_password_text_box}
 
 User pal is logged in
+    [Documentation]    This keyword verifies that user pal is logged in.
     ${UserLoggedIn} =    Execute JavaScript    return currentUser.username;
     Should Be Equal    ${UserLoggedIn}    StinaPalle
 
 User pal has logged in
+    [Documentation]    This keyword executes and verifies user pal login.
     User pal has registered
     Log in user pal
     User pal is logged in
@@ -100,20 +104,24 @@ Cart is empty
     Should Be Empty    ${cart}
 
 Pal ticket is added to cart
+    [Documentation]    This keyword verifies purchase of one adult regular ticket.
     ${listOfCartItemDescriptioins} =    Get Cart Item Descriptions
     Should Contain X Times    ${listOfCartItemDescriptioins}       1 Regular Adult Ticket(s)    1
 
 Pal ticket was added to cart
+    [Documentation]    This keyword executes and verifies purchase of one adult regular ticket.
     Press Ticket button
     Pal buys one adult regular ticket
     Pal ticket is added to cart
     
 Pal safaris are added to cart
+    [Documentation]    This keyword verifies purchase of safaris of pal's choice.
     ${cartItemDescriptioins} =    Get Cart Item Descriptions
     Should Contain X Times    ${cartItemDescriptioins}       Herbivore Tour on 2025-03-19    1
     Should Contain X Times    ${cartItemDescriptioins}       T-Rex Rumble on 2025-03-19    1
 
 All Pals items was added to cart
+    [Documentation]    This keyword executes and verifies purchase of safaris of pal's choice.
     Pal buys one adult regular ticket
     Pal books Herbivore safari without feeding
     Pal books T-rex tour
@@ -121,10 +129,14 @@ All Pals items was added to cart
     Pal ticket is added to cart
     
 Dates for safaris are correct
+    [Documentation]    This keyword verifies that the dates for pal's safaris are the same.
     ${datesInCartList} =  Get cart item dates
-    Should Be Equal    ${datesInCartList}[1]    ${datesInCartList}[2]    # Lösning för detta specifika fall
-    
+    Should Be Equal    ${datesInCartList}[1]    ${datesInCartList}[2]
+    Should Be Equal    ${datesInCartList}[1]    ${pal_expected_safari_date}
+
 Checkout summary alert shows correct Pal info
+    [Documentation]    This keyword verifies that the checkout summary alert 
+    ...    contains pal's order info.
     ${alert_text} =     Handle Alert    timeout=4 s
     Log    ${alert_text}
     Should Be Equal    ${alert_text}    Checkout Summary: 1 Regular Adult Ticket(s) - $50 Herbivore Tour on 2025-03-19 - $120 T-Rex Rumble on 2025-03-19 - $150 Total: $320
@@ -182,6 +194,8 @@ Press safari button
 ### Misc ###
 
 Total cart cost is correct
+    [Documentation]    This keyword verifies that cart cost is same as expected
+    ...    by looping through cart and adding all prices. 
     [Arguments]    ${expectedCost}
     ${cart} =    Execute JavaScript    return getCart();
     ${totalPriceInCart} =  Set Variable    0    
@@ -194,7 +208,9 @@ Total cart cost is correct
     END
     Should Be Equal As Numbers    ${totalPriceInCart}    ${expectedCost}
 
-Get Cart Item Descriptions    # I nästa liv och med mer tid, hade jag velat göra ett generellt "Hämta en lista med de här properties  i carten"-Keyword
+Get Cart Item Descriptions    
+    [Documentation]    This keyword fetches a list of descriptions of all items in cart.
+    ...    With more time, I would have liked a general "Get list by property" keyword 
     ${cart} =    Execute JavaScript    return getCart();
     ${cartLength} =    Get Length    ${cart}
     ${cartItemDescriptions} =    Create List
@@ -207,6 +223,9 @@ Get Cart Item Descriptions    # I nästa liv och med mer tid, hade jag velat gö
     RETURN    ${cartItemDescriptions}
 
 Get cart item dates
+    [Documentation]    This keyword fetches a list of dates of all safaris in cart.
+    ...    With more time, I would have fixed the "None" entry at index 0
+    ...    Tried "if temp = None then do not add to list", but did not get that to work
     ${datesList} =  Create List 
     ${cart} =    Execute JavaScript    return getCart();
     ${cartLength} =     Get Length    ${cart}
@@ -221,18 +240,16 @@ Get cart item dates
         ...        return;   
         ...    }
         Append to list   ${datesList}    ${temp}
-    # Om tid fanns i mitt nästa liv skulle jag vilja att 'None' inte lades till i listan och att alla datum sedan jämfördes med varandra, men får det inte att funka nu
     END
     RETURN    ${datesList} 
 
 
 Book safari
+    [Documentation]    This keyword executes and verifies the "book safari" process
     [Arguments]     ${safari_type}
     Press safari button
     Input Text    ${safari_date_field}    ${pal_safari_date}
-    #Sleep    1  
     Select From List By Value    ${safari_type_field}    ${safari_type}
-    #Sleep    1
     Click Element    ${safari_submit_button}
     Sleep    2
     ${alert_text}    Handle Alert    action=DISMISS

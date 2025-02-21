@@ -17,6 +17,7 @@ Test Teardown    Pal Teardown
 Register user pal
     [Documentation]    This test verifies registration process for user pal.
     [Tags]    Kristin
+    
     Given Page is opened to registration section
     When User pal enters registration credentials
     And User presses register button
@@ -25,6 +26,7 @@ Register user pal
 Log in user pal
     [Documentation]    This test verifies login process for user pal.
     [Tags]    Kristin
+
     Given User pal has registered
     And Page is opened to login page
     And No one is logged in
@@ -36,6 +38,7 @@ Buy entrance ticket
     [Documentation]    This test verifies that pal can buy entrance ticket,
     ...    that item is added to cart, and cart total is correct.
     [Tags]    Kristin
+
     Given User pal has logged in
     When User navigates to Buy Ticket page
     And Pal buys one adult regular ticket
@@ -46,6 +49,7 @@ Book safaris
     [Documentation]    This test verifies that pal can buy two safari tickets,
     ...    and and that items are added to cart, and cart total is correct.
     [Tags]    Kristin
+
     Given User pal has logged in
     And Pal ticket was added to cart
     When Pal books Herbivore safari without feeding
@@ -56,7 +60,7 @@ Book safaris
 Checkout
     [Documentation]    This test verifies the checkout process for user pal.
     [Tags]    Kristin
-      
+
     Given User pal has logged in
     And All Pals items was added to cart
     And Total cart cost is correct    ${320}

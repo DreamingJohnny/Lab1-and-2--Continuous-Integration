@@ -11,6 +11,7 @@ Test Teardown    Teardown Suite
 *** Test Cases ***
 #Test for booking an buying a regular adult ticket. (by Wille)
 Booking 1 regular adult ticket
+    [Tags]    Wille Virtanen
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
@@ -25,6 +26,7 @@ Booking 1 regular adult ticket
     Sleep    5
     #Test for booking and buying all diffrent typs of tickets and in diffrent descending quantitys to see that all combinations work. (Wille)
 Booking and buying all diffrent typs of tickets and in diffrent descending quantitys
+    [Tags]    Wille Virtanen
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
@@ -44,6 +46,7 @@ Booking and buying all diffrent typs of tickets and in diffrent descending quant
     Sleep    5
     #Test for booking and buying Safari. (by Wille)
 Booking Safari
+    [Tags]    Wille Virtanen
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
@@ -59,6 +62,7 @@ Booking Safari
     Sleep    5
     #Test for booking and buying all dirrfent types of Safari. (by Wille)
 Booking and buying all diffrent typs of safaris
+    [Tags]    Wille Virtanen
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}

@@ -23,18 +23,18 @@ Booking 1 regular adult ticket
     Sleep    5
     Handle Alert    action=DISMISS
     Sleep    5
-#Test for booking and buying all diffrent typs of tickets and in diffrent descending quantitys to see that all combinations work. (Wille)
+    #Test for booking and buying all diffrent typs of tickets and in diffrent descending quantitys to see that all combinations work. (Wille)
 Booking and buying all diffrent typs of tickets and in diffrent descending quantitys
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
     Sleep    5
     #the third variable is how many additional tickets you want to buy
-    Buy More Then One Ticket    ${VIP_ticket}    ${senior_ticket_type}    ${5}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Buy More Then One Ticket    ${regular_ticket}    ${senior_ticket_type}    ${4}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Buy More Then One Ticket    ${VIP_ticket}    ${child_ticket_type}    ${3}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Buy More Then One Ticket    ${regular_ticket}    ${child_ticket_type}    ${2}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Buy More Then One Ticket    ${vip_ticket}    ${adult_ticket_type}    ${1}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
+    Buy More Than One Ticket    ${VIP_ticket}    ${senior_ticket_type}    ${5}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
+    Buy More Than One Ticket    ${regular_ticket}    ${senior_ticket_type}    ${4}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
+    Buy More Than One Ticket    ${VIP_ticket}    ${child_ticket_type}    ${3}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
+    Buy More Than One Ticket    ${regular_ticket}    ${child_ticket_type}    ${2}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
+    Buy More Than One Ticket    ${vip_ticket}    ${adult_ticket_type}    ${1}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
     Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
     Click Element   ${cart_nav_button}
     Sleep    5
@@ -42,7 +42,7 @@ Booking and buying all diffrent typs of tickets and in diffrent descending quant
     Sleep    5
     Handle Alert    action=DISMISS
     Sleep    5
-#Test for booking and buying Safari. (by Wille)
+    #Test for booking and buying Safari. (by Wille)
 Booking Safari
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}

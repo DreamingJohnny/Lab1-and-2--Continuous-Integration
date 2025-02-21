@@ -72,3 +72,14 @@ cart_list_xpath = "xpath=//*[@id=\"cart-details\"]/ul/li"
 proceed_to_checkout_button = "xpath=//*[@id=\"checkout-button\"]"
 
 
+#Wille VG Variables
+
+#Ticket check variables
+vip_ticket_in_cart_spot =    "id=cart-details"
+vip_ticket_in_cart = "1 VIP Adult Ticket(s) - $100"
+
+#safari Check variables
+trex_rumble_in_cart = "T-Rex Rumble on"
+herbivor_in_cart = "Herbivore Tour on"
+herbivorplus_in_cart = "Herbivore Tour with Feeding"
+trex_rumbleplus_in_cart = "T-Rex Rumble eXtreme Thrill Pack"

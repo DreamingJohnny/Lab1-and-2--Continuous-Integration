@@ -62,7 +62,7 @@ Buy More Than One Ticket
 	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
 
 Book Safari
-    [Arguments]    ${saf_button}    ${saf_date_field}    ${date}    ${saf_type_field}    ${saf_type}    ${saf_sub_button}    ${add_to_cart_message_succesful}
+    [Arguments]    ${saf_button}    ${saf_date_field}    ${date}    ${saf_type_field}    ${saf_type}    ${saf_sub_button}    ${add_to_cart_message_successful}
     Click Element    ${saf_button}
     Sleep    5
     #When booking remember to always put six numer in the year slot and start with two 00 as Max has failed in his programing ;)
@@ -258,7 +258,7 @@ User Booking Goes Through
     ${alert_text}    Handle Alert    action=DISMISS
 	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
 
-User Buys Every Combination Of Ticket And Safari
+User Buys Every Combination Of Ticket
     [Arguments]    ${VIP_ticket}    ${regular_ticket}    ${senior_ticket_type}    ${adult_ticket_type}    ${child_ticket_type}    ${5}    ${4}    ${3}    ${2}    ${1}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}    ${cart_nav_button}    ${pro_to_checkout_button}    
     Buy More Than One Ticket    ${vip_ticket}    ${senior_ticket_type}    ${5}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
     Buy More Than One Ticket    ${regular_ticket}    ${senior_ticket_type}    ${4}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
@@ -278,8 +278,17 @@ User Buys Every Combination Of Ticket And Safari
     Click Element   ${cart_nav_button}
     Sleep    5
     Click Element    ${pro_to_checkout_button}
-   
 
+User Book Every Typ Of Safari
+    [Arguments]    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_type_herbivor_tour}    ${safari_type_herbivor_tour_feeding}    ${safari_type_t_rex_rumble_thrill}     ${safari_submit_button}    ${add_to_cart_message_successful}    ${cart_nav_button}    ${pro_to_checkout_button}
+    Book safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}
+    Book safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_herbivor_tour}    ${safari_submit_button}    ${add_to_cart_message_successful}
+    Book safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}    ${add_to_cart_message_successful}
+    Book safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble_thrill}    ${safari_submit_button}    ${add_to_cart_message_successful}
+    Click Element   ${cart_nav_button}
+    Sleep    5
+    Click Element    ${pro_to_checkout_button}
+    Sleep    5
 #Setup and Teardown
 Setup Suite
     [Arguments]    ${url}    ${browser}    ${title}    ${username}    ${username_text_box}    ${password}    ${password_text_box}    ${regin_button}    ${reg_sub_button}

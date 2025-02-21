@@ -86,3 +86,4 @@ trex_rumbleplus_in_cart = "T-Rex Rumble eXtreme Thrill Pack"
 
 all_combinations_cost = "1260"
 reg_ticket_trex_rumble_safari = "200"
+all_combinations_safari_cost = "770"

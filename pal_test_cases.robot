@@ -49,7 +49,7 @@ Checkout
     And All Pals items are in cart
     And Total cart cost is correct    ${320}
     And Dates for safaris are correct
-    And User navigates to cart section
-    When User presses Proceed To Checkout
+    When User navigates to cart section
+    And User presses Proceed To Checkout
     Then Checkout summary alert shows correct Pal info
     And Cart is empty

@@ -48,7 +48,7 @@ pro_to_checkout_button = "xpath=/html/body/main/article[6]/section/button"
 #Booking safaris
 safari_button = "xpath=/html/body/header/div/nav/ul/li[5]/a"
 safari_date_field = "id=safari-date"
-date_for_booking = "002025-02-20"
+date_for_booking = "002026-02-20"
 safari_type_field = "xpath=/html/body/main/article[5]/section/form/select"
 safari_type_herbivor_tour = "Herbivore Tour"
 safari_type_t_rex_rumble = "T-Rex Rumble"

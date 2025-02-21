@@ -5,11 +5,17 @@ current_directory = os.getcwd().replace('\\', '/')
 browser = "chrome"
 url_demo = f"file:///{current_directory}/Homepage\jurap.html"
 title_demo = "Jura-Stina-Kalle Park"
+#Sections
+home_section = "id=home-section"
+login_section = "id=login-section"
+reg_section = "id=register-form"
+tickets_section = "id=tickets-section"
+safari_section = "id=safari-section"
+cart_section = "id=safari-section"
 #Login specifics
 login_button = "login-nav"
 login_username_text_box = "login-username"
 login_password_text_box = "login-password"
-login_section = "id=login-section"
 #Valid login
 valid_username = "testUser2"
 valid_password = "testPassword2"
@@ -27,7 +33,6 @@ reg_password_text_box = "reg-password"
 reg_submit_button = "xpath=/html/body/main/article[2]/section/form/button"
 reg_message_element = "id=register-message"
 reg_success_message = "Registration successful! Redirecting to login..."
-reg_section = "id=register-form"
 #Misc
 standard_timeout = "5s"
 logout_button = "logout-link"

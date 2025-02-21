@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    Collections
 #Library    .venv/Lib/site-packages/robot/libraries/Collections.py
 
 *** Keywords ***
@@ -39,10 +40,10 @@ Increase value
 Buy A Ticket
     [Arguments]    ${cat}    ${type}    ${type_field}    ${cat_field}    ${input_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
     Click Specific Button    ${buy_ticket_button}
-    Sleep    5
+    Sleep    1
     Select From List By Value    ${type_field}    ${type} 
     Select From List By Value    ${cat_field}    ${cat}
-    Sleep    5
+    Sleep    1
     Click Button    ${add_to_cart_button}
      ${alert_text}    Handle Alert    action=DISMISS
 	Should Contain    ${alert_text}    ${add_to_cart_message_successful}

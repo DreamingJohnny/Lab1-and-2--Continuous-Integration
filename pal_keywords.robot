@@ -15,8 +15,6 @@ Variables    pal_specific_variables.py
 
 Pal Setup
     Open Browser To Page    ${url_demo}    ${browser}    ${title_demo} 
-    Click Specific Button    ${reg_button}
-    Sleep    2
 
 Pal Teardown
     Close Browser
@@ -25,10 +23,16 @@ Pal Teardown
 ### Page is opened ##
 
 Page is opened to login page
+    Press login button
     Page Should Contain Element    ${login_section}
 
 Page is opened to registration section
+    Press Register button
     Page Should Contain Element    ${reg_section}
+
+Page is opened to safari section
+    Press safari button
+    Page Should Contain Element    ${safari_section}
 
 
 ### Registration ###
@@ -42,6 +46,12 @@ User pal is registered
     ...    let user = users.find(item => item.username === 'StinaPalle');
     ...    return user.username === 'StinaPalle';
     Should Be True    ${userRegistered}
+
+User pal has registered
+    Press Register button
+    User pal enters registration credentials
+    Press register submit button
+    User pal is registered
 
 
 ### Login ###
@@ -63,11 +73,15 @@ User pal is logged in
     ${UserLoggedIn} =    Execute JavaScript    return currentUser.username;
     Should Be Equal    ${UserLoggedIn}    StinaPalle
 
+User pal has logged in
+    User pal has registered
+    Log in user pal
+    User pal is logged in
 
 ### Buying tickets ###
 
 Pal buys one adult regular ticket 
-    Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${pal_number_of_tickets}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
+    Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${1}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
 
 
 ### Safari bookings ###
@@ -89,12 +103,20 @@ Pal ticket is added to cart
     ${listOfCartItemDescriptioins} =    Get Cart Item Descriptions
     Should Contain X Times    ${listOfCartItemDescriptioins}       1 Regular Adult Ticket(s)    1
 
+Pal ticket was added to cart
+    Press Ticket button
+    Pal buys one adult regular ticket
+    Pal ticket is added to cart
+    
 Pal safaris are added to cart
     ${cartItemDescriptioins} =    Get Cart Item Descriptions
     Should Contain X Times    ${cartItemDescriptioins}       Herbivore Tour on 2025-03-19    1
     Should Contain X Times    ${cartItemDescriptioins}       T-Rex Rumble on 2025-03-19    1
 
-All Pals items are in cart
+All Pals items was added to cart
+    Pal buys one adult regular ticket
+    Pal books Herbivore safari without feeding
+    Pal books T-rex tour
     Pal safaris are added to cart
     Pal ticket is added to cart
     
@@ -111,20 +133,20 @@ Checkout summary alert shows correct Pal info
 ###  Buttons ###
 
 User presses login button
-    Click Specific Button    ${login_submit_button}
-    Sleep    2
+    Press login button
+    Page Should Contain Element    ${login_section}
 
-User presses Register button
-    Click Specific Button    ${reg_submit_button}
-    Sleep    2
+User presses register button
+    Press register submit button
+    Page Should Contain Element    ${reg_section}
 
 User navigates to Buy Ticket page
-    Click Specific Button    ${buy_ticket_button}
-    Sleep    2
+    Press Ticket button
+    Page Should Contain Element    ${tickets_section}
 
 User navigates to cart section
-    Click Specific Button    ${cart_nav_button}
-    Sleep    2
+    Press Cart button
+    Page Should Contain Element    ${cart_section}
 
 User presses Proceed To Checkout
     Click Specific Button    ${pro_to_checkout_button}
@@ -133,6 +155,29 @@ User presses Proceed To Checkout
 Login button is visible
     Element Should Be Visible    ${login_button}
 
+Press Register button
+    Click Specific Button    ${reg_button}
+    Sleep    2
+
+Press register submit button
+    Click Specific Button    ${reg_submit_button}
+    Sleep    2
+
+Press Ticket button
+    Click Specific Button    ${buy_ticket_button}
+    Sleep    2
+
+Press Cart button
+    Click Specific Button    ${cart_nav_button}
+    Sleep    2
+
+Press login button
+    Click Specific Button    ${login_submit_button}
+    Sleep    2
+
+Press safari button
+    Click Specific Button    ${safari_button}
+    Sleep    2
 
 ### Misc ###
 
@@ -183,13 +228,13 @@ Get cart item dates
 
 Book safari
     [Arguments]     ${safari_type}
-    Click Specific Button    ${safari_button}
+    Press safari button
     Input Text    ${safari_date_field}    ${pal_safari_date}
-    Sleep    1  
+    #Sleep    1  
     Select From List By Value    ${safari_type_field}    ${safari_type}
-    Sleep    1
+    #Sleep    1
     Click Element    ${safari_submit_button}
-    Sleep    1
+    Sleep    2
     ${alert_text}    Handle Alert    action=DISMISS
     Should Contain    ${alert_text}    ${add_to_cart_message_successful}
 

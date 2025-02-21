@@ -31,7 +31,7 @@ logout_button = "logout-link"
 buy_ticket_button = "xpath=/html/body/header/div/nav/ul/li[4]/a"
 ticket_type_field = "xpath=/html/body/main/article[4]/section/form/select[1]"
 adult_ticket_type = "Adult"
-regular_adult_ticket_price = 50
+regular_adult_ticket_price = "50"
 child_ticket_type = "Child"
 regular_child_ticket_price = 30
 senior_ticket_type = "Senior"
@@ -83,3 +83,5 @@ trex_rumble_in_cart = "T-Rex Rumble on"
 herbivor_in_cart = "Herbivore Tour on"
 herbivorplus_in_cart = "Herbivore Tour with Feeding"
 trex_rumbleplus_in_cart = "T-Rex Rumble eXtreme Thrill Pack"
+
+all_combinations_cost = "1260"

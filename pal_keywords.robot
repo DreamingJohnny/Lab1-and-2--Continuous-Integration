@@ -112,11 +112,9 @@ Dates for safaris are the same
     Should Be Equal    ${datesInCartList}[1]    ${datesInCartList}[2]    # Lösning för detta specifika fall
     
 Checkout summary alert shold show with correct Pal info
-    ${alert_text} =     
-    Handle Alert    timeout=4 s
-    Get Alert Message 
-    Log    ${pal_summary}
-    Get Ale
+    ${alert_text} =     Handle Alert    timeout=4 s
+    Log    ${alert_text}
+    Should Be Equal    ${alert_text}    Checkout Summary: 1 Regular Adult Ticket(s) - $50 Herbivore Tour on 2025-03-19 - $120 T-Rex Rumble on 2025-03-19 - $150 Total: $320
 
        
     

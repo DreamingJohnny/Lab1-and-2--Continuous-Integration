@@ -32,19 +32,12 @@ Booking and buying all diffrent typs of tickets and in diffrent descending quant
     #Test for booking and buying Safari. (by Wille)
 Booking Safari
     [Tags]    Wille Virtanen
-    Click Specific Button    ${login_button}
-    Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
-    Click Element   ${login_submit_button}
+    Given The User Is Logged In To Their Account    ${login_button}    ${valid_username}    ${valid_password}    
+	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
+    And User Books A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
+    When User Books A Safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}    ${cart_nav_button}    ${pro_to_checkout_button} 
     Sleep    5
-    Buy A Ticket    ${vip_ticket}    ${senior_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Sleep    5
-    Book safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}
-    Click Element   ${cart_nav_button}
-    Sleep    5
-    Click Element    ${pro_to_checkout_button}
-    Sleep    5
-    Handle Alert    action=DISMISS
-    Sleep    5
+    Then The Price In The Popup Is Correct    ${reg_ticket_trex_rumble_safari}
     #Test for booking and buying all dirrfent types of Safari. (by Wille)
 Booking and buying all diffrent typs of safaris
     [Tags]    Wille Virtanen

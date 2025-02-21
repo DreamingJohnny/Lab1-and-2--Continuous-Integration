@@ -271,7 +271,14 @@ User Buys Every Combination Of Ticket And Safari
     Click Element    ${pro_to_checkout_button}
     Sleep    5
  
-    
+ User Books A Safari
+    [Arguments]    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}    ${cart_nav_button}    ${pro_to_checkout_button} 
+    Book safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}
+    Sleep    5
+    Click Element   ${cart_nav_button}
+    Sleep    5
+    Click Element    ${pro_to_checkout_button}
+   
 
 #Setup and Teardown
 Setup Suite

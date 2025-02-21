@@ -1,148 +1,247 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.2 on win32)" generated="2025-02-21T22:40:41.809840" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.13.2 on win32)" generated="2025-02-21T22:51:04.714033" rpa="false" schemaversion="5">
 <suite id="s1" name="Lab1-Continuous-Integration" source="C:\Users\KristinKullberg\Desktop\Cont Lab 1\Lab1-Continuous-Integration">
 <suite id="s1-s1" name="Pal Test Cases" source="C:\Users\KristinKullberg\Desktop\Cont Lab 1\Lab1-Continuous-Integration\pal_test_cases.robot">
-<test id="s1-s1-t1" name="Register user pal" line="18">
+<test id="s1-s1-t1" name="Log in user pal" line="25">
 <kw name="Pal Setup" owner="pal_keywords" type="SETUP">
 <kw name="Open Browser To Page" owner="keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-21T22:40:42.508948" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/KristinKullberg/Desktop/Cont Lab 1/Lab1-Continuous-Integration/Homepage\jurap.html'.</msg>
+<msg time="2025-02-21T22:51:05.479322" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/KristinKullberg/Desktop/Cont Lab 1/Lab1-Continuous-Integration/Homepage\jurap.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-21T22:40:42.508134" elapsed="2.786388"/>
+<status status="PASS" start="2025-02-21T22:51:05.478380" elapsed="3.037334"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-21T22:40:45.312693" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<msg time="2025-02-21T22:51:08.538599" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
 <arg>${title}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-02-21T22:40:45.295275" elapsed="0.018212"/>
+<status status="PASS" start="2025-02-21T22:51:08.516539" elapsed="0.022641"/>
 </kw>
 <arg>${url_demo}</arg>
 <arg>${browser}</arg>
 <arg>${title_demo}</arg>
-<status status="PASS" start="2025-02-21T22:40:42.505807" elapsed="2.808261"/>
+<status status="PASS" start="2025-02-21T22:51:05.475748" elapsed="3.063924"/>
 </kw>
-<status status="PASS" start="2025-02-21T22:40:42.504506" elapsed="2.810043"/>
+<status status="PASS" start="2025-02-21T22:51:05.474059" elapsed="3.066463"/>
 </kw>
-<kw name="Given Page is opened to registration section" owner="pal_keywords">
+<kw name="Given User pal has registered" owner="pal_keywords">
 <kw name="Press Register button" owner="pal_keywords">
 <kw name="Click Specific Button" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-21T22:40:45.332567" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[2]/a'.</msg>
+<msg time="2025-02-21T22:51:08.565580" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[2]/a'.</msg>
 <arg>${button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-21T22:40:45.331873" elapsed="0.205613"/>
+<status status="PASS" start="2025-02-21T22:51:08.564129" elapsed="0.212301"/>
 </kw>
 <arg>${reg_button}</arg>
-<status status="PASS" start="2025-02-21T22:40:45.331205" elapsed="0.207175"/>
+<status status="PASS" start="2025-02-21T22:51:08.561946" elapsed="0.215497"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-21T22:40:47.540303" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-02-21T22:51:10.779523" level="INFO">Slept 2 seconds.</msg>
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-21T22:40:45.538943" elapsed="2.002078"/>
+<status status="PASS" start="2025-02-21T22:51:08.778018" elapsed="2.002376"/>
 </kw>
-<status status="PASS" start="2025-02-21T22:40:45.330588" elapsed="2.210853"/>
+<status status="PASS" start="2025-02-21T22:51:08.560525" elapsed="2.220854"/>
 </kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-02-21T22:40:47.567638" level="INFO">Current page contains element 'id=register-form'.</msg>
-<arg>${reg_section}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-02-21T22:40:47.541769" elapsed="0.026863"/>
-</kw>
-<status status="PASS" start="2025-02-21T22:40:45.315928" elapsed="2.253181"/>
-</kw>
-<kw name="When User pal enters registration credentials" owner="pal_keywords">
+<kw name="User pal enters registration credentials" owner="pal_keywords">
 <kw name="Input Credentials" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-21T22:40:47.582032" level="INFO">Typing text 'StinaPalle' into text field 'reg-username'.</msg>
+<msg time="2025-02-21T22:51:10.785701" level="INFO">Typing text 'StinaPalle' into text field 'reg-username'.</msg>
 <arg>${username_space}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-21T22:40:47.581324" elapsed="0.289586"/>
+<status status="PASS" start="2025-02-21T22:51:10.784669" elapsed="0.363440"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-21T22:40:47.872869" level="INFO">Typing text 'thePaleontoligist' into text field 'reg-password'.</msg>
+<msg time="2025-02-21T22:51:11.149455" level="INFO">Typing text 'thePaleontoligist' into text field 'reg-password'.</msg>
 <arg>${password_space}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-21T22:40:47.871850" elapsed="0.336925"/>
+<status status="PASS" start="2025-02-21T22:51:11.148603" elapsed="0.316667"/>
 </kw>
 <arg>${pal_username}</arg>
 <arg>${reg_username_text_box}</arg>
 <arg>${pal_password}</arg>
 <arg>${reg_password_text_box}</arg>
-<status status="PASS" start="2025-02-21T22:40:47.580194" elapsed="0.629259"/>
+<status status="PASS" start="2025-02-21T22:51:10.783447" elapsed="0.682534"/>
 </kw>
-<status status="PASS" start="2025-02-21T22:40:47.574820" elapsed="0.635084"/>
+<status status="PASS" start="2025-02-21T22:51:10.782233" elapsed="0.684204"/>
 </kw>
-<kw name="And User presses register button" owner="pal_keywords">
 <kw name="Press register submit button" owner="pal_keywords">
 <kw name="Click Specific Button" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-21T22:40:48.242919" level="INFO">Clicking element 'xpath=/html/body/main/article[2]/section/form/button'.</msg>
+<msg time="2025-02-21T22:51:11.473773" level="INFO">Clicking element 'xpath=/html/body/main/article[2]/section/form/button'.</msg>
 <arg>${button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-21T22:40:48.241768" elapsed="0.190810"/>
+<status status="PASS" start="2025-02-21T22:51:11.472664" elapsed="0.227695"/>
 </kw>
 <arg>${reg_submit_button}</arg>
-<status status="PASS" start="2025-02-21T22:40:48.240026" elapsed="0.193945"/>
+<status status="PASS" start="2025-02-21T22:51:11.468918" elapsed="0.232174"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-21T22:40:50.436436" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-02-21T22:51:13.703236" level="INFO">Slept 2 seconds.</msg>
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-21T22:40:48.434877" elapsed="2.002251"/>
+<status status="PASS" start="2025-02-21T22:51:11.701805" elapsed="2.002655"/>
 </kw>
-<status status="PASS" start="2025-02-21T22:40:48.238359" elapsed="2.199251"/>
+<status status="PASS" start="2025-02-21T22:51:11.467441" elapsed="2.238480"/>
 </kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-02-21T22:40:50.468398" level="INFO">Current page contains element 'id=register-form'.</msg>
-<arg>${reg_section}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-02-21T22:40:50.438463" elapsed="0.031928"/>
-</kw>
-<status status="PASS" start="2025-02-21T22:40:48.221594" elapsed="2.249805"/>
-</kw>
-<kw name="Then User pal is registered" owner="pal_keywords">
+<kw name="User pal is registered" owner="pal_keywords">
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-02-21T22:40:50.505869" level="INFO">Executing JavaScript:
+<msg time="2025-02-21T22:51:13.715472" level="INFO">Executing JavaScript:
 let users = getUsers();let user = users.find(item =&gt; item.username === 'StinaPalle');return user.username === 'StinaPalle';
 Without any arguments.</msg>
-<msg time="2025-02-21T22:40:50.525916" level="INFO">${userRegistered} = True</msg>
+<msg time="2025-02-21T22:51:13.748568" level="INFO">${userRegistered} = True</msg>
 <var>${userRegistered}</var>
 <arg>let users = getUsers();</arg>
 <arg>let user = users.find(item =&gt; item.username === 'StinaPalle');</arg>
 <arg>return user.username === 'StinaPalle';</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-02-21T22:40:50.502379" elapsed="0.024895"/>
+<status status="PASS" start="2025-02-21T22:51:13.712043" elapsed="0.037243"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${userRegistered}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-02-21T22:40:50.528039" elapsed="0.001487"/>
+<status status="PASS" start="2025-02-21T22:51:13.750482" elapsed="0.002310"/>
 </kw>
-<status status="PASS" start="2025-02-21T22:40:50.482809" elapsed="0.047310"/>
+<status status="PASS" start="2025-02-21T22:51:13.708049" elapsed="0.045495"/>
+</kw>
+<status status="PASS" start="2025-02-21T22:51:08.545275" elapsed="5.209087"/>
+</kw>
+<kw name="And Page is opened to login page" owner="pal_keywords">
+<kw name="Press login button" owner="pal_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-21T22:51:13.803028" level="INFO">Clicking element 'xpath=/html/body/main/article[3]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-21T22:51:13.801011" elapsed="0.447878"/>
+</kw>
+<arg>${login_submit_button}</arg>
+<status status="PASS" start="2025-02-21T22:51:13.798563" elapsed="0.451093"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-21T22:51:16.252763" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-21T22:51:14.250403" elapsed="2.003608"/>
+</kw>
+<status status="PASS" start="2025-02-21T22:51:13.796974" elapsed="2.459169"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-21T22:51:16.350938" level="INFO">Current page contains element 'id=login-section'.</msg>
+<arg>${login_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-21T22:51:16.258171" elapsed="0.093738"/>
+</kw>
+<status status="PASS" start="2025-02-21T22:51:13.779033" elapsed="2.573534"/>
+</kw>
+<kw name="And No one is logged in" owner="pal_keywords">
+<kw name="Login button is visible" owner="pal_keywords">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-02-21T22:51:16.547662" level="INFO">Element 'login-nav' is displayed.</msg>
+<arg>${login_button}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-21T22:51:16.414323" elapsed="0.134347"/>
+</kw>
+<status status="PASS" start="2025-02-21T22:51:16.412309" elapsed="0.137027"/>
+</kw>
+<status status="PASS" start="2025-02-21T22:51:16.381854" elapsed="0.167972"/>
+</kw>
+<kw name="When User pal enters login credentials" owner="pal_keywords">
+<kw name="Input Credentials" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-21T22:51:16.597964" level="INFO">Typing text 'StinaPalle' into text field 'login-username'.</msg>
+<arg>${username_space}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-21T22:51:16.595218" elapsed="0.478915"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-21T22:51:17.078154" level="INFO">Typing text 'thePaleontoligist' into text field 'login-password'.</msg>
+<arg>${password_space}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-21T22:51:17.076495" elapsed="0.313215"/>
+</kw>
+<arg>${pal_username}</arg>
+<arg>${login_username_text_box}</arg>
+<arg>${pal_password}</arg>
+<arg>${login_password_text_box}</arg>
+<status status="PASS" start="2025-02-21T22:51:16.588598" elapsed="0.801928"/>
+</kw>
+<status status="PASS" start="2025-02-21T22:51:16.568842" elapsed="0.822413"/>
+</kw>
+<kw name="And User presses login button" owner="pal_keywords">
+<kw name="Press login button" owner="pal_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-21T22:51:17.415506" level="INFO">Clicking element 'xpath=/html/body/main/article[3]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-21T22:51:17.414809" elapsed="0.160042"/>
+</kw>
+<arg>${login_submit_button}</arg>
+<status status="PASS" start="2025-02-21T22:51:17.413786" elapsed="0.161713"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-21T22:51:19.576940" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-21T22:51:17.576103" elapsed="2.001730"/>
+</kw>
+<status status="PASS" start="2025-02-21T22:51:17.412978" elapsed="2.165423"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-21T22:51:19.610787" level="INFO">Current page contains element 'id=login-section'.</msg>
+<arg>${login_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-21T22:51:19.578971" elapsed="0.032233"/>
+</kw>
+<status status="PASS" start="2025-02-21T22:51:17.400959" elapsed="2.210564"/>
+</kw>
+<kw name="Then User pal is logged in" owner="pal_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-21T22:51:19.645448" level="INFO">Executing JavaScript:
+return currentUser.username;
+Without any arguments.</msg>
+<msg time="2025-02-21T22:51:19.660778" level="INFO">${UserLoggedIn} = StinaPalle</msg>
+<var>${UserLoggedIn}</var>
+<arg>return currentUser.username;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-21T22:51:19.643642" elapsed="0.017472"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${UserLoggedIn}</arg>
+<arg>StinaPalle</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-21T22:51:19.661524" elapsed="0.000791"/>
+</kw>
+<status status="PASS" start="2025-02-21T22:51:19.626481" elapsed="0.036104"/>
 </kw>
 <kw name="Pal Teardown" owner="pal_keywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-21T22:40:50.550568" elapsed="2.357034"/>
+<status status="PASS" start="2025-02-21T22:51:19.674478" elapsed="2.379334"/>
 </kw>
-<status status="PASS" start="2025-02-21T22:40:50.547858" elapsed="2.360408"/>
+<status status="PASS" start="2025-02-21T22:51:19.673317" elapsed="2.382126"/>
 </kw>
-<status status="PASS" start="2025-02-21T22:40:42.500471" elapsed="10.408666"/>
+<doc>This test logs in user pal</doc>
+<tag>Kristin</tag>
+<status status="PASS" start="2025-02-21T22:51:05.471546" elapsed="16.585715"/>
 </test>
-<status status="PASS" start="2025-02-21T22:40:41.957521" elapsed="10.955720"/>
+<status status="PASS" start="2025-02-21T22:51:04.761693" elapsed="17.303913"/>
 </suite>
-<status status="PASS" start="2025-02-21T22:40:41.850648" elapsed="11.068387"/>
+<status status="PASS" start="2025-02-21T22:51:04.722464" elapsed="17.354446"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">Kristin</stat>
 </tag>
 <suite>
 <stat name="Lab1-Continuous-Integration" id="s1" pass="1" fail="0" skip="0">Lab1-Continuous-Integration</stat>

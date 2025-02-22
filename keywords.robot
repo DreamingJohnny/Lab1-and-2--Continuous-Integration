@@ -40,7 +40,7 @@ Increase value
 Buy A Ticket
     [Arguments]    ${cat}    ${type}    ${type_field}    ${cat_field}    ${input_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
     Click Specific Button    ${buy_ticket_button}
-    Sleep    1
+    Sleep    2
     Select From List By Value    ${type_field}    ${type} 
     Select From List By Value    ${cat_field}    ${cat}
     Sleep    1

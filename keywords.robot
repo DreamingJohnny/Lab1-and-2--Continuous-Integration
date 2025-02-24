@@ -3,6 +3,8 @@ Library    SeleniumLibrary
 Library    Collections
 
 Variables    variables.py
+Library    .venv/Lib/site-packages/robot/libraries/Collections.py
+Library    .venv/Lib/site-packages/robot/libraries/String.py
 
 
 *** Keywords ***
@@ -65,10 +67,10 @@ Buy More Than One Ticket
 	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
 
 Book Safari
-    [Arguments]    ${saf_button}    ${saf_date_field}    ${date}    ${saf_type_field}    ${saf_type}    ${saf_sub_button}    ${add_to_cart_message_succesful}
+    [Arguments]    ${saf_button}    ${saf_date_field}    ${date}    ${saf_type_field}    ${saf_type}    ${saf_sub_button}    ${add_to_cart_message_successful}
     Click Element    ${saf_button}
     Sleep    5
-    #When booking remember to always put six numer in the year slot and start with two 00 as Max has failed in his programing ;)
+    #When booking remember to always put six number in the year slot and start with two 00 as Max has failed in his programing ;)
     Input Text    ${saf_date_field}    ${date}
     Sleep    5    
     Select From List By Value    ${saf_type_field}    ${saf_type}
@@ -84,15 +86,9 @@ Check Shopping Cart Total
 	${actual_text}    Get Text    ${cart_total_xpath}
 	Should Contain    ${actual_text}    ${expected_total}
 
-
-
-#I think this might be the old function...?
 Check Cart Items Order Info
     [Arguments]    ${item_to_check}    ${expected_text}    ${cart_tab}    ${cart_list_xpath}
 	
-	# The function checks all items that are list items in the cart list.
-	# It then takes those that has the text in item_to-check
-	# And makes sure all of those also contains the expected text.
 	Click Specific Button    ${cart_tab}
 
     ${elements}    Get WebElements    ${cart_list_xpath}
@@ -119,8 +115,6 @@ The User Is Logged In To Their Account
 	Click Specific Button    ${submit_login_button}
 	Sleep    3
 
-	# TODO: Need to add way to check that they logged in correctly here.
-
 The User Buys Tickets For Their Family
     [Arguments]        ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
 	...    ${adult_ticket_type}    ${child_ticket_type}    ${ticket_type_field}
@@ -135,78 +129,13 @@ The User Buys Tickets For Their Family
 	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    
 	...    ${add_to_cart_button}    ${add_to_cart_message_successful}
     
-	# TODO: Look into how to have the number one here be sent through in some way, instead of appearing here.
 	Buy More Than One Ticket    ${vip_ticket}    ${child_ticket_type}    1
 	...    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}
 	...    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
 
 The User Proceeds To The Cart    
     [Arguments]    ${cart_nav_button}
-    # TODO: Look @ this with help, should this keyword be here? If it just wraps another?
-    # If yes, why not take in variables of the page straight to this script?
 	Click Specific Button    ${cart_nav_button}
-
-Check Item Info Is Correct
-    [Arguments]    ${list_xpath}    ${item_text_to_check}    ${text_to_search_for}
-	
-	# The function checks all items that are list items in the cart list.
-	# It then takes those that has the text in item_to-check
-	# And makes sure all of those also contains the expected text.
-
-    ${elements}    Get WebElements    ${list_xpath}
-    
-    ${filtered_items}    Create List
-    FOR    ${el}    IN    @{elements}
-        ${text}    Get Text    ${el}
-		# If statement appends the text of the element to list, if element-text contains the text we are checking for 
-        IF    $item_text_to_check in $text
-            Append To List    ${filtered_items}    ${text}
-        END
-    END
-
-    # Think about maybe removing this one, if we want to see if the item has the correct values instead?
-    Should Not Be Empty    ${filtered_items}    No items found with ${item_text_to_check}!
-
-    FOR    ${item}    IN    @{filtered_items}
-	        # Checks if item starts with a digit, if true, copies that number to result-variable
-            ${result}    Evaluate    re.match(r'^(\d+)', ${item})    modules=re
-            Run Keyword If    ${result}
-    ...        Check If Text Contains Correct Multiplied Value    ${item}    ${text_to_search_for}    ${result.group(1)}
-    ...    ELSE 
-    ...        Check If Text Contains Expected Text    ${item}    ${text_to_search_for}
-	END
-
-Check If Text Contains Correct Multiplied Value
-    [Arguments]    ${cart_order}    ${expected_cost}    ${amount_of_order}
-
-    #Converts expected_cost to integer
-    ${expected_cost_int}    Convert To Integer    ${expected_cost}
-    ${multiplied_value}    Evaluate    ${expected_cost_int} * int(${amount_of_order})
-
-    #Checks if the text contains the correct multiple of the value
-    ${contains_value}    Evaluate    str(${multiplied_value}) in ${cart_order}
-    Run Keyword If    ${contains_value}    Log    '${cart_order}' contains '${multiplied_value}'!
-    ...    ELSE    Log    '${cart_order}' does NOT contain '${multiplied_value}'!
-
-Check If Text Contains Expected Text
-    [Arguments]    ${cart_order}    ${expected_cost}
-
-    ${contains_cost}    Evaluate    str(${expected_cost}) in ${cart_order}
-    Run Keyword If    ${contains_cost}    Log    '${cart_order}' contains '${expected_cost}'!
-    ...    ELSE    Log    '${cart_order}' does NOT contain '${expected_cost}'!       
-
-
-# So, I think this one is also old and can be removed
-The Cart Shows The Correct Prices On The Items
-    [Arguments]    ${cart_list_xpath}    ${cart_tab_xpath}    ${ITEM_PRICES}
-	Click Specific Button    ${cart_tab_xpath}
-	# So, for each item in item prices, check if it is in the cart, and if it is, check so that the price is right
-	# So, here I'll want to set up a keyword called, info in items is correct, basically, and then have that one go through all of the items and check them.
-	
-    FOR    ${pair}    IN    @{ITEM_PRICES}
-        ${first}    ${second} =    Set Variable    ${pair}[0]    ${pair}[1]
-        Check Item Info Is Correct    ${cart_list_xpath}    ${first}    ${second}
-    END
 
 The The Total Price Is Correct
     [Arguments]    ${cart_tab_xpath}    ${kim_expected_ticket_cost_total}    ${cart_total_xpath}
@@ -216,7 +145,6 @@ The User Purchases The Tickets
     [Arguments]    ${cart_tab_xpath}    ${proceed_to_checkout_button}
 	Click Specific Button    ${cart_tab_xpath}
 	Click Specific Button    ${proceed_to_checkout_button}
-	# So, if we don't handle the popup here, but instead does that in the next step? We need to check so that works.
 
 The User Purchases The Safaris
     [Arguments]    ${cart_tab_xpath}    ${proceed_to_checkout_button}
@@ -243,7 +171,6 @@ The Date Of The Safari Bookings Are Correct
     [Arguments]    ${cart_list_xpath}    ${cart_tab_xpath}    ${safari_keyword_1}
 	...    ${safari_keyword_2}    ${expected_safari_date}
 
-    # So, these should change to the new function then.
     Check Cart Items Order Info    ${safari_keyword_1}    ${expected_safari_date}    ${cart_tab_xpath}    ${cart_list_xpath}
 	Check Cart Items Order Info    ${safari_keyword_2}    ${expected_safari_date}    ${cart_tab_xpath}    ${cart_list_xpath}
 

@@ -8,8 +8,8 @@ Variables    kim_specific_variables.py
 
 Test Setup    Setup Suite    ${url_demo}    ${browser}    ${title_demo}    ${kim_username}    ${reg_username_text_box}    ${kim_password}    ${reg_password_text_box}    ${reg_button}    ${reg_submit_button}
 Test Teardown    Teardown Suite
-*** Test Cases ***
 
+*** Test Cases ***
 Valid browser login
     [Tags]    Johan Ahlsten
     Click Specific Button    ${login_button}
@@ -17,7 +17,7 @@ Valid browser login
     Click Element    ${login_submit_button}
 	Sleep    3
 
-User sees the correct price on tickets in cart
+User sees the correct price total on tickets in cart
     [Tags]    Johan Ahlsten
     Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
 	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
@@ -51,24 +51,6 @@ User books weekend safaris for their family
 	...    ${safari_type_t_rex_rumble_thrill}    ${add_to_cart_message_successful}
     Then The Date Of The Safari Bookings Are Correct    ${cart_list_xpath}    ${cart_tab_xpath}    ${safari_type_herbivor_tour_feeding}
 	...    ${safari_type_t_rex_rumble_thrill}    ${kim_expected_safari_date}
-
-
-# So, we want to see so that the prices are correct as well, yeah? Both in the cart and post checkout.
-# I just built a function, so I can use that for a lot of this. So, I want to set one up that goes through and checks each part of the shopping.
-# So, do one that is, the price of the items is correct? Yeah,
-# So, to begin with, look at total price? Later on, will want to look at other things here as well yeah? Will want to break out dates correct?
-User sees correct prices on the orders in their cart
-    [Tags]    Johan Ahlsten
-    Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
-	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
-	And The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
-	...    ${adult_ticket_type}    ${child_ticket_type}    ${ticket_type_field}
-	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${add_to_cart_button}
-	...    ${add_to_cart_message_successful}
-    When The User Books Weekend Safaris For Their Family    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
-	...    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}
-	...    ${safari_type_t_rex_rumble_thrill}    ${add_to_cart_message_successful}
-    Then The Cart Shows The Correct Prices On The Items    ${cart_list_xpath}    ${cart_tab_xpath}    ${ITEM_PRICES}
 
 User purchases weekend safaris for their family
     [Tags]    Johan Ahlsten

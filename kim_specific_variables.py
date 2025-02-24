@@ -22,12 +22,12 @@ kim_expected_vacation_cost_total = "$670"
 
 # TODO Discuss with WV if we can organize the variables in variables.py for easier use,
 # might involve deciding on a naming convention as well.
-
-# Items and their expected prices, to be used to check so those are correct.
-ITEM_PRICES = [
-	("Regular Adult", 50)
-	("VIP Adult", 100)
-	("Regular Child", 30)
-	("VIP Child", 60)
-	("Herbivore Tour with Feeding", 180)
-	("T-Rex Rumble eXtreme Thrill Pack", 220)]
+kim_order_info = [
+		["VIP Adult Ticket","100"],
+		["Regular Adult Ticket","50"],
+		["VIP Child Ticket","60"],
+		["Herbivor Tour with Feeding", kim_expected_safari_date],
+		["T-Rex Rumble eXtreme Thrill Pack", kim_expected_safari_date],
+		["Herbivor Tour with Feeding", "180"],
+		["T-Rex Rumble eXtreme Thrill Pack", "220"]
+	]

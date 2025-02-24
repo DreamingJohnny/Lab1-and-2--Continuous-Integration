@@ -1,6 +1,9 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    .venv/Lib/site-packages/robot/libraries/Collections.py
+Library    Collections
+
+Variables    variables.py
+
 
 *** Keywords ***
 Open Browser To Page

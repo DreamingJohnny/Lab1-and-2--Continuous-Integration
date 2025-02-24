@@ -1,0 +1,1504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.2 on win32)" generated="2025-02-24T13:58:19.018982" rpa="false" schemaversion="5">
+<suite id="s1" name="Lab1-Continuous-Integration" source="C:\Users\KristinKullberg\Desktop\Cont Lab 1\Lab1-Continuous-Integration">
+<suite id="s1-s1" name="VG test cases" source="C:\Users\KristinKullberg\Desktop\Cont Lab 1\Lab1-Continuous-Integration\VG_test_cases.robot">
+<test id="s1-s1-t1" name="User Can Not Register Username That Already Exists" line="22">
+<kw name="VG Kristin Setup" owner="VG_keywords" type="SETUP">
+<kw name="Open Browser To Page" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:19.542419" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/KristinKullberg/Desktop/Cont Lab 1/Lab1-Continuous-Integration/Homepage\jurap.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-24T13:58:19.541888" elapsed="2.108608"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:21.674703" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-02-24T13:58:21.651024" elapsed="0.024387"/>
+</kw>
+<arg>${url_demo}</arg>
+<arg>${browser}</arg>
+<arg>${title_demo}</arg>
+<status status="PASS" start="2025-02-24T13:58:19.540120" elapsed="2.135747"/>
+</kw>
+<doc>This setup opens browser to JurasStina-Kalle park home page.</doc>
+<status status="PASS" start="2025-02-24T13:58:19.539093" elapsed="2.137098"/>
+</kw>
+<kw name="Given User Is Registered" owner="VG_user_generic_keywords">
+<kw name="User Registers Username" owner="VG_user_generic_keywords">
+<kw name="User Navigates To Register Section" owner="VG_user_generic_keywords">
+<kw name="Press Register Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:21.701470" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[2]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:21.700567" elapsed="0.211284"/>
+</kw>
+<arg>${reg_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:21.699623" elapsed="0.212535"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-24T13:58:23.913920" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-24T13:58:21.912533" elapsed="2.002020"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:21.698666" elapsed="2.216377"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:23.948076" level="INFO">Current page contains element 'id=register-form'.</msg>
+<arg>${reg_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:23.915573" elapsed="0.032884"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:21.697499" elapsed="2.251266"/>
+</kw>
+<kw name="User Enters Registration Credentials" owner="VG_user_generic_keywords">
+<kw name="Input Credentials" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:23.951424" level="INFO">Typing text 'VGUser' into text field 'reg-username'.</msg>
+<arg>${username_space}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:23.950870" elapsed="0.147813"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:24.099387" level="INFO">Typing text 'kittencollab' into text field 'reg-password'.</msg>
+<arg>${password_space}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:24.098959" elapsed="0.138947"/>
+</kw>
+<arg>${username}</arg>
+<arg>${reg_username_text_box}</arg>
+<arg>${password}</arg>
+<arg>${reg_password_text_box}</arg>
+<status status="PASS" start="2025-02-24T13:58:23.950124" elapsed="0.288044"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>This keyword enters username and password into registration fields.</doc>
+<status status="PASS" start="2025-02-24T13:58:23.949155" elapsed="0.289195"/>
+</kw>
+<kw name="Press Register Submit Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:24.240010" level="INFO">Clicking element 'xpath=/html/body/main/article[2]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:24.239560" elapsed="0.092652"/>
+</kw>
+<arg>${reg_submit_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:24.239076" elapsed="0.093416"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-24T13:58:26.334111" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-24T13:58:24.332819" elapsed="2.002562"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:24.238582" elapsed="2.098488"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>This keyword executes registration process of user, without verification.</doc>
+<status status="PASS" start="2025-02-24T13:58:21.696259" elapsed="4.641879"/>
+</kw>
+<kw name="User Should Be Registered" owner="VG_user_generic_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:26.345940" level="INFO">Executing JavaScript:
+let users = getUsers();return users.some(u =&gt; u.username === 'VGUser');
+Without any arguments.</msg>
+<msg time="2025-02-24T13:58:26.365273" level="INFO">${userRegistered} = True</msg>
+<var>${userRegistered}</var>
+<arg>let users = getUsers();</arg>
+<arg>return users.some(u =&gt; u.username === '${username}');</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-24T13:58:26.342480" elapsed="0.023072"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${userRegistered}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-02-24T13:58:26.365912" elapsed="0.000640"/>
+</kw>
+<arg>${username}</arg>
+<doc>This keyword verifies that user is registerd as a user,
+by fetching list of users with javascript and finding username in list.</doc>
+<status status="PASS" start="2025-02-24T13:58:26.339858" elapsed="0.026936"/>
+</kw>
+<arg>${VG_username}</arg>
+<arg>${VG_password}</arg>
+<doc>This keyword executes and verifies user registration.</doc>
+<status status="PASS" start="2025-02-24T13:58:21.679755" elapsed="4.687249"/>
+</kw>
+<kw name="When User Registers Username" owner="VG_user_generic_keywords">
+<kw name="User Navigates To Register Section" owner="VG_user_generic_keywords">
+<kw name="Press Register Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:26.380479" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[2]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:26.380117" elapsed="0.093762"/>
+</kw>
+<arg>${reg_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:26.379715" elapsed="0.094411"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-24T13:58:28.475245" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-24T13:58:26.474381" elapsed="2.001806"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:26.379350" elapsed="2.097703"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:28.506213" level="INFO">Current page contains element 'id=register-form'.</msg>
+<arg>${reg_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:28.478790" elapsed="0.027797"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:26.378857" elapsed="2.128063"/>
+</kw>
+<kw name="User Enters Registration Credentials" owner="VG_user_generic_keywords">
+<kw name="Input Credentials" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:28.510627" level="INFO">Typing text 'VGUser' into text field 'reg-username'.</msg>
+<arg>${username_space}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:28.510049" elapsed="0.114931"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:28.625674" level="INFO">Typing text 'kittencollab' into text field 'reg-password'.</msg>
+<arg>${password_space}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:28.625277" elapsed="0.128265"/>
+</kw>
+<arg>${username}</arg>
+<arg>${reg_username_text_box}</arg>
+<arg>${password}</arg>
+<arg>${reg_password_text_box}</arg>
+<status status="PASS" start="2025-02-24T13:58:28.508483" elapsed="0.245261"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>This keyword enters username and password into registration fields.</doc>
+<status status="PASS" start="2025-02-24T13:58:28.507255" elapsed="0.246621"/>
+</kw>
+<kw name="Press Register Submit Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:28.755261" level="INFO">Clicking element 'xpath=/html/body/main/article[2]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:28.754974" elapsed="0.081521"/>
+</kw>
+<arg>${reg_submit_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:28.754566" elapsed="0.082398"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-24T13:58:30.837951" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-24T13:58:28.837200" elapsed="2.001641"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:28.754106" elapsed="2.085529"/>
+</kw>
+<arg>${VG_username}</arg>
+<arg>${VG_password}</arg>
+<doc>This keyword executes registration process of user, without verification.</doc>
+<status status="PASS" start="2025-02-24T13:58:26.374860" elapsed="4.465274"/>
+</kw>
+<kw name="Then User Should Get Message That Username Already Exists" owner="VG_keywords">
+<kw name="Message Should Be Displayed" owner="VG_user_generic_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${standard_timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-24T13:58:30.859110" elapsed="0.032841"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:30.892632" level="INFO">Verifying element 'id=register-message' contains exact text 'Username already exists. Please choose another.'.</msg>
+<arg>${element}</arg>
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-24T13:58:30.892228" elapsed="0.034924"/>
+</kw>
+<arg>${reg_message_element}</arg>
+<arg>${reg_error_message_already_exists}</arg>
+<doc>This keyword verifies that a specific element contains a specific message.</doc>
+<status status="PASS" start="2025-02-24T13:58:30.857971" elapsed="0.069473"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:30.853208" elapsed="0.074484"/>
+</kw>
+<kw name="VG Kristin Teardown" owner="VG_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-24T13:58:30.932109" elapsed="2.274744"/>
+</kw>
+<doc>This teardown closes browser.</doc>
+<status status="PASS" start="2025-02-24T13:58:30.931614" elapsed="2.276005"/>
+</kw>
+<doc>This test verifies that an error message is displayed if user tries to register an already registered username.</doc>
+<tag>Kristin</tag>
+<status status="PASS" start="2025-02-24T13:58:19.536616" elapsed="13.672107"/>
+</test>
+<test id="s1-s1-t2" name="User That Is Not Logged In Can Not Add Ticket To Cart" line="29">
+<kw name="VG Kristin Setup" owner="VG_keywords" type="SETUP">
+<kw name="Open Browser To Page" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:33.225786" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/KristinKullberg/Desktop/Cont Lab 1/Lab1-Continuous-Integration/Homepage\jurap.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-24T13:58:33.224691" elapsed="2.070697"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:35.328968" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.295969" elapsed="0.033474"/>
+</kw>
+<arg>${url_demo}</arg>
+<arg>${browser}</arg>
+<arg>${title_demo}</arg>
+<status status="PASS" start="2025-02-24T13:58:33.222480" elapsed="2.107266"/>
+</kw>
+<doc>This setup opens browser to JurasStina-Kalle park home page.</doc>
+<status status="PASS" start="2025-02-24T13:58:33.220333" elapsed="2.109658"/>
+</kw>
+<kw name="Given No one is logged in" owner="VG_user_generic_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:35.354232" level="INFO">Executing JavaScript:
+if (currentUser) { return true; } else { return false; }
+Without any arguments.</msg>
+<msg time="2025-02-24T13:58:35.374587" level="INFO">${test} = False</msg>
+<var>${test}</var>
+<arg>if (currentUser) { return true; } else { return false; }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.352139" elapsed="0.022960"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${test}</arg>
+<arg>Log Out User</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.375678" elapsed="0.000927"/>
+</kw>
+<kw name="Login Button Should Be Visible" owner="VG_user_generic_keywords">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:35.423179" level="INFO">Element 'login-nav' is displayed.</msg>
+<arg>${login_button}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.378010" elapsed="0.045496"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:35.377131" elapsed="0.046583"/>
+</kw>
+<doc>This keyword verifies that no user is currently logged in. If any user is logged in, user is logged out.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.339969" elapsed="0.083897"/>
+</kw>
+<kw name="When User Buys Ticket" owner="VG_keywords">
+<kw name="User Navigates To Buy Ticket Section" owner="VG_user_generic_keywords">
+<kw name="Press Ticket Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:35.443085" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[4]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.442672" elapsed="0.183175"/>
+</kw>
+<arg>${buy_ticket_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:35.442194" elapsed="0.185299"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${tickets_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.628186" elapsed="0.028369"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:35.441792" elapsed="0.215196"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:35.670921" level="INFO">Current page contains element 'id=tickets-section'.</msg>
+<arg>${tickets_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.657453" elapsed="0.014604"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:35.441022" elapsed="0.231465"/>
+</kw>
+<kw name="Buy Entrance Tickets Without Verification" owner="VG_user_generic_keywords">
+<kw name="User Navigates To Buy Ticket Section" owner="VG_user_generic_keywords">
+<kw name="Press Ticket Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:35.677611" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[4]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.676953" elapsed="0.089104"/>
+</kw>
+<arg>${buy_ticket_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:35.676039" elapsed="0.091403"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${tickets_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.768079" elapsed="0.015892"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:35.675402" elapsed="0.109218"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:35.796737" level="INFO">Current page contains element 'id=tickets-section'.</msg>
+<arg>${tickets_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.785119" elapsed="0.012215"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:35.674757" elapsed="0.123016"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:35.800737" level="INFO">Selecting options from selection list 'id=ticket-type' by value Adult.</msg>
+<arg>${ticket_field_type}</arg>
+<arg>${selected_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.798403" elapsed="0.081823"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:35.881636" level="INFO">Selecting options from selection list 'id=ticket-category' by value Regular.</msg>
+<arg>${ticket_field_cat}</arg>
+<arg>${selected_category}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.880547" elapsed="0.060727"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:35.941975" level="INFO">Typing text '1' into text field 'id=ticket-quantity'.</msg>
+<arg>${ticket_field_quantity}</arg>
+<arg>${selected_quantity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.941537" elapsed="0.121740"/>
+</kw>
+<kw name="Press Add To Cart Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:36.067465" level="INFO">Clicking element 'xpath=/html/body/main/article[4]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:36.066347" elapsed="0.099934"/>
+</kw>
+<arg>${add_to_cart_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:36.064919" elapsed="0.101685"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-24T13:58:38.168370" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-24T13:58:36.166981" elapsed="2.002366"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:36.063607" elapsed="2.106550"/>
+</kw>
+<arg>${adult_ticket_type}</arg>
+<arg>${regular_ticket}</arg>
+<arg>${1}</arg>
+<doc>This keyword executes and verifies adding entrance ticket(s) to cart, without verification.
+Error message/alert should be handled elsewhere.</doc>
+<status status="PASS" start="2025-02-24T13:58:35.672849" elapsed="2.497777"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:35.433543" elapsed="2.737581"/>
+</kw>
+<kw name="Then User Should Recieve Alert" owner="VG_user_generic_keywords">
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:38.195344" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2025-02-24T13:58:38.211965" level="INFO">${alert_text} = You must be logged in to purchase tickets.</msg>
+<var>${alert_text}</var>
+<arg>action=DISMISS</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-02-24T13:58:38.194790" elapsed="0.017662"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${alert_text}</arg>
+<arg>${expected_alert_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-02-24T13:58:38.212920" elapsed="0.003693"/>
+</kw>
+<arg>${ticket_login_error_message}</arg>
+<doc>This keyword verifies message of an alert box.</doc>
+<status status="PASS" start="2025-02-24T13:58:38.186550" elapsed="0.030691"/>
+</kw>
+<kw name="VG Kristin Teardown" owner="VG_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-24T13:58:38.226521" elapsed="2.245492"/>
+</kw>
+<doc>This teardown closes browser.</doc>
+<status status="PASS" start="2025-02-24T13:58:38.225465" elapsed="2.246948"/>
+</kw>
+<doc>This test verifies that an error alert is displayed if user that is not logged in tries to buy entrance ticket.</doc>
+<tag>Kristin</tag>
+<status status="PASS" start="2025-02-24T13:58:33.213782" elapsed="7.259053"/>
+</test>
+<test id="s1-s1-t3" name="User That Is Not Logged In Can Not Book Safari" line="36">
+<kw name="VG Kristin Setup" owner="VG_keywords" type="SETUP">
+<kw name="Open Browser To Page" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:40.478689" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/KristinKullberg/Desktop/Cont Lab 1/Lab1-Continuous-Integration/Homepage\jurap.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-24T13:58:40.478221" elapsed="1.892346"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:42.384726" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-02-24T13:58:42.370846" elapsed="0.014595"/>
+</kw>
+<arg>${url_demo}</arg>
+<arg>${browser}</arg>
+<arg>${title_demo}</arg>
+<status status="PASS" start="2025-02-24T13:58:40.477423" elapsed="1.908426"/>
+</kw>
+<doc>This setup opens browser to JurasStina-Kalle park home page.</doc>
+<status status="PASS" start="2025-02-24T13:58:40.476447" elapsed="1.909781"/>
+</kw>
+<kw name="Given No one is logged in" owner="VG_user_generic_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:42.394789" level="INFO">Executing JavaScript:
+if (currentUser) { return true; } else { return false; }
+Without any arguments.</msg>
+<msg time="2025-02-24T13:58:42.407750" level="INFO">${test} = False</msg>
+<var>${test}</var>
+<arg>if (currentUser) { return true; } else { return false; }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-24T13:58:42.394219" elapsed="0.013753"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${test}</arg>
+<arg>Log Out User</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-24T13:58:42.408295" elapsed="0.000400"/>
+</kw>
+<kw name="Login Button Should Be Visible" owner="VG_user_generic_keywords">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:42.452762" level="INFO">Element 'login-nav' is displayed.</msg>
+<arg>${login_button}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-24T13:58:42.409496" elapsed="0.043588"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:42.408923" elapsed="0.044554"/>
+</kw>
+<doc>This keyword verifies that no user is currently logged in. If any user is logged in, user is logged out.</doc>
+<status status="PASS" start="2025-02-24T13:58:42.389061" elapsed="0.064631"/>
+</kw>
+<kw name="When User Books Safari" owner="VG_keywords">
+<kw name="Book Safari Without Verification" owner="VG_user_generic_keywords">
+<kw name="User Navigates To Safari Section" owner="VG_user_generic_keywords">
+<kw name="Press Safari Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:42.469065" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[5]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:42.468755" elapsed="0.163284"/>
+</kw>
+<arg>${safari_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:42.468300" elapsed="0.164047"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${safari_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:42.632705" elapsed="0.022201"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:42.467592" elapsed="0.187611"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:42.665371" level="INFO">Current page contains element 'id=safari-section'.</msg>
+<arg>${safari_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:42.655520" elapsed="0.010203"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:42.465720" elapsed="0.200281"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:42.668296" level="INFO">Typing text '002025-03-26' into text field 'id=safari-date'.</msg>
+<arg>${safari_date_field}</arg>
+<arg>${safari_date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:42.666501" elapsed="0.146609"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:42.816019" level="INFO">Selecting options from selection list 'xpath=/html/body/main/article[5]/section/form/select' by value Herbivore Tour.</msg>
+<arg>${safari_type_field}</arg>
+<arg>${safari_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-24T13:58:42.814913" elapsed="0.080286"/>
+</kw>
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:42.899304" level="INFO">Clicking element 'xpath=/html/body/main/article[5]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:42.898376" elapsed="0.093552"/>
+</kw>
+<arg>${safari_submit_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:42.896079" elapsed="0.096199"/>
+</kw>
+<arg>${safari_type_herbivor_tour}</arg>
+<arg>${VG_safari_date_weekday}</arg>
+<doc>This keyword executes safari booking process, without verification.
+Error message/alert should be handled elsewhere.</doc>
+<status status="PASS" start="2025-02-24T13:58:42.464414" elapsed="0.528084"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:42.458410" elapsed="0.534311"/>
+</kw>
+<kw name="Then User Should Recieve Alert" owner="VG_user_generic_keywords">
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:43.017775" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2025-02-24T13:58:43.024914" level="INFO">${alert_text} = You must be logged in to book a safari.</msg>
+<var>${alert_text}</var>
+<arg>action=DISMISS</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-02-24T13:58:43.017357" elapsed="0.008000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${alert_text}</arg>
+<arg>${expected_alert_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-02-24T13:58:43.025824" elapsed="0.001076"/>
+</kw>
+<arg>${safari_login_error_message}</arg>
+<doc>This keyword verifies message of an alert box.</doc>
+<status status="PASS" start="2025-02-24T13:58:43.005244" elapsed="0.022155"/>
+</kw>
+<kw name="VG Kristin Teardown" owner="VG_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-24T13:58:43.036544" elapsed="2.245865"/>
+</kw>
+<doc>This teardown closes browser.</doc>
+<status status="PASS" start="2025-02-24T13:58:43.035734" elapsed="2.247377"/>
+</kw>
+<doc>This test verifies that an error alert is displayed if user that is not logged in tries to book a safari.</doc>
+<tag>Kristin</tag>
+<status status="PASS" start="2025-02-24T13:58:40.474703" elapsed="4.809425"/>
+</test>
+<test id="s1-s1-t4" name="User With Regular Ticket Can Not Book VIP Safari" line="43">
+<kw name="VG Kristin Setup" owner="VG_keywords" type="SETUP">
+<kw name="Open Browser To Page" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:45.298452" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/KristinKullberg/Desktop/Cont Lab 1/Lab1-Continuous-Integration/Homepage\jurap.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-24T13:58:45.296803" elapsed="1.873200"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:47.176412" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-02-24T13:58:47.170385" elapsed="0.006486"/>
+</kw>
+<arg>${url_demo}</arg>
+<arg>${browser}</arg>
+<arg>${title_demo}</arg>
+<status status="PASS" start="2025-02-24T13:58:45.294078" elapsed="1.883490"/>
+</kw>
+<doc>This setup opens browser to JurasStina-Kalle park home page.</doc>
+<status status="PASS" start="2025-02-24T13:58:45.292748" elapsed="1.885115"/>
+</kw>
+<kw name="Given User Is Logged In" owner="VG_user_generic_keywords">
+<kw name="User Is Registered" owner="VG_user_generic_keywords">
+<kw name="User Registers Username" owner="VG_user_generic_keywords">
+<kw name="User Navigates To Register Section" owner="VG_user_generic_keywords">
+<kw name="Press Register Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:47.192865" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[2]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:47.192320" elapsed="0.125317"/>
+</kw>
+<arg>${reg_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:47.191863" elapsed="0.126270"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-24T13:58:49.319611" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-24T13:58:47.318483" elapsed="2.001404"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:47.191499" elapsed="2.128591"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:49.334953" level="INFO">Current page contains element 'id=register-form'.</msg>
+<arg>${reg_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:49.320336" elapsed="0.014891"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:47.191070" elapsed="2.144349"/>
+</kw>
+<kw name="User Enters Registration Credentials" owner="VG_user_generic_keywords">
+<kw name="Input Credentials" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:49.337028" level="INFO">Typing text 'VGUser' into text field 'reg-username'.</msg>
+<arg>${username_space}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:49.336683" elapsed="0.138680"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:49.477087" level="INFO">Typing text 'kittencollab' into text field 'reg-password'.</msg>
+<arg>${password_space}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:49.475859" elapsed="0.142790"/>
+</kw>
+<arg>${username}</arg>
+<arg>${reg_username_text_box}</arg>
+<arg>${password}</arg>
+<arg>${reg_password_text_box}</arg>
+<status status="PASS" start="2025-02-24T13:58:49.336167" elapsed="0.282688"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>This keyword enters username and password into registration fields.</doc>
+<status status="PASS" start="2025-02-24T13:58:49.335638" elapsed="0.283354"/>
+</kw>
+<kw name="Press Register Submit Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:49.620326" level="INFO">Clicking element 'xpath=/html/body/main/article[2]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:49.620031" elapsed="0.077652"/>
+</kw>
+<arg>${reg_submit_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:49.619608" elapsed="0.078450"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-24T13:58:51.699610" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-24T13:58:49.698418" elapsed="2.001521"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:49.619206" elapsed="2.080967"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>This keyword executes registration process of user, without verification.</doc>
+<status status="PASS" start="2025-02-24T13:58:47.190568" elapsed="4.509758"/>
+</kw>
+<kw name="User Should Be Registered" owner="VG_user_generic_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:51.702056" level="INFO">Executing JavaScript:
+let users = getUsers();return users.some(u =&gt; u.username === 'VGUser');
+Without any arguments.</msg>
+<msg time="2025-02-24T13:58:51.715162" level="INFO">${userRegistered} = True</msg>
+<var>${userRegistered}</var>
+<arg>let users = getUsers();</arg>
+<arg>return users.some(u =&gt; u.username === '${username}');</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-24T13:58:51.701305" elapsed="0.014086"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${userRegistered}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-02-24T13:58:51.715699" elapsed="0.000447"/>
+</kw>
+<arg>${username}</arg>
+<doc>This keyword verifies that user is registerd as a user,
+by fetching list of users with javascript and finding username in list.</doc>
+<status status="PASS" start="2025-02-24T13:58:51.700624" elapsed="0.015701"/>
+</kw>
+<arg>${VG_username}</arg>
+<arg>${VG_password}</arg>
+<doc>This keyword executes and verifies user registration.</doc>
+<status status="PASS" start="2025-02-24T13:58:47.189921" elapsed="4.526601"/>
+</kw>
+<kw name="Log In User" owner="VG_user_generic_keywords">
+<kw name="User Navigates To Login Section" owner="VG_user_generic_keywords">
+<kw name="Press Login Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:51.719265" level="INFO">Clicking element 'login-nav'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:51.718863" elapsed="0.095425"/>
+</kw>
+<arg>${login_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:51.718348" elapsed="0.096191"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${login_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:51.814761" elapsed="0.015720"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:51.717877" elapsed="0.112849"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:51.839950" level="INFO">Current page contains element 'id=login-section'.</msg>
+<arg>${login_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:51.831009" elapsed="0.009212"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:51.717401" elapsed="0.123085"/>
+</kw>
+<kw name="User Enters Login Credentials" owner="VG_user_generic_keywords">
+<kw name="Input Credentials" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:51.844970" level="INFO">Typing text 'VGUser' into text field 'login-username'.</msg>
+<arg>${username_space}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:51.842645" elapsed="0.142878"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:51.986241" level="INFO">Typing text 'kittencollab' into text field 'login-password'.</msg>
+<arg>${password_space}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:51.985819" elapsed="0.168830"/>
+</kw>
+<arg>${username}</arg>
+<arg>${login_username_text_box}</arg>
+<arg>${password}</arg>
+<arg>${login_password_text_box}</arg>
+<status status="PASS" start="2025-02-24T13:58:51.841318" elapsed="0.313570"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>This keyword enters username and password into login fields.</doc>
+<status status="PASS" start="2025-02-24T13:58:51.840697" elapsed="0.314330"/>
+</kw>
+<kw name="User Presses Login Button" owner="VG_user_generic_keywords">
+<kw name="Press Login Submit Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:52.156807" level="INFO">Clicking element 'xpath=/html/body/main/article[3]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:52.156502" elapsed="0.096705"/>
+</kw>
+<arg>${login_submit_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:52.156082" elapsed="0.097323"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-24T13:58:54.254629" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-24T13:58:52.253662" elapsed="2.001920"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:52.155716" elapsed="2.100523"/>
+</kw>
+<doc>This keyword executes pressing login button.</doc>
+<status status="PASS" start="2025-02-24T13:58:52.155263" elapsed="2.101467"/>
+</kw>
+<kw name="User Should Be Logged In" owner="VG_user_generic_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:54.264544" level="INFO">Executing JavaScript:
+return currentUser.username;
+Without any arguments.</msg>
+<msg time="2025-02-24T13:58:54.284562" level="INFO">${UserLoggedIn} = VGUser</msg>
+<var>${UserLoggedIn}</var>
+<arg>return currentUser.username;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.261494" elapsed="0.023422"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${UserLoggedIn}</arg>
+<arg>${username}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.285358" elapsed="0.000784"/>
+</kw>
+<arg>${username}</arg>
+<doc>This keyword verifies that user is logged in,
+by using javascript to fetch the username of the current logged in user.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.257543" elapsed="0.028833"/>
+</kw>
+<arg>${VG_username}</arg>
+<arg>${VG_password}</arg>
+<doc>This keyword executes and verifies login of user.</doc>
+<status status="PASS" start="2025-02-24T13:58:51.716793" elapsed="2.569788"/>
+</kw>
+<kw name="User Should Be Logged In" owner="VG_user_generic_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:54.289078" level="INFO">Executing JavaScript:
+return currentUser.username;
+Without any arguments.</msg>
+<msg time="2025-02-24T13:58:54.300159" level="INFO">${UserLoggedIn} = VGUser</msg>
+<var>${UserLoggedIn}</var>
+<arg>return currentUser.username;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.287984" elapsed="0.012462"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${UserLoggedIn}</arg>
+<arg>${username}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.300699" elapsed="0.000437"/>
+</kw>
+<arg>${VG_username}</arg>
+<doc>This keyword verifies that user is logged in,
+by using javascript to fetch the username of the current logged in user.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.286944" elapsed="0.014357"/>
+</kw>
+<doc>This keyword executes and verifies user login.</doc>
+<status status="PASS" start="2025-02-24T13:58:47.180135" elapsed="7.121294"/>
+</kw>
+<kw name="And Regular Entrance Ticket is Added To Cart" owner="VG_user_generic_keywords">
+<kw name="Buy Entrance Tickets" owner="VG_user_generic_keywords">
+<kw name="User Navigates To Buy Ticket Section" owner="VG_user_generic_keywords">
+<kw name="Press Ticket Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:54.316821" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[4]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.316520" elapsed="0.100744"/>
+</kw>
+<arg>${buy_ticket_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:54.316161" elapsed="0.101530"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${tickets_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.417930" elapsed="0.016252"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:54.315841" elapsed="0.118599"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:54.445345" level="INFO">Current page contains element 'id=tickets-section'.</msg>
+<arg>${tickets_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.434702" elapsed="0.010911"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:54.315503" elapsed="0.130298"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:54.446485" level="INFO">Selecting options from selection list 'id=ticket-type' by value Adult.</msg>
+<arg>${ticket_field_type}</arg>
+<arg>${selected_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.446008" elapsed="0.061234"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:54.508889" level="INFO">Selecting options from selection list 'id=ticket-category' by value Regular.</msg>
+<arg>${ticket_field_cat}</arg>
+<arg>${selected_category}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.507566" elapsed="0.063493"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:54.571775" level="INFO">Typing text '1' into text field 'id=ticket-quantity'.</msg>
+<arg>${ticket_field_quantity}</arg>
+<arg>${selected_quantity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.571330" elapsed="0.116178"/>
+</kw>
+<kw name="Press Add To Cart Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:54.688965" level="INFO">Clicking element 'xpath=/html/body/main/article[4]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.688640" elapsed="0.095735"/>
+</kw>
+<arg>${add_to_cart_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:54.688260" elapsed="0.096345"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-24T13:58:56.785715" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.784826" elapsed="2.001687"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:54.687828" elapsed="2.098997"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:56.787951" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2025-02-24T13:58:56.799433" level="INFO">${alert_text} = Item added to cart!</msg>
+<var>${alert_text}</var>
+<arg>action=DISMISS</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-02-24T13:58:56.787160" elapsed="0.012638"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${alert_text}</arg>
+<arg>${add_to_cart_message_successful}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-02-24T13:58:56.800265" elapsed="0.000860"/>
+</kw>
+<arg>${adult_ticket_type}</arg>
+<arg>${regular_ticket}</arg>
+<arg>${1}</arg>
+<doc>This keyword executes and verifies adding entrance ticket(s) to cart.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.314472" elapsed="2.487070"/>
+</kw>
+<doc>This keyword executes and verifies adding one adult VIP ticket to cart.</doc>
+<status status="PASS" start="2025-02-24T13:58:54.310592" elapsed="2.491376"/>
+</kw>
+<kw name="When User books VIP safari" owner="VG_keywords">
+<kw name="Book Safari Without Verification" owner="VG_user_generic_keywords">
+<kw name="User Navigates To Safari Section" owner="VG_user_generic_keywords">
+<kw name="Press Safari Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:56.823274" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[5]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:56.822898" elapsed="0.155731"/>
+</kw>
+<arg>${safari_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:56.822506" elapsed="0.156653"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${safari_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:56.979596" elapsed="0.020558"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:56.822132" elapsed="0.179164"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:57.017495" level="INFO">Current page contains element 'id=safari-section'.</msg>
+<arg>${safari_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:58:57.001767" elapsed="0.016199"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:56.821596" elapsed="0.196620"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:57.018965" level="INFO">Typing text '002025-03-22' into text field 'id=safari-date'.</msg>
+<arg>${safari_date_field}</arg>
+<arg>${safari_date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:57.018434" elapsed="0.118455"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:57.137854" level="INFO">Selecting options from selection list 'xpath=/html/body/main/article[5]/section/form/select' by value T-Rex Rumble eXtreme Thrill Pack.</msg>
+<arg>${safari_type_field}</arg>
+<arg>${safari_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-24T13:58:57.137283" elapsed="0.096955"/>
+</kw>
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:57.235353" level="INFO">Clicking element 'xpath=/html/body/main/article[5]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:58:57.235057" elapsed="0.080010"/>
+</kw>
+<arg>${safari_submit_button}</arg>
+<status status="PASS" start="2025-02-24T13:58:57.234565" elapsed="0.080846"/>
+</kw>
+<arg>${safari_type_t_rex_rumble_thrill}</arg>
+<arg>${VG_safari_date_weekend}</arg>
+<doc>This keyword executes safari booking process, without verification.
+Error message/alert should be handled elsewhere.</doc>
+<status status="PASS" start="2025-02-24T13:58:56.821117" elapsed="0.494529"/>
+</kw>
+<doc>This keyword executes booking of VIP safari, without verification.</doc>
+<status status="PASS" start="2025-02-24T13:58:56.812657" elapsed="0.503193"/>
+</kw>
+<kw name="Then User Should Get Message That Only VIP User Can Book VIP Safaris" owner="VG_keywords">
+<kw name="Message Should Be Displayed" owner="VG_user_generic_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${standard_timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-24T13:58:57.328066" elapsed="0.027824"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:57.356812" level="INFO">Verifying element 'id=safari-message' contains exact text 'Only VIP users can book the selected safari option.'.</msg>
+<arg>${element}</arg>
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-24T13:58:57.356173" elapsed="0.030220"/>
+</kw>
+<arg>${safari_message_element}</arg>
+<arg>${safari_VIP_error_message}</arg>
+<doc>This keyword verifies that a specific element contains a specific message.</doc>
+<status status="PASS" start="2025-02-24T13:58:57.326913" elapsed="0.059747"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:58:57.321560" elapsed="0.065237"/>
+</kw>
+<kw name="VG Kristin Teardown" owner="VG_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-24T13:58:57.390042" elapsed="2.286513"/>
+</kw>
+<doc>This teardown closes browser.</doc>
+<status status="PASS" start="2025-02-24T13:58:57.389433" elapsed="2.287400"/>
+</kw>
+<doc>This test verifies that an error message is displayed if user tries to book VIP safari without VIP ticket.</doc>
+<tag>Kristin</tag>
+<status status="PASS" start="2025-02-24T13:58:45.288659" elapsed="14.388647"/>
+</test>
+<test id="s1-s1-t5" name="User With Regular Ticket Can Not Book Safari On Weekend" line="52">
+<kw name="VG Kristin Setup" owner="VG_keywords" type="SETUP">
+<kw name="Open Browser To Page" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:58:59.684904" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/KristinKullberg/Desktop/Cont Lab 1/Lab1-Continuous-Integration/Homepage\jurap.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-24T13:58:59.684345" elapsed="1.951543"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:01.648553" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-02-24T13:59:01.636225" elapsed="0.013328"/>
+</kw>
+<arg>${url_demo}</arg>
+<arg>${browser}</arg>
+<arg>${title_demo}</arg>
+<status status="PASS" start="2025-02-24T13:58:59.683052" elapsed="1.966738"/>
+</kw>
+<doc>This setup opens browser to JurasStina-Kalle park home page.</doc>
+<status status="PASS" start="2025-02-24T13:58:59.681943" elapsed="1.968048"/>
+</kw>
+<kw name="Given User Is Logged In" owner="VG_user_generic_keywords">
+<kw name="User Is Registered" owner="VG_user_generic_keywords">
+<kw name="User Registers Username" owner="VG_user_generic_keywords">
+<kw name="User Navigates To Register Section" owner="VG_user_generic_keywords">
+<kw name="Press Register Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:01.668734" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[2]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:01.668241" elapsed="0.169085"/>
+</kw>
+<arg>${reg_button}</arg>
+<status status="PASS" start="2025-02-24T13:59:01.667860" elapsed="0.169933"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-24T13:59:03.839302" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-24T13:59:01.838243" elapsed="2.001683"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:59:01.667507" elapsed="2.172644"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:03.855289" level="INFO">Current page contains element 'id=register-form'.</msg>
+<arg>${reg_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:59:03.840373" elapsed="0.015528"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:59:01.667102" elapsed="2.189024"/>
+</kw>
+<kw name="User Enters Registration Credentials" owner="VG_user_generic_keywords">
+<kw name="Input Credentials" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:03.858268" level="INFO">Typing text 'VGUser' into text field 'reg-username'.</msg>
+<arg>${username_space}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:03.857603" elapsed="0.138090"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:03.996732" level="INFO">Typing text 'kittencollab' into text field 'reg-password'.</msg>
+<arg>${password_space}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:03.995973" elapsed="0.138634"/>
+</kw>
+<arg>${username}</arg>
+<arg>${reg_username_text_box}</arg>
+<arg>${password}</arg>
+<arg>${reg_password_text_box}</arg>
+<status status="PASS" start="2025-02-24T13:59:03.856937" elapsed="0.277865"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>This keyword enters username and password into registration fields.</doc>
+<status status="PASS" start="2025-02-24T13:59:03.856367" elapsed="0.278598"/>
+</kw>
+<kw name="Press Register Submit Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:04.136290" level="INFO">Clicking element 'xpath=/html/body/main/article[2]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:04.136010" elapsed="0.094904"/>
+</kw>
+<arg>${reg_submit_button}</arg>
+<status status="PASS" start="2025-02-24T13:59:04.135584" elapsed="0.095553"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-24T13:59:06.232072" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-24T13:59:04.231314" elapsed="2.001766"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:59:04.135175" elapsed="2.098553"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>This keyword executes registration process of user, without verification.</doc>
+<status status="PASS" start="2025-02-24T13:59:01.666235" elapsed="4.568411"/>
+</kw>
+<kw name="User Should Be Registered" owner="VG_user_generic_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:06.243759" level="INFO">Executing JavaScript:
+let users = getUsers();return users.some(u =&gt; u.username === 'VGUser');
+Without any arguments.</msg>
+<msg time="2025-02-24T13:59:06.262157" level="INFO">${userRegistered} = True</msg>
+<var>${userRegistered}</var>
+<arg>let users = getUsers();</arg>
+<arg>return users.some(u =&gt; u.username === '${username}');</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-24T13:59:06.240503" elapsed="0.021956"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${userRegistered}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-02-24T13:59:06.262823" elapsed="0.000582"/>
+</kw>
+<arg>${username}</arg>
+<doc>This keyword verifies that user is registerd as a user,
+by fetching list of users with javascript and finding username in list.</doc>
+<status status="PASS" start="2025-02-24T13:59:06.235548" elapsed="0.028048"/>
+</kw>
+<arg>${VG_username}</arg>
+<arg>${VG_password}</arg>
+<doc>This keyword executes and verifies user registration.</doc>
+<status status="PASS" start="2025-02-24T13:59:01.665103" elapsed="4.598660"/>
+</kw>
+<kw name="Log In User" owner="VG_user_generic_keywords">
+<kw name="User Navigates To Login Section" owner="VG_user_generic_keywords">
+<kw name="Press Login Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:06.267276" level="INFO">Clicking element 'login-nav'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:06.266846" elapsed="0.094066"/>
+</kw>
+<arg>${login_button}</arg>
+<status status="PASS" start="2025-02-24T13:59:06.266303" elapsed="0.094887"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${login_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:59:06.361390" elapsed="0.013622"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:59:06.265676" elapsed="0.109561"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:06.384792" level="INFO">Current page contains element 'id=login-section'.</msg>
+<arg>${login_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:59:06.375437" elapsed="0.009628"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:59:06.264915" elapsed="0.120324"/>
+</kw>
+<kw name="User Enters Login Credentials" owner="VG_user_generic_keywords">
+<kw name="Input Credentials" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:06.387540" level="INFO">Typing text 'VGUser' into text field 'login-username'.</msg>
+<arg>${username_space}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:06.386721" elapsed="0.138258"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:06.526032" level="INFO">Typing text 'kittencollab' into text field 'login-password'.</msg>
+<arg>${password_space}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:06.525348" elapsed="0.153804"/>
+</kw>
+<arg>${username}</arg>
+<arg>${login_username_text_box}</arg>
+<arg>${password}</arg>
+<arg>${login_password_text_box}</arg>
+<status status="PASS" start="2025-02-24T13:59:06.386048" elapsed="0.293308"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>This keyword enters username and password into login fields.</doc>
+<status status="PASS" start="2025-02-24T13:59:06.385453" elapsed="0.294059"/>
+</kw>
+<kw name="User Presses Login Button" owner="VG_user_generic_keywords">
+<kw name="Press Login Submit Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:06.681282" level="INFO">Clicking element 'xpath=/html/body/main/article[3]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:06.680964" elapsed="0.093154"/>
+</kw>
+<arg>${login_submit_button}</arg>
+<status status="PASS" start="2025-02-24T13:59:06.680558" elapsed="0.093897"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-24T13:59:08.776097" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-24T13:59:06.774811" elapsed="2.002177"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:59:06.680183" elapsed="2.097425"/>
+</kw>
+<doc>This keyword executes pressing login button.</doc>
+<status status="PASS" start="2025-02-24T13:59:06.679738" elapsed="2.098369"/>
+</kw>
+<kw name="User Should Be Logged In" owner="VG_user_generic_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:08.784106" level="INFO">Executing JavaScript:
+return currentUser.username;
+Without any arguments.</msg>
+<msg time="2025-02-24T13:59:08.801199" level="INFO">${UserLoggedIn} = VGUser</msg>
+<var>${UserLoggedIn}</var>
+<arg>return currentUser.username;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-24T13:59:08.781829" elapsed="0.019613"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${UserLoggedIn}</arg>
+<arg>${username}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-24T13:59:08.801992" elapsed="0.000667"/>
+</kw>
+<arg>${username}</arg>
+<doc>This keyword verifies that user is logged in,
+by using javascript to fetch the username of the current logged in user.</doc>
+<status status="PASS" start="2025-02-24T13:59:08.778890" elapsed="0.024151"/>
+</kw>
+<arg>${VG_username}</arg>
+<arg>${VG_password}</arg>
+<doc>This keyword executes and verifies login of user.</doc>
+<status status="PASS" start="2025-02-24T13:59:06.264036" elapsed="2.539412"/>
+</kw>
+<kw name="User Should Be Logged In" owner="VG_user_generic_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:08.807298" level="INFO">Executing JavaScript:
+return currentUser.username;
+Without any arguments.</msg>
+<msg time="2025-02-24T13:59:08.814943" level="INFO">${UserLoggedIn} = VGUser</msg>
+<var>${UserLoggedIn}</var>
+<arg>return currentUser.username;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-24T13:59:08.805792" elapsed="0.009363"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${UserLoggedIn}</arg>
+<arg>${username}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-24T13:59:08.815411" elapsed="0.000459"/>
+</kw>
+<arg>${VG_username}</arg>
+<doc>This keyword verifies that user is logged in,
+by using javascript to fetch the username of the current logged in user.</doc>
+<status status="PASS" start="2025-02-24T13:59:08.804103" elapsed="0.011920"/>
+</kw>
+<doc>This keyword executes and verifies user login.</doc>
+<status status="PASS" start="2025-02-24T13:59:01.650746" elapsed="7.165400"/>
+</kw>
+<kw name="And Regular Entrance Ticket Is Added To Cart" owner="VG_user_generic_keywords">
+<kw name="Buy Entrance Tickets" owner="VG_user_generic_keywords">
+<kw name="User Navigates To Buy Ticket Section" owner="VG_user_generic_keywords">
+<kw name="Press Ticket Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:08.828611" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[4]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:08.828312" elapsed="0.107756"/>
+</kw>
+<arg>${buy_ticket_button}</arg>
+<status status="PASS" start="2025-02-24T13:59:08.827948" elapsed="0.108682"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${tickets_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:59:08.937207" elapsed="0.014462"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:59:08.827604" elapsed="0.124342"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:08.963994" level="INFO">Current page contains element 'id=tickets-section'.</msg>
+<arg>${tickets_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:59:08.952175" elapsed="0.012099"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:59:08.827206" elapsed="0.137259"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:08.965173" level="INFO">Selecting options from selection list 'id=ticket-type' by value Adult.</msg>
+<arg>${ticket_field_type}</arg>
+<arg>${selected_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-24T13:59:08.964677" elapsed="0.068147"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:09.033557" level="INFO">Selecting options from selection list 'id=ticket-category' by value Regular.</msg>
+<arg>${ticket_field_cat}</arg>
+<arg>${selected_category}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-24T13:59:09.033109" elapsed="0.060841"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:09.094658" level="INFO">Typing text '1' into text field 'id=ticket-quantity'.</msg>
+<arg>${ticket_field_quantity}</arg>
+<arg>${selected_quantity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:09.094229" elapsed="0.118860"/>
+</kw>
+<kw name="Press Add To Cart Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:09.214927" level="INFO">Clicking element 'xpath=/html/body/main/article[4]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:09.214599" elapsed="0.099490"/>
+</kw>
+<arg>${add_to_cart_button}</arg>
+<status status="PASS" start="2025-02-24T13:59:09.213976" elapsed="0.100329"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-24T13:59:11.315135" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-24T13:59:09.314526" elapsed="2.000925"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:59:09.213430" elapsed="2.102257"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:11.316448" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2025-02-24T13:59:11.328141" level="INFO">${alert_text} = Item added to cart!</msg>
+<var>${alert_text}</var>
+<arg>action=DISMISS</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.315920" elapsed="0.012729"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${alert_text}</arg>
+<arg>${add_to_cart_message_successful}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.329196" elapsed="0.001323"/>
+</kw>
+<arg>${adult_ticket_type}</arg>
+<arg>${regular_ticket}</arg>
+<arg>${1}</arg>
+<doc>This keyword executes and verifies adding entrance ticket(s) to cart.</doc>
+<status status="PASS" start="2025-02-24T13:59:08.825593" elapsed="2.505529"/>
+</kw>
+<doc>This keyword executes and verifies adding one adult VIP ticket to cart.</doc>
+<status status="PASS" start="2025-02-24T13:59:08.820279" elapsed="2.511350"/>
+</kw>
+<kw name="When User Books Safari On A Weekend" owner="VG_keywords">
+<kw name="Book Safari Without Verification" owner="VG_user_generic_keywords">
+<kw name="User Navigates To Safari Section" owner="VG_user_generic_keywords">
+<kw name="Press Safari Button" owner="VG_user_generic_keywords">
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:11.363952" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[5]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.363200" elapsed="0.167255"/>
+</kw>
+<arg>${safari_button}</arg>
+<status status="PASS" start="2025-02-24T13:59:11.361347" elapsed="0.169362"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${safari_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.530967" elapsed="0.018508"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:59:11.358970" elapsed="0.191009"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:11.566467" level="INFO">Current page contains element 'id=safari-section'.</msg>
+<arg>${safari_section}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.550411" elapsed="0.016732"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:59:11.357592" elapsed="0.210209"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:11.569496" level="INFO">Typing text '002025-03-22' into text field 'id=safari-date'.</msg>
+<arg>${safari_date_field}</arg>
+<arg>${safari_date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.568255" elapsed="0.119621"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:11.688907" level="INFO">Selecting options from selection list 'xpath=/html/body/main/article[5]/section/form/select' by value Herbivore Tour.</msg>
+<arg>${safari_type_field}</arg>
+<arg>${safari_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.688407" elapsed="0.071221"/>
+</kw>
+<kw name="Click Specific Button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:11.761301" level="INFO">Clicking element 'xpath=/html/body/main/article[5]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.760834" elapsed="0.101003"/>
+</kw>
+<arg>${safari_submit_button}</arg>
+<status status="PASS" start="2025-02-24T13:59:11.760032" elapsed="0.102008"/>
+</kw>
+<arg>${safari_type_herbivor_tour}</arg>
+<arg>${VG_safari_date_weekend}</arg>
+<doc>This keyword executes safari booking process, without verification.
+Error message/alert should be handled elsewhere.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.354413" elapsed="0.507754"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:59:11.342941" elapsed="0.519355"/>
+</kw>
+<kw name="Then User Should Get Message That VIP Ticket Is Required" owner="VG_keywords">
+<kw name="Message Should Be Displayed" owner="VG_user_generic_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${standard_timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.873538" elapsed="0.027399"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-24T13:59:11.901723" level="INFO">Verifying element 'id=safari-message' contains exact text 'VIP tickets required to book safaris on weekends.'.</msg>
+<arg>${element}</arg>
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.901236" elapsed="0.040099"/>
+</kw>
+<arg>${safari_message_element}</arg>
+<arg>${safari_weekend_without_VIP_error_message}</arg>
+<doc>This keyword verifies that a specific element contains a specific message.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.872233" elapsed="0.069577"/>
+</kw>
+<status status="PASS" start="2025-02-24T13:59:11.866103" elapsed="0.075931"/>
+</kw>
+<kw name="VG Kristin Teardown" owner="VG_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.948795" elapsed="3.855081"/>
+</kw>
+<doc>This teardown closes browser.</doc>
+<status status="PASS" start="2025-02-24T13:59:11.947959" elapsed="3.856874"/>
+</kw>
+<doc>This test verifies that an error message is displayed if user tries to book safari on a weekend without VIP ticket.</doc>
+<tag>Kristin</tag>
+<status status="PASS" start="2025-02-24T13:58:59.679425" elapsed="16.126485"/>
+</test>
+<status status="PASS" start="2025-02-24T13:58:19.059387" elapsed="56.753206"/>
+</suite>
+<status status="PASS" start="2025-02-24T13:58:19.024826" elapsed="56.796860"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">Kristin</stat>
+</tag>
+<suite>
+<stat name="Lab1-Continuous-Integration" id="s1" pass="5" fail="0" skip="0">Lab1-Continuous-Integration</stat>
+<stat name="VG test cases" id="s1-s1" pass="5" fail="0" skip="0">Lab1-Continuous-Integration.VG test cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -9,9 +9,9 @@ Library    XML
 
 Resource    keywords.robot
 Resource    pal_keywords.robot
-Resource    VG_user_generic_keywords.robot
+Resource    VG_Kristin_user_generic_keywords.robot
 
-Variables    VG_specific_variables.py
+Variables    VG_Kristin_specific_variables.py
 
 
 

@@ -10,7 +10,7 @@ Library    XML
 Resource    keywords.robot
 Resource    pal_keywords.robot
 
-Variables    VG_specific_variables.py
+Variables    VG_Kristin_specific_variables.py
 
 *** Keywords ***
 

@@ -9,8 +9,8 @@ Library    Collections
 
 Resource    keywords.robot
 Resource    pal_keywords.robot
-Resource    VG_keywords.robot
-Resource    VG_user_generic_keywords.robot
+Resource    VG_Kristin_keywords.robot
+Resource    VG_Kristin_user_generic_keywords.robot
 
 Test Setup    VG Kristin Setup
 Test Teardown    VG Kristin Teardown

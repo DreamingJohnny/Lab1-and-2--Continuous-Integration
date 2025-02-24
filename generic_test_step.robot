@@ -11,21 +11,21 @@ Test Teardown    Teardown Suite
 *** Test Cases ***
 #Invalid login test to see if the page need correct credentials. 
 Invalid browser login
-    [Tags]    Wille Virtanen
+    [Tags]    [Wille Virtanen]
     Click Specific Button    ${login_button}
     Input Credentials    ${invalid_username}    ${login_username_text_box}    ${invalid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
 #Valid login test to see that login works with valid credentials.
     Message Should Be Visible    ${error_message_element_demo}    ${error_message_demo}    ${standard_timeout}    ${verifying_message}
 Valid browser login
-    [Tags]    Wille Virtanen
+    [Tags]    [Wille Virtanen]
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element    ${login_submit_button}   
     Sleep    3
 #Logout test to see that the logout feature of the page works.
 Valid browser logout
-    [Tags]    Wille Virtanen
+    [Tags]    [Wille Virtanen]
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
@@ -33,7 +33,7 @@ Valid browser logout
     Logout    ${logout_button}
 #Test for booking an buying a regular adult ticket.
 Booking 1 regular adult ticket
-    [Tags]    Wille Virtanen Refactored by Johan Ahlsten
+    [Tags]    [Wille Virtanen] [Refactored by Johan Ahlsten]
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
@@ -48,7 +48,7 @@ Booking 1 regular adult ticket
     Sleep    5
 #Test for booking and buying additional tickets.
 Booking 2 regular adult ticket
-    [Tags]    Wille Virtanen Refactored by Johan Ahlsten
+    [Tags]    [Wille Virtanen] [Refactored by Johan Ahlsten]
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
@@ -63,7 +63,7 @@ Booking 2 regular adult ticket
     Sleep    5
 #Test for booking and buying Safari.
 Booking Safari
-    [Tags]    Wille Virtanen Refactored by Johan Ahlsten
+    [Tags]    [Wille Virtanen] [Refactored by Johan Ahlsten]
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
@@ -79,7 +79,7 @@ Booking Safari
     Sleep    5
 #Test for removing items from cart.
 Removing object from cart
-    [Tags]    Wille Virtanen
+    [Tags]    [Wille Virtanen]
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}

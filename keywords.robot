@@ -22,7 +22,7 @@ Message Should Be Visible
     [Arguments]    ${error_message_element}    ${error_message_text}    ${timeout}    ${good_mess}
     Wait Until Element Is Visible    ${error_message_element}    ${timeout}
     Element Text Should Be    ${error_message_element}    ${good_mess}
-    Sleep    5s
+    Sleep    2
     Wait Until Element Is Visible    ${error_message_element}    ${timeout}
     Element Text Should Be    ${error_message_element}    ${error_message_text}
 Registration
@@ -43,10 +43,10 @@ Increase value
 Buy A Ticket
     [Arguments]    ${cat}    ${type}    ${type_field}    ${cat_field}    ${input_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
     Click Specific Button    ${buy_ticket_button}
-    Sleep    5
+    Sleep    2
     Select From List By Value    ${type_field}    ${type} 
     Select From List By Value    ${cat_field}    ${cat}
-    Sleep    5
+    Sleep    2
     Click Button    ${add_to_cart_button}
      ${alert_text}    Handle Alert    action=DISMISS
 	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
@@ -54,13 +54,13 @@ Buy A Ticket
 Buy More Than One Ticket
     [Arguments]    ${cat}    ${type}    ${amount}    ${type_field}    ${cat_field}    ${input_counter}    ${button_one}    ${button_two}    ${add_to_cart_message_successful}
     Click Specific Button    ${button_one}
-    Sleep    5
+    Sleep    2
     Select From List By Value    ${type_field}    ${type} 
     Select From List By Value    ${cat_field}    ${cat}
     WHILE    True    limit=${amount}    on_limit=pass    
     Increase value    ${input_counter}    ARROW_UP
     END 
-    Sleep    5
+    Sleep    2
     Click Button    ${button_two}
      ${alert_text}    Handle Alert    action=DISMISS
 	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
@@ -68,14 +68,14 @@ Buy More Than One Ticket
 Book Safari
     [Arguments]    ${saf_button}    ${saf_date_field}    ${date}    ${saf_type_field}    ${saf_type}    ${saf_sub_button}    ${add_to_cart_message_successful}
     Click Element    ${saf_button}
-    Sleep    5
+    Sleep    2
     #When booking remember to always put six number in the year slot and start with two 00 as Max has failed in his programing ;)
     Input Text    ${saf_date_field}    ${date}
-    Sleep    5    
+    Sleep    2    
     Select From List By Value    ${saf_type_field}    ${saf_type}
-    Sleep    5
+    Sleep    2
     Click Element    ${saf_sub_button}
-    Sleep    5
+    Sleep    2
      ${alert_text}    Handle Alert    action=DISMISS
 	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
 

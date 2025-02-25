@@ -2,7 +2,7 @@
 Library    SeleniumLibrary
 Resource    keywords.robot
 Variables    variables.py
-Documentation    Generic test suite for general test functions as a base library.
+Documentation   Grupp 2 Wille, Johan och Kristin. Generic test suite for general test functions as a base library.
 
 #Test setup that starts up the page in a browser and registers a user. (by Wille)
 Test Setup    Setup Suite    ${url_demo}    ${browser}    ${title_demo}    ${valid_username}    ${reg_username_text_box}    ${valid_password}    ${reg_password_text_box}    ${reg_button}    ${reg_submit_button}

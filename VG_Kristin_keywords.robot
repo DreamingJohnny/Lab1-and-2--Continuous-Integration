@@ -36,8 +36,7 @@ User Should Get Message That Only VIP User Can Book VIP Safaris
 User Should Get Message That VIP Ticket Is Required
     Message Should Be Displayed   ${safari_message_element}    ${safari_weekend_without_VIP_error_message}
 
-User Presses "Add To Cart" Button
-    Press Add To Cart Button
+
 
 User Books Safari On A Weekend
     Book Safari without verification   ${safari_type_herbivor_tour}    ${VG_safari_date_weekend}

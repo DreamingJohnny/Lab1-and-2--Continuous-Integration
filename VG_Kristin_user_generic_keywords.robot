@@ -48,7 +48,7 @@ User Is Registered
     User should be registered    ${username}
 
 User Is Logged In
-    [Documentation]    This keyword executes and verifies user login.
+    [Documentation]    This keyword executes and verifies user registration and login.
     [Arguments]    ${username}    ${password}
     User Is Registered    ${username}    ${password}
     Log In User    ${username}    ${password}   
@@ -56,7 +56,7 @@ User Is Logged In
 
 
 Log In User
-    [Documentation]    This keyword executes and verifies login of user.
+    [Documentation]    This keyword executes and verifies user login.
     [Arguments]    ${username}    ${password}
     User Navigates To Login Section
     User Enters Login Credentials    ${username}    ${password}
@@ -72,8 +72,8 @@ User Should Be Logged In
 
 No One Is Logged In
     [Documentation]    This keyword verifies that no user is currently logged in. If any user is logged in, user is logged out.
-    ${test} =     Execute Javascript    if (currentUser) { return true; } else { return false; }
-    Run Keyword If    ${test}    Log Out User
+    ${userLoggedIn} =     Execute Javascript    if (currentUser) { return true; } else { return false; }
+    Run Keyword If    ${userLoggedIn}    Log Out User
     Login Button Should Be Visible
 
 Log Out User
@@ -129,7 +129,7 @@ Buy Entrance Tickets
     Select From List By Value    ${ticket_type_field}    ${selected_type} 
     Select From List By Value    ${ticket_cat_field}    ${selected_category}
     Input Text  ${input_of_ticket_counter}   ${selected_quantity}
-    Press Add To Cart Button
+    Press Add Ticket To Cart Button
      ${alert_text}    Handle Alert    action=DISMISS
 	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
 
@@ -141,7 +141,7 @@ Buy Entrance Tickets Without Verification
     Select From List By Value    ${ticket_type_field}    ${selected_type} 
     Select From List By Value    ${ticket_cat_field}    ${selected_category}
     Input Text  ${input_of_ticket_counter}   ${selected_quantity}
-    Press Add To Cart Button
+    Press Add Ticket To Cart Button
 
 
 Book Safari
@@ -150,8 +150,7 @@ Book Safari
     Press Safari Button
     Input Text    ${safari_date_field}    ${safari_date}
     Select From List By Value    ${safari_type_field}    ${safari_type}
-    Click Element    ${safari_submit_button}
-    Sleep    2
+    Press Add Safari To Cart Button
     ${alert_text}    Handle Alert    action=DISMISS
     Should Contain    ${alert_text}    ${add_to_cart_message_successful}
 
@@ -200,10 +199,12 @@ User Presses Login Button
     [Documentation]    This keyword executes pressing login button.
     Press Login Submit Button
 
-User Presses Add To Cart Button
-    User Navigates To Buy Ticket Section
-    Press Add To Cart Button
+User Presses Safari "Add To Cart" Button
+    Press Add Safari To Cart Button
 
+User Presses Ticket "Add To Cart" Button
+    Press Add Ticket To Cart Button
+    
 User Presses Proceed To Checkout
     [Documentation]    This keyword navigates to cart and presses "Proceed to checkout" button.
     User Navigates To Cart Section
@@ -243,9 +244,14 @@ Press Login Submit Button
     Click Specific Button    ${login_submit_button}
     Sleep    2
 
-Press Add To Cart Button
+Press Add Safari To Cart Button
+    Click Specific Button    ${safari_submit_button}
+    Sleep    2
+
+Press Add Ticket To Cart Button
     Click Specific Button    ${add_to_cart_button}
     Sleep    2
+
 
 Press Register Submit Button
     Click Specific Button    ${reg_submit_button}

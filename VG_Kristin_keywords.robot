@@ -8,8 +8,8 @@ Library    Collections
 Library    XML
 
 Resource    keywords.robot
-Resource    pal_keywords.robot
 Resource    VG_Kristin_user_generic_keywords.robot
+#Resource    pal_keywords.robot
 
 Variables    VG_Kristin_specific_variables.py
 
@@ -24,6 +24,7 @@ VG Kristin Setup
 VG Kristin Teardown
     [Documentation]    This teardown closes browser.
     Close Browser
+
 
 
 User Should Get Message That Username Already Exists
@@ -58,22 +59,12 @@ User books VIP safari
 
 
 
-
-
-
-
-
-
-
-
-
-
-##Not used, cannot press regoster, is alerted "fyll i det här fältet" first
+##Not used, cannot press register, is alerted "fyll i det här fältet" first
 User Enters Only Username And No Password
-    Input Text    ${reg_username_text_box}    ${pal_username}
+    Input Text    ${reg_username_text_box}    ${VG_username}
 
 User Enters Only Password And No Username
-    Input Credentials    ${None}    ${reg_username_text_box}    ${pal_password}    ${reg_password_text_box}
+    Input Credentials    ${None}    ${reg_username_text_box}    ${VG_password}    ${reg_password_text_box}
 
 
     

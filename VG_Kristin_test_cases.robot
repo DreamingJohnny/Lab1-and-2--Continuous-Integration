@@ -8,9 +8,10 @@ Library    SeleniumLibrary
 Library    Collections
 
 Resource    keywords.robot
-Resource    pal_keywords.robot
 Resource    VG_Kristin_keywords.robot
-Resource    VG_Kristin_user_generic_keywords.robot
+
+#Resource    pal_keywords.robot
+#Resource    VG_Kristin_user_generic_keywords.robot
 
 Test Setup    VG Kristin Setup
 Test Teardown    VG Kristin Teardown
@@ -43,7 +44,7 @@ User That Is Not Logged In Can Not Book Safari
 User With Regular Ticket Can Not Book VIP Safari
     [Documentation]    This test verifies that an error message is displayed if user tries to book VIP safari without VIP ticket.
     [Tags]    Kristin
-    Given User Is Logged In 
+    Given User Is Logged In    ${VG_username}    ${VG_password}
     And Regular Entrance Ticket is Added To Cart
     When User books VIP safari
     Then User Should Get Message That Only VIP User Can Book VIP Safaris
@@ -52,7 +53,7 @@ User With Regular Ticket Can Not Book VIP Safari
 User With Regular Ticket Can Not Book Safari On Weekend
     [Documentation]    This test verifies that an error message is displayed if user tries to book safari on a weekend without VIP ticket.
     [Tags]    Kristin
-    Given User Is Logged In
+    Given User Is Logged In    ${VG_username}    ${VG_password}
     And Regular Entrance Ticket Is Added To Cart
     When User Books Safari On A Weekend
     Then User Should Get Message That VIP Ticket Is Required

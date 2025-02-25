@@ -44,13 +44,13 @@ standard_timeout = "5s"
 logout_button = "logout-link"
 #Buying tickets
 buy_ticket_button = "xpath=/html/body/header/div/nav/ul/li[4]/a"
-ticket_type_field = "xpath=/html/body/main/article[4]/section/form/select[1]"
+ticket_type_field = "id=ticket-type"    #"xpath=/html/body/main/article[4]/section/form/select[1]"
 adult_ticket_type = "Adult"
 regular_adult_ticket_price = 50
 child_ticket_type = "Child"
 regular_child_ticket_price = 30
 senior_ticket_type = "Senior"
-ticket_cat_field = "xpath=/html/body/main/article[4]/section/form/select[2]"
+ticket_cat_field = "id=ticket-category"     #"xpath=/html/body/main/article[4]/section/form/select[2]"
 regular_ticket = "Regular"
 vip_ticket = "VIP"
 vip_adult_ticket_price = 100

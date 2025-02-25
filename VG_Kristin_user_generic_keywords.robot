@@ -8,24 +8,9 @@ Library    Collections
 Library    XML
 
 Resource    keywords.robot
-Resource    pal_keywords.robot
 
-Variables    VG_Kristin_specific_variables.py
 
 *** Keywords ***
-
-User Is Registered
-    [Documentation]    This keyword executes and verifies user registration.
-    [Arguments]    ${username}    ${password}
-    User Registers Username    ${username}    ${password}
-    User should be registered    ${username}
-
-User Is Logged In
-    [Documentation]    This keyword executes and verifies user login.
-    User Is Registered    ${VG_username}    ${VG_password}
-    Log In User    ${VG_username}    ${VG_password}   
-    User Should Be Logged In    ${VG_username}
-
 
 
 User Enters Registration Credentials
@@ -54,6 +39,20 @@ User Should Be Registered
     ...    let users = getUsers();
         ...    return users.some(u => u.username === '${username}');
     Should Be True    ${userRegistered}
+
+
+User Is Registered
+    [Documentation]    This keyword executes and verifies user registration.
+    [Arguments]    ${username}    ${password}    
+    User Registers Username    ${username}    ${password}
+    User should be registered    ${username}
+
+User Is Logged In
+    [Documentation]    This keyword executes and verifies user login.
+    [Arguments]    ${username}    ${password}
+    User Is Registered    ${username}    ${password}
+    Log In User    ${username}    ${password}   
+    User Should Be Logged In    ${username}
 
 
 Log In User
@@ -127,9 +126,9 @@ Buy Entrance Tickets
     [Documentation]    This keyword executes and verifies adding entrance ticket(s) to cart. 
     [Arguments]    ${selected_type}    ${selected_category}     ${selected_quantity}
     User Navigates To Buy Ticket Section
-    Select From List By Value    ${ticket_field_type}    ${selected_type} 
-    Select From List By Value    ${ticket_field_cat}    ${selected_category}
-    Input Text  ${ticket_field_quantity}   ${selected_quantity}
+    Select From List By Value    ${ticket_type_field}    ${selected_type} 
+    Select From List By Value    ${ticket_cat_field}    ${selected_category}
+    Input Text  ${input_of_ticket_counter}   ${selected_quantity}
     Press Add To Cart Button
      ${alert_text}    Handle Alert    action=DISMISS
 	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
@@ -139,9 +138,9 @@ Buy Entrance Tickets Without Verification
     ...    Error message/alert should be handled elsewhere.   
     [Arguments]    ${selected_type}    ${selected_category}     ${selected_quantity}
     User Navigates To Buy Ticket Section
-    Select From List By Value    ${ticket_field_type}    ${selected_type} 
-    Select From List By Value    ${ticket_field_cat}    ${selected_category}
-    Input Text  ${ticket_field_quantity}   ${selected_quantity}
+    Select From List By Value    ${ticket_type_field}    ${selected_type} 
+    Select From List By Value    ${ticket_cat_field}    ${selected_category}
+    Input Text  ${input_of_ticket_counter}   ${selected_quantity}
     Press Add To Cart Button
 
 
@@ -256,6 +255,59 @@ Press Proceed To Checkout Button
     Click Specific Button    ${pro_to_checkout_button}
     Sleep    2
 
+
+
+Total Cart Cost Should Be Correct
+    [Documentation]    This keyword verifies that total cart cost is same as expected, by looping through cart, 
+    ...    add all prices up, using javascript to fetch items in cart and their prices.  
+    [Arguments]    ${expectedCost}
+    ${cart} =    Execute JavaScript    return getCart();
+    ${totalPriceInCart} =  Set Variable    0    
+    ${cartLength} =     Get Length    ${cart}
+    FOR     ${i}    IN RANGE     0    ${cartLength}
+        ${tempItemPrice} =    Execute Javascript            
+        ...    let item = ${cart}[${i}];
+        ...    return item.price;
+        ${totalPriceInCart}    Evaluate    ${totalPriceInCart} + ${tempItemPrice}
+    END
+    Should Be Equal As Numbers    ${totalPriceInCart}    ${expectedCost}
+
+Get Cart Item Descriptions    
+    [Documentation]    This keyword fetches a list of descriptions of all items in cart, 
+    ...    using javascript to fetch items in cart and their respective descriptions.
+    ...    (With more time, I would have liked a general "Get list by property" keyword)
+    ${cart} =    Execute JavaScript    return getCart();
+    ${cartLength} =    Get Length    ${cart}
+    ${cartItemDescriptions} =    Create List
+    FOR     ${i}    IN RANGE     0    ${cartLength}
+        ${temp} =    Execute Javascript           
+            ...    let item = ${cart}[${i}];
+            ...    return item.description;
+        Append To List    ${cartItemDescriptions}    ${temp}
+    END
+    RETURN    ${cartItemDescriptions}
+
+
+Get Cart Item Dates
+    [Documentation]    This keyword fetches a list of dates of all safaris in cart, 
+    ...    using javascript to fetch items in cart and their respective dates.
+    ${datesList} =  Create List 
+    ${cart} =    Execute JavaScript    return getCart();
+    ${cartLength} =     Get Length    ${cart}
+    FOR    ${i}    IN RANGE    0    ${cartLength}
+        ${temp} =     Set Variable    ''
+        ${date} =     Execute Javascript
+        ...    let item = ${cart}[${i}];
+        ...    if (item.hasOwnProperty('date')){
+        ...        return item.date;    
+        ...    }
+        ...    else {    
+        ...        return "";   
+        ...    }
+
+        Run Keyword If    '${date}' != ''    Append To List   ${datesList}    ${date}
+    END
+    RETURN    ${datesList} 
 
 
 

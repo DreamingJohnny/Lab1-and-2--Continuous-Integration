@@ -1,5 +1,5 @@
 
-# Group 3: Wille, Johan, Kristin 
+# Group 2: Wille, Johan, Kristin 
 # This file is created, tested, refactored by Kristin
 
 *** Settings ***
@@ -11,7 +11,7 @@ Library    XML
 Resource    keywords.robot
 Resource    VG_Kristin_user_generic_keywords.robot
 
-Variables    variables.py
+#Variables    variables.py
 Variables    pal_specific_variables.py
 
 
@@ -87,7 +87,7 @@ Pal Books Safaris
     VG_Kristin_user_generic_keywords.Book Safari    ${safari_type_t_rex_rumble}    ${pal_safari_date}
     VG_Kristin_user_generic_keywords.Book Safari    ${safari_type_herbivor_tour}    ${pal_safari_date}
 
-### Cart ###
+### Cart  and Checkout ###
 
 Pal Entrance Ticket Should be Added To Cart
     [Documentation]    This keyword verifies that pal's entrance ticket is in cart.
@@ -147,61 +147,6 @@ Checkout Summary Alert Should Show Correct Pal Info
     Should Contain X Times    ${alert_text}    ${pal_safari2_description}    1
     Should Contain X Times    ${alert_text}    ${pal_total_desctiption}    1
 
-
-
-### Misc ###
-
-Total Cart Cost Should Be Correct
-    [Documentation]    This keyword verifies that total cart cost is same as expected, by looping through cart, 
-    ...    add all prices up, using javascript to fetch items in cart and their prices.  
-    [Arguments]    ${expectedCost}
-    ${cart} =    Execute JavaScript    return getCart();
-    ${totalPriceInCart} =  Set Variable    0    
-    ${cartLength} =     Get Length    ${cart}
-    FOR     ${i}    IN RANGE     0    ${cartLength}
-        ${tempItemPrice} =    Execute Javascript            
-        ...    let item = ${cart}[${i}];
-        ...    return item.price;
-        ${totalPriceInCart}    Evaluate    ${totalPriceInCart} + ${tempItemPrice}
-    END
-    Should Be Equal As Numbers    ${totalPriceInCart}    ${expectedCost}
-
-Get Cart Item Descriptions    
-    [Documentation]    This keyword fetches a list of descriptions of all items in cart, 
-    ...    using javascript to fetch items in cart and their respective descriptions.
-    ...    (With more time, I would have liked a general "Get list by property" keyword)
-    ${cart} =    Execute JavaScript    return getCart();
-    ${cartLength} =    Get Length    ${cart}
-    ${cartItemDescriptions} =    Create List
-    FOR     ${i}    IN RANGE     0    ${cartLength}
-        ${temp} =    Execute Javascript           
-            ...    let item = ${cart}[${i}];
-            ...    return item.description;
-        Append To List    ${cartItemDescriptions}    ${temp}
-    END
-    RETURN    ${cartItemDescriptions}
-
-
-Get Cart Item Dates
-    [Documentation]    This keyword fetches a list of dates of all safaris in cart, 
-    ...    using javascript to fetch items in cart and their respective dates.
-    ${datesList} =  Create List 
-    ${cart} =    Execute JavaScript    return getCart();
-    ${cartLength} =     Get Length    ${cart}
-    FOR    ${i}    IN RANGE    0    ${cartLength}
-        ${temp} =     Set Variable    ''
-        ${date} =     Execute Javascript
-        ...    let item = ${cart}[${i}];
-        ...    if (item.hasOwnProperty('date')){
-        ...        return item.date;    
-        ...    }
-        ...    else {    
-        ...        return "";   
-        ...    }
-
-        Run Keyword If    '${date}' != ''    Append To List   ${datesList}    ${date}
-    END
-    RETURN    ${datesList} 
 
 
 

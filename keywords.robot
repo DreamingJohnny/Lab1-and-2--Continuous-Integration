@@ -1,10 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    Collections
+Library    String
 
 Variables    variables.py
-Library    .venv/Lib/site-packages/robot/libraries/Collections.py
-Library    .venv/Lib/site-packages/robot/libraries/String.py
+
 
 *** Keywords ***
 Open Browser To Page

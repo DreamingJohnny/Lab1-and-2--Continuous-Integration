@@ -4,7 +4,7 @@ Cart-relaterat
 Biljett-relaterat
 Safari-relaterat
 
-KLART
+--- KLART
 
 - Testa om man kan registrera användare dubbelt
 Given username is already registered
@@ -16,6 +16,10 @@ Given No one is logged in
 When user buys ticket
 Then user recieves error message
 
+- Testa att köpa safari som icke inloggad
+    Given No one is logged in
+    When User Books Safari
+    Then User Should Recieve Alert
 
 - Testa att vanligt folk inte kan köpa vip-safari
 Given user has logged in 
@@ -29,11 +33,12 @@ And VIP entrance ticket is in cart
 When user books VIP safari ticket on weekday
 Then user recieves error message
 
-IN PROGRESS
+
+--- IN PROGRESS
 
 
 
-TODO -- om tid och lust finns
+--- TODO -- om tid och lust finns
 
 - Testa att priserna stämmer för x antal biljetter
 Given user has added lots of stuff to cart
@@ -45,58 +50,3 @@ Given user has added lots of stuff to cart
 When User views cart
 Then correct stuff is in cart
 
-
-
-
-
-
--- Valda features:
-• Användare kan registrera ett unikt användarnamn på hemsidan
-• Inloggade användare kan köpa entrébiljetter till parken
-• Användare kan boka Safariturer på vardagar, användare som har köpt VIP-biljetter
-kan även boka safariturer på helger samt 2 VIP-exklusiva turer
-
---Kanske om tid och lust finns:
-
-• Vid bokning går användare igenom en ”Checkout”-process där priser för valda
-bokningar listas
-• Det finns biljetter av typerna ”Adult”, ”Child” och ”Senior” samt VIP-biljetter för
-dubbelt pris
-
---- Features på hemsidan (välj minst 2):
-
-• Startsidan som användare möts av innehåller nyheter relaterade till parken och
-• Användare kan registrera ett unikt användarnamn på hemsidan
-• Registrerade användare kan logga in på hemsidan
-• Inloggade användare kan köpa entrébiljetter till parken
-• Det finns biljetter av typerna ”Adult”, ”Child” och ”Senior” samt VIP-biljetter för
-dubbelt pris
-• Användare kan boka Safariturer på vardagar, användare som har köpt VIP-biljetter
-kan även boka safariturer på helger samt 2 VIP-exklusiva turer
-• Vid bokning går användare igenom en ”Checkout”-process där priser för valda
-bokningar listas
-
-
-
---- Instruktioner – Betyg VG  
-
-Denna del görs individuellt! 
-
-I G-delen testades många features med utgångspunkten att det mesta fungerar som tänkt. Nu är det 
-dags att tänka om! Din uppgift är att skapa en ny testsvit samt testfall som utför automatiserade tester 
-för två av de listade funktionerna i Dokumentationsdokumentet. Ta inspiration från ISTQB 
-(ekvivalensklasser etc) och utforma tester enligt principerna för BDD. Skriv kortfattade 
-acceptanskriterier som du sedan kopplar till dina testfall. Dina tester behöver även uppfylla följande 
-krav:  
-
-* Skapa en ny testsvit, döp den till ”VG_del_{ditt_namn}”  
-* Testa minst 2 olika features (från listan i dokumentationen) 
-* Varje feature ska minst ha två olika testfall som går att koppla mot dina krav 
-* Testerna är välformulerade och använder sig av Resource-filer och välstrukturerad kod som gör 
-testfallen lätta att läsa oberoende av teknisk bakgrund (i enlighet med BDD) 
-* Testerna använder sig av [Tags] och [Documentation]  
-* Tester och acceptanskriterier skiljer sig från de som skrivits i G-delen (alltså räcker det inte att kopiera 
-samma fall, dessa fall ska skrivas från grunden av dig). 
-
-Tänk på att du nu ska testa funktionalitet, så du behöver tänka på att du vill testa om saker fungerar som 
-de ska istället för att bara försöka ta dig ”från punkt A till B”.

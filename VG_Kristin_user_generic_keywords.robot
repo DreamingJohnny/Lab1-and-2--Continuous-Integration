@@ -8,24 +8,9 @@ Library    Collections
 Library    XML
 
 Resource    keywords.robot
-#Resource    pal_keywords.robot
 
-Variables    VG_Kristin_specific_variables.py
 
 *** Keywords ***
-
-User Is Registered
-    [Documentation]    This keyword executes and verifies user registration.
-    [Arguments]    ${username}    ${password}
-    User Registers Username    ${username}    ${password}
-    User should be registered    ${username}
-
-User Is Logged In
-    [Documentation]    This keyword executes and verifies user login.
-    User Is Registered    ${VG_username}    ${VG_password}
-    Log In User    ${VG_username}    ${VG_password}   
-    User Should Be Logged In    ${VG_username}
-
 
 
 User Enters Registration Credentials
@@ -54,6 +39,20 @@ User Should Be Registered
     ...    let users = getUsers();
         ...    return users.some(u => u.username === '${username}');
     Should Be True    ${userRegistered}
+
+
+User Is Registered
+    [Documentation]    This keyword executes and verifies user registration.
+    [Arguments]    ${username}    ${password}    
+    User Registers Username    ${username}    ${password}
+    User should be registered    ${username}
+
+User Is Logged In
+    [Documentation]    This keyword executes and verifies user login.
+    [Arguments]    ${username}    ${password}
+    User Is Registered    ${username}    ${password}
+    Log In User    ${username}    ${password}   
+    User Should Be Logged In    ${username}
 
 
 Log In User
@@ -127,9 +126,9 @@ Buy Entrance Tickets
     [Documentation]    This keyword executes and verifies adding entrance ticket(s) to cart. 
     [Arguments]    ${selected_type}    ${selected_category}     ${selected_quantity}
     User Navigates To Buy Ticket Section
-    Select From List By Value    ${ticket_field_type}    ${selected_type} 
-    Select From List By Value    ${ticket_field_cat}    ${selected_category}
-    Input Text  ${ticket_field_quantity}   ${selected_quantity}
+    Select From List By Value    ${ticket_type_field}    ${selected_type} 
+    Select From List By Value    ${ticket_cat_field}    ${selected_category}
+    Input Text  ${input_of_ticket_counter}   ${selected_quantity}
     Press Add To Cart Button
      ${alert_text}    Handle Alert    action=DISMISS
 	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
@@ -139,9 +138,9 @@ Buy Entrance Tickets Without Verification
     ...    Error message/alert should be handled elsewhere.   
     [Arguments]    ${selected_type}    ${selected_category}     ${selected_quantity}
     User Navigates To Buy Ticket Section
-    Select From List By Value    ${ticket_field_type}    ${selected_type} 
-    Select From List By Value    ${ticket_field_cat}    ${selected_category}
-    Input Text  ${ticket_field_quantity}   ${selected_quantity}
+    Select From List By Value    ${ticket_type_field}    ${selected_type} 
+    Select From List By Value    ${ticket_cat_field}    ${selected_category}
+    Input Text  ${input_of_ticket_counter}   ${selected_quantity}
     Press Add To Cart Button
 
 

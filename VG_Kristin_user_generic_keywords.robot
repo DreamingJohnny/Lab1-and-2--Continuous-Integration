@@ -8,7 +8,7 @@ Library    Collections
 Library    XML
 
 Resource    keywords.robot
-Resource    pal_keywords.robot
+#Resource    pal_keywords.robot
 
 Variables    VG_Kristin_specific_variables.py
 
@@ -256,6 +256,59 @@ Press Proceed To Checkout Button
     Click Specific Button    ${pro_to_checkout_button}
     Sleep    2
 
+
+
+Total Cart Cost Should Be Correct
+    [Documentation]    This keyword verifies that total cart cost is same as expected, by looping through cart, 
+    ...    add all prices up, using javascript to fetch items in cart and their prices.  
+    [Arguments]    ${expectedCost}
+    ${cart} =    Execute JavaScript    return getCart();
+    ${totalPriceInCart} =  Set Variable    0    
+    ${cartLength} =     Get Length    ${cart}
+    FOR     ${i}    IN RANGE     0    ${cartLength}
+        ${tempItemPrice} =    Execute Javascript            
+        ...    let item = ${cart}[${i}];
+        ...    return item.price;
+        ${totalPriceInCart}    Evaluate    ${totalPriceInCart} + ${tempItemPrice}
+    END
+    Should Be Equal As Numbers    ${totalPriceInCart}    ${expectedCost}
+
+Get Cart Item Descriptions    
+    [Documentation]    This keyword fetches a list of descriptions of all items in cart, 
+    ...    using javascript to fetch items in cart and their respective descriptions.
+    ...    (With more time, I would have liked a general "Get list by property" keyword)
+    ${cart} =    Execute JavaScript    return getCart();
+    ${cartLength} =    Get Length    ${cart}
+    ${cartItemDescriptions} =    Create List
+    FOR     ${i}    IN RANGE     0    ${cartLength}
+        ${temp} =    Execute Javascript           
+            ...    let item = ${cart}[${i}];
+            ...    return item.description;
+        Append To List    ${cartItemDescriptions}    ${temp}
+    END
+    RETURN    ${cartItemDescriptions}
+
+
+Get Cart Item Dates
+    [Documentation]    This keyword fetches a list of dates of all safaris in cart, 
+    ...    using javascript to fetch items in cart and their respective dates.
+    ${datesList} =  Create List 
+    ${cart} =    Execute JavaScript    return getCart();
+    ${cartLength} =     Get Length    ${cart}
+    FOR    ${i}    IN RANGE    0    ${cartLength}
+        ${temp} =     Set Variable    ''
+        ${date} =     Execute Javascript
+        ...    let item = ${cart}[${i}];
+        ...    if (item.hasOwnProperty('date')){
+        ...        return item.date;    
+        ...    }
+        ...    else {    
+        ...        return "";   
+        ...    }
+
+        Run Keyword If    '${date}' != ''    Append To List   ${datesList}    ${date}
+    END
+    RETURN    ${datesList} 
 
 
 

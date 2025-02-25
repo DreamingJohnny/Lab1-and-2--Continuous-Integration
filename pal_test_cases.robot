@@ -1,5 +1,5 @@
 
-# Group 3: Wille, Johan, Kristin 
+# Group 2: Wille, Johan, Kristin 
 # This file is created, tested, refactored by Kristin
 
 *** Settings ***
@@ -16,7 +16,7 @@ Test Teardown    Pal Teardown
 *** Test Cases ***
     
 
-Register user pal
+Register User Pal
     [Documentation]    This test verifies the registration process for user pal.
     [Tags]    Kristin    Registration    Credentials
     Given Page Is Opened To Registration Section
@@ -24,7 +24,7 @@ Register user pal
     And User Presses Register Button
     Then User Pal Should be Registered    
     
-Log in user pal
+Log In User Pal
     [Documentation]    This test verifies the login process for user pal.
     [Tags]    Kristin    Login    Credentials
     Given User Pal Is Registered
@@ -34,7 +34,7 @@ Log in user pal
     And User Presses Login Button
     Then User Pal Should Be Logged In
 
-Pal buys entrance ticket
+Pal Buys Entrance Ticket
     [Documentation]    This test verifies that pal can buy entrance ticket when logged in,
     ...    that item is added to cart, and cart total is correct.
     [Tags]    Kristin    Ticket    BookingProcess    Cart    CostTotal    Demo
@@ -43,7 +43,7 @@ Pal buys entrance ticket
     Then Pal Entrance Ticket Should be Added To Cart
     And Total Cart Cost Should Be Correct    ${50}
 
-Pal books safaris
+Pal Books Safaris
     [Documentation]    This test verifies the safari booking process for user pal, 
     ...    and that cart total price is correct.
     [Tags]    Kristin    Safari    BookingProcess    Cart    CostTotal    Demo

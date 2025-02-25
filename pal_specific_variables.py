@@ -1,4 +1,4 @@
-# Group 3: Wille, Johan, Kristin 
+# Group 2: Wille, Johan, Kristin 
 # This file is created by Kristin
 
 pal_username = "StinaPalle"

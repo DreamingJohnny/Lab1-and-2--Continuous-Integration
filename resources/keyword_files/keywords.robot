@@ -3,8 +3,7 @@ Library    SeleniumLibrary
 Library    Collections
 Library    String
 
-Variables    variables.py
-
+Variables    ../util/variables.py
 
 *** Keywords ***
 Open Browser To Page

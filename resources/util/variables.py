@@ -3,7 +3,7 @@ import os
 current_directory = os.getcwd().replace('\\', '/')
 #Site specifics
 browser = "chrome"
-url_demo = f"file:///{current_directory}/Homepage\jurap.html"
+url_demo = f"file:///{current_directory}/webpage\jurap.html"
 title_demo = "Jura-Stina-Kalle Park"
 #Sections
 home_section = "id=home-section"

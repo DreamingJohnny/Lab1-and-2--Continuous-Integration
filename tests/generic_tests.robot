@@ -1,7 +1,9 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    keywords.robot
-Variables    variables.py
+
+Resource    ../resources/keyword_files/keywords.robot
+Variables    ../resources/util/variables.py
+
 Documentation   Grupp 2 Wille, Johan och Kristin. Generic test suite for general test functions as a base library.
 
 #Test setup that starts up the page in a browser and registers a user. (by Wille)

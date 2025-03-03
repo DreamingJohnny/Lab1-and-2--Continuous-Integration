@@ -1,10 +1,13 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    .venv/Lib/site-packages/robot/libraries/OperatingSystem.py
-Resource    keywords.robot
 
-Variables    variables.py
-Variables    kim_specific_variables.py
+Resource    ../resources/keyword_files/keywords.robot
+Variables    ../resources/util/variables.py
+
+
+
+Variables    ../resources/util/kim_specific_variables.py
 
 Test Setup    Setup Suite    ${url_demo}    ${browser}    ${title_demo}    ${kim_username}    ${reg_username_text_box}    ${kim_password}    ${reg_password_text_box}    ${reg_button}    ${reg_submit_button}
 Test Teardown    Teardown Suite

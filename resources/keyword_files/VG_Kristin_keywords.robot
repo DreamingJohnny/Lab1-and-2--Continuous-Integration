@@ -9,14 +9,11 @@ Library    XML
 
 Resource    keywords.robot
 Resource    VG_Kristin_user_generic_keywords.robot
-#Resource    pal_keywords.robot
 
-Variables    VG_Kristin_specific_variables.py
-
-
+Variables    ../util/VG_Kristin_specific_variables.py
+Variables    ../util/variables.py
 
 *** Keywords ***
-
 VG Kristin Setup
     [Documentation]    This setup opens browser to JurasStina-Kalle park home page.
     Open Browser To Page    ${url_demo}    ${browser}    ${title_demo} 
@@ -24,8 +21,6 @@ VG Kristin Setup
 VG Kristin Teardown
     [Documentation]    This teardown closes browser.
     Close Browser
-
-
 
 User Should Get Message That Username Already Exists
     Message Should Be Displayed    ${reg_message_element}    ${reg_error_message_already_exists}

@@ -6,16 +6,16 @@
 
 Library    SeleniumLibrary
 
-Resource    keywords.robot
-Resource    pal_keywords.robot
+Resource    ../resources/keyword_files/keywords.robot
+Resource    ../resources/keyword_files/pal_keywords.robot
+
+Variables    ../resources/util/variables.py
+Variables    ../resources/util/pal_specific_variables.py
 
 Test Setup    Pal Setup
 Test Teardown    Pal Teardown
 
-
 *** Test Cases ***
-    
-
 Register User Pal
     [Documentation]    This test verifies the registration process for user pal.
     [Tags]    Kristin    Registration    Credentials

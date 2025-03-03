@@ -46,7 +46,7 @@ logout_button = "logout-link"
 buy_ticket_button = "xpath=/html/body/header/div/nav/ul/li[4]/a"
 ticket_type_field = "id=ticket-type"    #"xpath=/html/body/main/article[4]/section/form/select[1]"
 adult_ticket_type = "Adult"
-regular_adult_ticket_price = 50
+regular_adult_ticket_price = "50"
 child_ticket_type = "Child"
 regular_child_ticket_price = 30
 senior_ticket_type = "Senior"
@@ -64,7 +64,7 @@ ticket_login_error_message = "You must be logged in to purchase tickets."
 #Booking safaris
 safari_button = "xpath=/html/body/header/div/nav/ul/li[5]/a"
 safari_date_field = "id=safari-date"
-date_for_booking = "002025-02-20"
+date_for_booking = "002026-02-20"
 safari_type_field = "xpath=/html/body/main/article[5]/section/form/select"
 safari_type_herbivor_tour = "Herbivore Tour"
 safari_type_t_rex_rumble = "T-Rex Rumble"
@@ -92,3 +92,18 @@ cart_list_xpath = "xpath=//*[@id=\"cart-details\"]/ul/li"
 proceed_to_checkout_button = "xpath=//*[@id=\"checkout-button\"]"
 
 
+#Wille VG Variables
+
+#Ticket check variables
+vip_ticket_in_cart_spot =    "id=cart-details"
+vip_ticket_in_cart = "1 VIP Adult Ticket(s) - $100"
+
+#safari Check variables
+trex_rumble_in_cart = "T-Rex Rumble on"
+herbivor_in_cart = "Herbivore Tour on"
+herbivorplus_in_cart = "Herbivore Tour with Feeding"
+trex_rumbleplus_in_cart = "T-Rex Rumble eXtreme Thrill Pack"
+
+all_combinations_cost = "1260"
+reg_ticket_trex_rumble_safari = "200"
+all_combinations_safari_cost = "770"

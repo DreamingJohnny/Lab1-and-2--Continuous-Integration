@@ -7,19 +7,13 @@
 Library    SeleniumLibrary
 Library    Collections
 
-Resource    keywords.robot
-Resource    VG_Kristin_keywords.robot
-
-#Resource    pal_keywords.robot
-#Resource    VG_Kristin_user_generic_keywords.robot
+Resource    ../resources/keyword_files/keywords.robot
+Resource    ../resources/keyword_files/VG_Kristin_keywords.robot
 
 Test Setup    VG Kristin Setup
 Test Teardown    VG Kristin Teardown
 
-
 *** Test Cases ***
-
-
 User Can Not Register Username That Already Exists
     [Documentation]    This test verifies that an error message is displayed if user tries to register an already registered username.
     [Tags]    Kristin

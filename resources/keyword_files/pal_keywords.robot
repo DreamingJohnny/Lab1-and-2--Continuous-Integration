@@ -11,12 +11,9 @@ Library    XML
 Resource    keywords.robot
 Resource    VG_Kristin_user_generic_keywords.robot
 
-#Variables    variables.py
-Variables    pal_specific_variables.py
-
+Variables    ../resources/util/pal_specific_variables.py
 
 *** Keywords ***
-
 Pal Setup
     [Documentation]    This setup opens browser to JurasStina-Kalle park home page.
     Open Browser To Page    ${url_demo}    ${browser}    ${title_demo} 
@@ -24,8 +21,6 @@ Pal Setup
 Pal Teardown
     [Documentation]    This teardown closes browser.
     Close Browser
-
-
 
 ### Registration ###
 
@@ -47,7 +42,6 @@ User Pal Is Registered
     User Pal Enters Registration Credentials
     Press Register Submit Button
     User Pal Should be Registered
-
 
 ### Login ###
 

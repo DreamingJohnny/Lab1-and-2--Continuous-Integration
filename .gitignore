@@ -1,3 +1,12 @@
+# Ignoring test failed screenshots
+*.png
+
+# Logging files
+results/*
+log.html
+output.xml
+report.html
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

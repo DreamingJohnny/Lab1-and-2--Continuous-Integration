@@ -2,10 +2,9 @@
 *.png
 
 # Logging files
-results/*
-log.html
-output.xml
-report.html
+results/
+*.xml
+*.html
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

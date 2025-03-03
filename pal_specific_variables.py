@@ -27,4 +27,6 @@ pal_total_desctiption = "Total: $320"
 # T-Rex Rumble on 2025-03-19 - $150 
 # Total: $320
 
+#Hej
+
 

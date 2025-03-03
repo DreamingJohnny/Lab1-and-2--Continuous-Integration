@@ -1,0 +1,47 @@
+Group 2: Wille, Johan, Kristin 
+This file is written by Kristin
+
+
+Detta testfall handlar on paleontologen Stina-Palle, vars fallbeskrivning finns i sin helhet längst ned i denna fil.
+Stina-Palle (även kallad "pal") har dessa specifika önskemål: 
+
+"besöka parken under en vardag" 
+ --->  Detta ger att vi väljer en vardag som datum.
+
+"observera både kött och växtätare", "observera från håll" och "vägrar ta del av matning" 
+--->  Detta ger att vi väljer följande två safarityper: Herbivore tour (without feeding) 
+och T-rex rumble ("vanlig", inte thrill-varianten). 
+
+User stories: 
+
+Som en någorlunda ekonomiskt begränsad person men med mycket fritid
+Vill jag beöka parken på en vardag 
+Så att jag kan få den billigaste biljetten.
+
+Som en paleontolog
+Vill jag se djuren på avstånd och utan interaktion med människor
+Så att jag kan studera deras naturliga beteende. 
+
+Vad ska testas?
+    # Test av registrering och login av användare
+    # Test att boka entrebiljett
+    # Test att boka safaris på valt datum
+    # Test att allt läggs till i cart och att summan stämmer
+    # Testa att det går att checka ut 
+
+#------
+#Bug - går att boka safaris på olika datum med bara en biljett.
+#-------
+
+
+Paleontologen Stina-Palle
+Stina-Palle älskar dinosaurier, men som relativt nyexaminerad paleontolog har hen ännu 
+inte hunnit bygga upp ett stabilt kapital. Detta hindrar dock inte Stina-Palle från att
+besöka Jurasstina-Kalle Park. Med lite tur i oturen kring hens ekonomiska situation så
+har Stina-Palle mycket fritid och arbetar mest lite då och då vilket gör det möjligt att
+besöka parken under en vardag. 
+Stina-Palle vill dock maximera kunskapen som hen kan
+hämta in från sitt besök genom att observera både kött och växtätare. 
+Som en sann akademiker vill hen dock observera från håll, studera dinosauriernas naturliga beteende
+och vägrar ta del av matning, ett onaturligt beteende enligt Stina-Palle.
+

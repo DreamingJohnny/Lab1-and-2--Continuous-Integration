@@ -1,0 +1,52 @@
+
+Utvalda features:
+Cart-relaterat
+Biljett-relaterat
+Safari-relaterat
+
+--- KLART
+
+- Testa om man kan registrera användare dubbelt
+Given username is already registered
+When user tries to register the same username
+Then user should get error message
+
+- Testa att köpa biljett som icke inloggad
+Given No one is logged in
+When user buys ticket
+Then user recieves error message
+
+- Testa att köpa safari som icke inloggad
+    Given No one is logged in
+    When User Books Safari
+    Then User Should Recieve Alert
+
+- Testa att vanligt folk inte kan köpa vip-safari
+Given user has logged in 
+And regular entrance ticket is in cart
+When user books VIP safari
+Then user recieves error message
+
+- Testa att vanligt folk inte kan köpa kan köpa safaribiljetter på helg
+Given user has logged in 
+And VIP entrance ticket is in cart
+When user books VIP safari ticket on weekday
+Then user recieves error message
+
+
+--- IN PROGRESS
+
+
+
+--- TODO -- om tid och lust finns
+
+- Testa att priserna stämmer för x antal biljetter
+Given user has added lots of stuff to cart
+When User views cart
+Then cart shows correct total amount
+
+- Testa att rätt saker lagts till i cart
+Given user has added lots of stuff to cart
+When User views cart
+Then correct stuff is in cart
+

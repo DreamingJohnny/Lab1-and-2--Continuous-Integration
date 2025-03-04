@@ -2,7 +2,6 @@
 Library    SeleniumLibrary
 Library    Collections
 Library    String
-#Library    XML
 
 
 Variables    ../util/variables.py

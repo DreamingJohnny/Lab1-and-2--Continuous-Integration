@@ -36,7 +36,7 @@ User Presses Submit Registration Button
     [Documentation]    This keyword executes pressing registration submit button.
     Press Register Submit Button
 
-User Presses Login Button
+User Presses Login Submit Button
     [Documentation]    This keyword executes pressing login button.
     Press Login Submit Button
 

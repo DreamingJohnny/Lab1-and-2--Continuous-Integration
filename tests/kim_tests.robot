@@ -14,7 +14,7 @@ Test Teardown    Teardown Suite
 
 *** Test Cases ***
 Valid browser login
-    [Tags]    Johan_Ahlsten    new-feature
+    [Tags]    Victor_Ä_så_Cool    new-feature
     Click Specific Button    ${login_button}
 	Input Credentials    ${kim_username}    ${login_username_text_box}    ${kim_password}    ${login_password_text_box}
     Click Element    ${login_submit_button}

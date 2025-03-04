@@ -2,7 +2,7 @@ import os
 
 current_directory = os.getcwd().replace('\\', '/')
 #Site specifics
-browser = "chrome"
+browser = "headlesschrome"
 url_demo = f"file:///{current_directory}/webpage\jurap.html"
 title_demo = "Jura-Stina-Kalle Park"
 #Sections

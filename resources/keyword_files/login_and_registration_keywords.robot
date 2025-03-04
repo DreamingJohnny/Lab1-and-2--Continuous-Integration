@@ -3,7 +3,6 @@
 Library    SeleniumLibrary
 Library    Collections
 Library    String
-#Library    XML
 
 #Resource    keywords.robot
 Resource    button_and_navigation_keywords.robot

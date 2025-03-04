@@ -2,7 +2,7 @@ import os
 
 current_directory = os.getcwd().replace('\\', '/')
 #Site specifics
-browser = "chrome"
+browser = "headlesschrome"
 url_demo = f"file:///{current_directory}/webpage\jurap.html"
 title_demo = "Jura-Stina-Kalle Park"
 #Sections
@@ -65,6 +65,10 @@ ticket_login_error_message = "You must be logged in to purchase tickets."
 safari_button = "xpath=/html/body/header/div/nav/ul/li[5]/a"
 safari_date_field = "id=safari-date"
 date_for_booking = "002026-02-20"
+safari_date_weekend = "002026-02-21"
+safari_date_weekday = "002026-02-20"
+safari_expected_date_weekend = "2026-02-21"
+safari_expected_date_weekday = "2026-02-20"
 safari_type_field = "xpath=/html/body/main/article[5]/section/form/select"
 safari_type_herbivor_tour = "Herbivore Tour"
 safari_type_t_rex_rumble = "T-Rex Rumble"

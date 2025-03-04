@@ -12,8 +12,8 @@ Resource    ../resources/keyword_files/pal_keywords.robot
 Variables    ../resources/util/variables.py
 Variables    ../resources/util/pal_specific_variables.py
 
-Test Setup    Pal Setup
-Test Teardown    Pal Teardown
+Test Setup    Setup Suite Open Page
+Test Teardown    Teardown Suite
 
 *** Test Cases ***
 Register User Pal
@@ -21,7 +21,7 @@ Register User Pal
     [Tags]    Kristin    Registration    Credentials
     Given Page Is Opened To Registration Section
     When User Pal Enters Registration Credentials
-    And User Presses Register Button
+    And User Presses Submit Registration Button
     Then User Pal Should be Registered    
     
 Log In User Pal
@@ -31,13 +31,13 @@ Log In User Pal
     And Page Is Opened To Login Page
     And No One Is Logged In
     When User Pal Enters Login Credentials
-    And User Presses Login Button
+    And User Presses Login Submit Button
     Then User Pal Should Be Logged In
 
 Pal Buys Entrance Ticket
     [Documentation]    This test verifies that pal can buy entrance ticket when logged in,
     ...    that item is added to cart, and cart total is correct.
-    [Tags]    Kristin    Ticket    BookingProcess    Cart    CostTotal    Demo
+    [Tags]    Kristin    Ticket    BookingProcess    Cart    CostTotal    Demo    new-feature
     Given User Pal Is Logged In
     When Pal Buys Entrance Ticket
     Then Pal Entrance Ticket Should be Added To Cart

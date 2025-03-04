@@ -9,8 +9,8 @@ Documentation   Grupp 2 Wille, Johan och Kristin. Generic test suite for general
 
 #Test setup that starts up the page in a browser and registers a user. (by Wille)
 Test Setup    Setup Suite    ${url_demo}    ${browser}    ${title_demo}    ${valid_username}    ${reg_username_text_box}    ${valid_password}    ${reg_password_text_box}    ${reg_button}    ${reg_submit_button}
-#Test teardown that closes the browser, made as a suite incase we want to add more functions to it. (by Wille)
 Test Teardown    Teardown Suite 
+
 *** Test Cases ***
 #Invalid login test to see if the page need correct credentials.
 Invalid browser login
@@ -66,14 +66,14 @@ Booking 2 regular adult ticket
     Sleep    5
 #Test for booking and buying Safari.
 Booking Safari
-    [Tags]    [Wille Virtanen] [Refactored by Johan Ahlsten]
+    [Tags]    [Wille Virtanen] [Refactored by Johan Ahlsten]    new-feature
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
     Sleep    5
-    from_original_keywords.Buy A Ticket    ${vip_ticket}    ${senior_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
+    Buy A Ticket    ${vip_ticket}    ${senior_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
     Sleep    5
-    from_original_keywords.Book Safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}
+    Book Safari    ${safari_type_herbivor_tour}    ${date_for_booking}
     Click Element   ${cart_nav_button}
     Sleep    5
     Click Element    ${pro_to_checkout_button}
@@ -87,9 +87,9 @@ Removing object from cart
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
     Sleep    5
-    from_original_keywords.Buy A Ticket    ${vip_ticket}    ${senior_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
+    Buy A Ticket    ${vip_ticket}    ${senior_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
     Sleep    5
-    from_original_keywords.Book Safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}
+    Book Safari    ${safari_type_t_rex_rumble}    ${date_for_booking}
     Click Element   ${cart_nav_button}
     Sleep    5
     Click Element    ${second_object_in_cart}
@@ -115,14 +115,14 @@ User That Is Not Logged In Can Not Add Ticket To Cart
 
 User That Is Not Logged In Can Not Book Safari
     [Documentation]    This test verifies that an error alert is displayed if user that is not logged in tries to book a safari. 
-    [Tags]    Kristin
+    [Tags]    Kristin    new-feature
     Given No one is logged in
     When User Books Safari
     Then User Should Recieve Alert    ${safari_login_error_message}
 
 User With Regular Ticket Can Not Book VIP Safari
     [Documentation]    This test verifies that an error message is displayed if user tries to book VIP safari without VIP ticket.
-    [Tags]    Kristin
+    [Tags]    Kristin    new-feature
     Given User Is Logged In    ${valid_username}    ${valid_password}
     And Regular Entrance Ticket is Added To Cart
     When User books VIP safari
@@ -131,7 +131,7 @@ User With Regular Ticket Can Not Book VIP Safari
     
 User With Regular Ticket Can Not Book Safari On Weekend
     [Documentation]    This test verifies that an error message is displayed if user tries to book safari on a weekend without VIP ticket.
-    [Tags]    Kristin
+    [Tags]    Kristin    new-feature
     Given User Is Logged In    ${valid_username}    ${valid_password}
     And Regular Entrance Ticket Is Added To Cart
     When User Books Safari On A Weekend

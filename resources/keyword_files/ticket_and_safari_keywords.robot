@@ -5,14 +5,13 @@ Library    String
 
 Resource    login_and_registration_keywords.robot
 Resource    button_and_navigation_keywords.robot
-Resource    from_original_keywords.robot
 
 Variables    ../util/variables.py
 
 
 *** Keywords ***
 
-
+##Det finns ett js-script där man kan jämföra dag och se om det är en helg eller vardag. day == 1 eller 6 är söndag resp lördag.
 
 
 Buy Entrance Tickets
@@ -37,7 +36,7 @@ Buy Entrance Tickets Without Verification
     Press Add Ticket To Cart Button
 
 
-Book Safari K
+Book Safari
     [Documentation]    This keyword executes and verifies the "book safari" process
     [Arguments]     ${safari_type}    ${safari_date}
     Press Safari Button

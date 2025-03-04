@@ -2,7 +2,6 @@
 Library    SeleniumLibrary
 Library    Collections
 Library    String
-#Library    XML
 
 Resource    login_and_registration_keywords.robot
 Resource    button_and_navigation_keywords.robot

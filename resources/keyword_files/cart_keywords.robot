@@ -10,7 +10,6 @@ Variables    ../util/variables.py
 
 *** Keywords ***
 
-
 Check Shopping Cart Total
     [Arguments]    ${expected_total}    ${cart_tab}    ${cart_total_xpath}
     Click Specific Button    ${cart_tab}

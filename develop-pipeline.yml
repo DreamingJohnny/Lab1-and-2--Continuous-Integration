@@ -3,9 +3,9 @@ trigger:
     include:
       - develop
 
-exclude:
-  - main
-  - feature/*
+    exclude:
+      - main
+      - feature/*
 
 pool:
   vmImage: 'ubuntu-latest'

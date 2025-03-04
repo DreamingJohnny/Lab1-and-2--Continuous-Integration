@@ -4,7 +4,6 @@ Library    SeleniumLibrary
 Library    Collections
 Library    String
 
-#Resource    keywords.robot
 Resource    button_and_navigation_keywords.robot
 Variables    ../util/variables.py
 

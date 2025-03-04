@@ -107,7 +107,6 @@ Press Proceed To Checkout Button
 
 ### Page is opened to.. ###
 
-
 Page Is Opened To Login Page
     [Documentation]    This keyword executes and verifies navigation to login section. 
     User Navigates To Login Section

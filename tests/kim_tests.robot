@@ -9,7 +9,7 @@ Variables    ../resources/util/variables.py
 
 Variables    ../resources/util/kim_specific_variables.py
 
-Test Setup    Setup Suite    ${url_demo}    ${browser}    ${title_demo}    ${kim_username}    ${reg_username_text_box}    ${kim_password}    ${reg_password_text_box}    ${reg_button}    ${reg_submit_button}
+Test Setup    Setup Suite Open Page And Register User    ${kim_username}    ${kim_password}
 Test Teardown    Teardown Suite
 
 *** Test Cases ***

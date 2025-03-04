@@ -8,7 +8,7 @@ Variables    ../resources/util/variables.py
 Documentation   Grupp 2 Wille, Johan och Kristin. Generic test suite for general test functions as a base library.
 
 #Test setup that starts up the page in a browser and registers a user. (by Wille)
-Test Setup    Setup Suite    ${url_demo}    ${browser}    ${title_demo}    ${valid_username}    ${reg_username_text_box}    ${valid_password}    ${reg_password_text_box}    ${reg_button}    ${reg_submit_button}
+Test Setup    Setup Suite Open Page And Register User    ${valid_username}    ${valid_password}
 Test Teardown    Teardown Suite 
 
 *** Test Cases ***
@@ -37,61 +37,28 @@ Valid browser logout
 #Test for booking an buying a regular adult ticket.
 Booking 1 regular adult ticket
     [Tags]    [Wille Virtanen] [Refactored by Johan Ahlsten]    new-feature
-    Click Specific Button    ${login_button}
-    Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
-    Click Element   ${login_submit_button}
-    Sleep    5
-#When booking remember to always put six numer in the year slot and start with two 00 as Max has failed in his programing ;)
-    from_original_keywords.Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Click Element   ${cart_nav_button}
-    Sleep    5
-    Click Element    ${pro_to_checkout_button}
-    Sleep    5
-    Handle Alert    action=DISMISS
-    Sleep    5
-#Test for booking and buying additional tickets.
+    Log In User    ${valid_username}    ${valid_password}
+    Buy Entrance Tickets    ${adult_ticket_type}    ${regular_ticket}    1
+
 Booking 2 regular adult ticket
     [Tags]    [Wille Virtanen] [Refactored by Johan Ahlsten]    new-feature
-    Click Specific Button    ${login_button}
-    Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
-    Click Element   ${login_submit_button}
-    Sleep    5
-    #the third variable is how many additional tickets you want to buy
-    Buy More Than One Ticket    ${regular_ticket}    ${adult_ticket_type}    ${1}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Click Element   ${cart_nav_button}
-    Sleep    5
-    Click Element    ${pro_to_checkout_button}
-    Sleep    5
-    Handle Alert    action=DISMISS
-    Sleep    5
+    Log In User    ${valid_username}    ${valid_password}
+    Buy Entrance Tickets    ${adult_ticket_type}    ${regular_ticket}    2
+
 #Test for booking and buying Safari.
 Booking Safari
     [Tags]    [Wille Virtanen] [Refactored by Johan Ahlsten]
-    Click Specific Button    ${login_button}
-    Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
-    Click Element   ${login_submit_button}
-    Sleep    5
-    Buy A Ticket    ${vip_ticket}    ${senior_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Sleep    5
+    Log In User    ${valid_username}    ${valid_password}
+    Buy Entrance Tickets    ${senior_ticket_type}    ${vip_ticket}    1
     Book Safari    ${safari_type_herbivor_tour}    ${date_for_booking}
-    Click Element   ${cart_nav_button}
-    Sleep    5
-    Click Element    ${pro_to_checkout_button}
-    Sleep    5
-    Handle Alert    action=DISMISS
-    Sleep    5
+
 #Test for removing items from cart.
 Removing object from cart
-    [Tags]    [Wille Virtanen]
-    Click Specific Button    ${login_button}
-    Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
-    Click Element   ${login_submit_button}
-    Sleep    5
-    Buy A Ticket    ${vip_ticket}    ${senior_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Sleep    5
+    [Tags]    [Wille Virtanen]    refactor-me
+    Log In User    ${valid_username}    ${valid_password}
+    Buy Entrance Tickets    ${senior_ticket_type}    ${vip_ticket}    1
     Book Safari    ${safari_type_t_rex_rumble}    ${date_for_booking}
-    Click Element   ${cart_nav_button}
-    Sleep    5
+    User Navigates To Cart Section
     Click Element    ${second_object_in_cart}
     Sleep    5
     Click Element    ${pro_to_checkout_button}
@@ -122,7 +89,7 @@ User That Is Not Logged In Can Not Book Safari
 
 User With Regular Ticket Can Not Book VIP Safari
     [Documentation]    This test verifies that an error message is displayed if user tries to book VIP safari without VIP ticket.
-    [Tags]    Kristin
+    [Tags]    Kristin    new-feature
     Given User Is Logged In    ${valid_username}    ${valid_password}
     And Regular Entrance Ticket is Added To Cart
     When User books VIP safari

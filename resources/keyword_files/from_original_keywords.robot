@@ -19,8 +19,8 @@ Increase value
 
 The User Kim Buys Tickets For Their Family
     [Tags]    safari
-	Buy Entrance Tickets    ${adult_ticket_type}    ${regular_ticket}    ${input_of_ticket_counter}
-    Buy Entrance Tickets    ${adult_ticket_type}    ${vip_ticket}    ${input_of_ticket_counter}
+	Buy Entrance Tickets    ${adult_ticket_type}    ${regular_ticket}    1
+    Buy Entrance Tickets    ${adult_ticket_type}    ${vip_ticket}    1
     Buy Entrance Tickets    ${child_ticket_type}    ${vip_ticket}    2    
 
 
@@ -32,6 +32,7 @@ The User Kim Books Weekend Safaris For Their Family
 
 
 The Date Of The Safari Bookings Are Correct
+    [Tags]    refactor-me
     [Arguments]    ${cart_list_xpath}    ${cart_tab_xpath}    ${safari_keyword_1}
 	...    ${safari_keyword_2}    ${expected_safari_date}
 
@@ -53,15 +54,13 @@ User Buys Every Combination Of Ticket
     Buy Entrance Tickets    ${child_ticket_type}    ${vip_ticket}    1
     Buy Entrance Tickets    ${child_ticket_type}    ${regular_ticket}    4
 
- 
  User Books A Safari
     [Tags]    safari
     [Arguments]    ${safari_type}        ${safari_date} 
     Book safari    ${safari_type}    ${safari_date}
 
-
 User Book Every Typ Of Safari
-    [Tags]    safari
+    [Tags]    safari    refactor-me
     [Arguments]   
     Book safari    ${safari_type_t_rex_rumble}    ${date_for_booking}
     Book safari    ${safari_type_herbivor_tour}    ${date_for_booking}

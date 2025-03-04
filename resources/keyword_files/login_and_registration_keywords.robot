@@ -55,13 +55,13 @@ User Is Logged In
     Log In User    ${username}    ${password}   
     User Should Be Logged In    ${username}
 
-
 Log In User
     [Documentation]    This keyword executes and verifies user login.
     [Arguments]    ${username}    ${password}
     User Navigates To Login Section
     User Enters Login Credentials    ${username}    ${password}
-    User Presses Login Button
+    User Presses Login Submit Button
+    Wait Until Page Contains Element    ${logout_button}
     User Should Be Logged In    ${username}
 
 User Should Be Logged In

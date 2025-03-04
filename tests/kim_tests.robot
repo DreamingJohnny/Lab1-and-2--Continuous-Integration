@@ -42,29 +42,25 @@ User purchase tickets for their family
 	Then The Price In The Popup Is Correct    ${kim_expected_ticket_cost_total}
 
 User books weekend safaris for their family
-    [Tags]    Johan Ahlsten
+    [Tags]    Johan Ahlsten    new-feature
     Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
 	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
 	And The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
 	...    ${adult_ticket_type}    ${child_ticket_type}    ${ticket_type_field}
 	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${add_to_cart_button}
 	...    ${add_to_cart_message_successful}
-    When The User Books Weekend Safaris For Their Family    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
-	...    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}
-	...    ${safari_type_t_rex_rumble_thrill}    ${add_to_cart_message_successful}
+    When The User Books Weekend Safaris For Their Family    ${kim_safari_date}
     Then The Date Of The Safari Bookings Are Correct    ${cart_list_xpath}    ${cart_tab_xpath}    ${safari_type_herbivor_tour_feeding}
 	...    ${safari_type_t_rex_rumble_thrill}    ${kim_expected_safari_date}
 
 User purchases weekend safaris for their family
-    [Tags]    Johan Ahlsten
+    [Tags]    Johan Ahlsten    new-feature
     Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
 	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
 	And The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
 	...    ${adult_ticket_type}    ${child_ticket_type}    ${ticket_type_field}
 	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${add_to_cart_button}
 	...    ${add_to_cart_message_successful}
-    When The User Books Weekend Safaris For Their Family    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
-	...    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}
-	...    ${safari_type_t_rex_rumble_thrill}    ${add_to_cart_message_successful}
+    When The User Books Weekend Safaris For Their Family	${kim_safari_date}
     And The User Purchases The Safaris    ${cart_tab_xpath}    ${proceed_to_checkout_button}
 	Then The Price In The Popup Is Correct    ${kim_expected_vacation_cost_total}

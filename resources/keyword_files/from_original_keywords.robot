@@ -6,6 +6,7 @@ Library    String
 
 Resource    login_and_registration_keywords.robot
 Resource    cart_keywords.robot
+Resource    ticket_and_safari_keywords.robot
 
 Variables    ../util/variables.py
 
@@ -40,20 +41,6 @@ Buy More Than One Ticket
      ${alert_text}    Handle Alert    action=DISMISS
 	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
 
-Book Safari
-    [Arguments]    ${saf_button}    ${saf_date_field}    ${date}    ${saf_type_field}    ${saf_type}    ${saf_sub_button}    ${add_to_cart_message_successful}
-    Click Element    ${saf_button}
-    Sleep    2
-    #When booking remember to always put six number in the year slot and start with two 00 as Max has failed in his programing ;)
-    Input Text    ${saf_date_field}    ${date}
-    Sleep    2    
-    Select From List By Value    ${saf_type_field}    ${saf_type}
-    Sleep    2
-    Click Element    ${saf_sub_button}
-    Sleep    2
-     ${alert_text}    Handle Alert    action=DISMISS
-	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
-
 
 The User Buys Tickets For Their Family
     [Arguments]        ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
@@ -76,15 +63,11 @@ The User Buys Tickets For Their Family
 
 
 The User Books Weekend Safaris For Their Family
-    [Arguments]    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
-	...    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}
-	...    ${safari_type_t_rex_rumble_thrill}    ${add_to_cart_message_successful}
-	Book Safari    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
-	...    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}
-	...    ${add_to_cart_message_successful}
-	Book Safari    ${safari_button}    ${safari_date_field}    ${kim_safari_date}
-	...    ${safari_type_field}    ${safari_type_t_rex_rumble_thrill}    ${safari_submit_button}
-	...    ${add_to_cart_message_successful}
+    [Tags]    safari    new-feature
+    [Arguments]    ${safari_date}    
+	Book Safari    ${safari_type_herbivor_tour_feeding}    ${safari_date}
+	Book Safari    ${safari_type_t_rex_rumble_thrill}    ${safari_date}
+
 
 The Date Of The Safari Bookings Are Correct
     [Arguments]    ${cart_list_xpath}    ${cart_tab_xpath}    ${safari_keyword_1}
@@ -121,19 +104,20 @@ User Buys Every Combination Of Ticket
     Sleep    5
  
  User Books A Safari
+    [Tags]    safari    new-feature
     [Arguments]    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}    ${cart_nav_button}    ${pro_to_checkout_button} 
-    Book safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}
+    Book safari    ${safari_type_t_rex_rumble}    ${date_for_booking}
     Sleep    5
     Click Element   ${cart_nav_button}
     Sleep    5
     Click Element    ${pro_to_checkout_button}
 
 User Book Every Typ Of Safari
-    [Arguments]    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_type_herbivor_tour}    ${safari_type_herbivor_tour_feeding}    ${safari_type_t_rex_rumble_thrill}     ${safari_submit_button}    ${add_to_cart_message_successful}    ${cart_nav_button}    ${pro_to_checkout_button}
-    Book safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}
-    Book safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_herbivor_tour}    ${safari_submit_button}    ${add_to_cart_message_successful}
-    Book safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_herbivor_tour_feeding}    ${safari_submit_button}    ${add_to_cart_message_successful}
-    Book safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble_thrill}    ${safari_submit_button}    ${add_to_cart_message_successful}
+    [Tags]    safari    new-feature
+    [Arguments]   
+    Book safari    ${safari_type_t_rex_rumble}    ${date_for_booking}
+    Book safari    ${safari_type_herbivor_tour}    ${date_for_booking}
+    Book safari    ${safari_type_t_rex_rumble_thrill}    ${date_for_booking}
     Click Element   ${cart_nav_button}
     Sleep    5
     Click Element    ${pro_to_checkout_button}

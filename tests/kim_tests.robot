@@ -14,14 +14,14 @@ Test Teardown    Teardown Suite
 
 *** Test Cases ***
 Valid browser login
-    [Tags]    Johan Ahlsten
+    [Tags]    Johan_Ahlsten    new-feature
     Click Specific Button    ${login_button}
 	Input Credentials    ${kim_username}    ${login_username_text_box}    ${kim_password}    ${login_password_text_box}
     Click Element    ${login_submit_button}
 	Sleep    3
 
 User sees the correct price total on tickets in cart
-    [Tags]    Johan Ahlsten
+    [Tags]    Johan_Ahlsten    new_feature
     Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
 	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
     When The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
@@ -31,7 +31,7 @@ User sees the correct price total on tickets in cart
     Then The The Total Price Is Correct    ${cart_tab_xpath}    ${kim_expected_ticket_cost_total}    ${cart_total_xpath}
 
 User purchase tickets for their family
-    [Tags]    Johan Ahlsten
+    [Tags]    Johan_Ahlsten new-feature
     Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
 	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
     When The User Buys Tickets For Their Family    ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}

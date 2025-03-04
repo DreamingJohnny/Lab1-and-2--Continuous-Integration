@@ -20,7 +20,7 @@ Invalid browser login
 #Valid login test to see that login works with valid credentials.
     Message Should Be Visible    ${error_message_element_demo}    ${error_message_demo}    ${standard_timeout}    ${verifying_message}
 Valid browser login
-    [Tags]    [Wille Virtanen]
+    [Tags]    [Wille Virtanen] 
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element    ${login_submit_button}   

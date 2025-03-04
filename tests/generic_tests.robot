@@ -2,6 +2,7 @@
 Library    SeleniumLibrary
 
 Resource    ../resources/keyword_files/keywords.robot
+Resource    ../resources/keyword_files/from_original_keywords.robot
 Variables    ../resources/util/variables.py
 
 Documentation   Grupp 2 Wille, Johan och Kristin. Generic test suite for general test functions as a base library.
@@ -41,7 +42,7 @@ Booking 1 regular adult ticket
     Click Element   ${login_submit_button}
     Sleep    5
 #When booking remember to always put six numer in the year slot and start with two 00 as Max has failed in his programing ;)
-    Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
+    from_original_keywords.Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
     Click Element   ${cart_nav_button}
     Sleep    5
     Click Element    ${pro_to_checkout_button}
@@ -70,9 +71,9 @@ Booking Safari
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
     Sleep    5
-    Buy A Ticket    ${vip_ticket}    ${senior_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
+    from_original_keywords.Buy A Ticket    ${vip_ticket}    ${senior_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
     Sleep    5
-    Book Safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}
+    from_original_keywords.Book Safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}
     Click Element   ${cart_nav_button}
     Sleep    5
     Click Element    ${pro_to_checkout_button}
@@ -86,9 +87,9 @@ Removing object from cart
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
     Sleep    5
-    Buy A Ticket    ${vip_ticket}    ${senior_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
+    from_original_keywords.Buy A Ticket    ${vip_ticket}    ${senior_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
     Sleep    5
-    Book Safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}
+    from_original_keywords.Book Safari    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}
     Click Element   ${cart_nav_button}
     Sleep    5
     Click Element    ${second_object_in_cart}
@@ -97,3 +98,41 @@ Removing object from cart
     Sleep    5
     Handle Alert    action=DISMISS
     Sleep    5
+
+User Can Not Register Username That Already Exists
+    [Documentation]    This test verifies that an error message is displayed if user tries to register an already registered username.
+    [Tags]    Kristin
+    Given User Is Registered    ${valid_username}    ${valid_password}
+    When User Registers Username    ${valid_username}    ${valid_password}
+    Then User Should Get Message That Username Already Exists    
+
+User That Is Not Logged In Can Not Add Ticket To Cart
+    [Documentation]    This test verifies that an error alert is displayed if user that is not logged in tries to buy entrance ticket. 
+    [Tags]    Kristin    
+    Given No one is logged in
+    When User Buys Ticket
+    Then User Should Recieve Alert    ${ticket_login_error_message}
+
+User That Is Not Logged In Can Not Book Safari
+    [Documentation]    This test verifies that an error alert is displayed if user that is not logged in tries to book a safari. 
+    [Tags]    Kristin
+    Given No one is logged in
+    When User Books Safari
+    Then User Should Recieve Alert    ${safari_login_error_message}
+
+User With Regular Ticket Can Not Book VIP Safari
+    [Documentation]    This test verifies that an error message is displayed if user tries to book VIP safari without VIP ticket.
+    [Tags]    Kristin
+    Given User Is Logged In    ${valid_username}    ${valid_password}
+    And Regular Entrance Ticket is Added To Cart
+    When User books VIP safari
+    Then User Should Get Message That Only VIP User Can Book VIP Safaris
+
+    
+User With Regular Ticket Can Not Book Safari On Weekend
+    [Documentation]    This test verifies that an error message is displayed if user tries to book safari on a weekend without VIP ticket.
+    [Tags]    Kristin
+    Given User Is Logged In    ${valid_username}    ${valid_password}
+    And Regular Entrance Ticket Is Added To Cart
+    When User Books Safari On A Weekend
+    Then User Should Get Message That VIP Ticket Is Required

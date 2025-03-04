@@ -9,7 +9,6 @@ Library    Collections
 Library    XML
 
 Resource    keywords.robot
-Resource    VG_Kristin_user_generic_keywords.robot
 
 Variables    ../resources/util/pal_specific_variables.py
 
@@ -78,8 +77,8 @@ Pal Buys Entrance Ticket
 Pal Books Safaris
     [Documentation]    This keyword executes and verifies the booking process 
     ...    of pal's selected safari types and date.
-    VG_Kristin_user_generic_keywords.Book Safari    ${safari_type_t_rex_rumble}    ${pal_safari_date}
-    VG_Kristin_user_generic_keywords.Book Safari    ${safari_type_herbivor_tour}    ${pal_safari_date}
+    Book Safari K   ${safari_type_t_rex_rumble}    ${pal_safari_date}
+    Book Safari K   ${safari_type_herbivor_tour}    ${pal_safari_date}
 
 ### Cart  and Checkout ###
 

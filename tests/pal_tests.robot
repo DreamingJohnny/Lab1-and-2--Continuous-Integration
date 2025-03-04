@@ -37,7 +37,7 @@ Log In User Pal
 Pal Buys Entrance Ticket
     [Documentation]    This test verifies that pal can buy entrance ticket when logged in,
     ...    that item is added to cart, and cart total is correct.
-    [Tags]    Kristin    Ticket    BookingProcess    Cart    CostTotal    Demo
+    [Tags]    Kristin    Ticket    BookingProcess    Cart    CostTotal    Demo    new-feature
     Given User Pal Is Logged In
     When Pal Buys Entrance Ticket
     Then Pal Entrance Ticket Should be Added To Cart

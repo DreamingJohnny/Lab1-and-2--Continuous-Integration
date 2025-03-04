@@ -18,7 +18,7 @@ User Enters Registration Credentials
     Input Credentials    ${username}    ${reg_username_text_box}    ${password}    ${reg_password_text_box}
 
 User Enters Login Credentials
-    [Tags]    new-feature
+    [Tags]
     [Documentation]    This keyword enters username and password into login fields.
     [Arguments]    ${username}    ${password}
     Input Credentials    ${username}    ${login_username_text_box}    ${password}    ${login_password_text_box}

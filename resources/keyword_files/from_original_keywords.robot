@@ -16,54 +16,16 @@ Variables    ../util/variables.py
 Increase value
     [Arguments]    ${input_id}    ${direction}
     Press Keys  ${input_id}  ${direction} 
-Buy A Ticket
-    [Arguments]    ${cat}    ${type}    ${type_field}    ${cat_field}    ${input_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Click Specific Button    ${buy_ticket_button}
-    Sleep    2
-    Select From List By Value    ${type_field}    ${type} 
-    Select From List By Value    ${cat_field}    ${cat}
-    Sleep    2
-    Click Button    ${add_to_cart_button}
-     ${alert_text}    Handle Alert    action=DISMISS
-	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
 
-Buy More Than One Ticket
-    [Arguments]    ${cat}    ${type}    ${amount}    ${type_field}    ${cat_field}    ${input_counter}    ${button_one}    ${button_two}    ${add_to_cart_message_successful}
-    Click Specific Button    ${button_one}
-    Sleep    2
-    Select From List By Value    ${type_field}    ${type} 
-    Select From List By Value    ${cat_field}    ${cat}
-    WHILE    True    limit=${amount}    on_limit=pass    
-    Increase value    ${input_counter}    ARROW_UP
-    END 
-    Sleep    2
-    Click Button    ${button_two}
-     ${alert_text}    Handle Alert    action=DISMISS
-	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
+The User Kim Buys Tickets For Their Family
+    [Tags]    safari
+	Buy Entrance Tickets    ${adult_ticket_type}    ${regular_ticket}    ${input_of_ticket_counter}
+    Buy Entrance Tickets    ${adult_ticket_type}    ${vip_ticket}    ${input_of_ticket_counter}
+    Buy Entrance Tickets    ${child_ticket_type}    ${vip_ticket}    2    
 
 
-The User Buys Tickets For Their Family
-    [Arguments]        ${buy_ticket_button}    ${regular_ticket}    ${vip_ticket}
-	...    ${adult_ticket_type}    ${child_ticket_type}    ${ticket_type_field}
-	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${add_to_cart_button}
-	...    ${add_to_cart_message_successful}
-	
-	Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}
-	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    
-	...    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    
-	Buy A Ticket    ${vip_ticket}    ${adult_ticket_type}    ${ticket_type_field}
-	...    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    
-	...    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    
-	Buy More Than One Ticket    ${vip_ticket}    ${child_ticket_type}    1
-	...    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}
-	...    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-
-
-
-The User Books Weekend Safaris For Their Family
-    [Tags]    safari    new-feature
+The User Kim Books Weekend Safaris For Their Family
+    [Tags]    safari
     [Arguments]    ${safari_date}    
 	Book Safari    ${safari_type_herbivor_tour_feeding}    ${safari_date}
 	Book Safari    ${safari_type_t_rex_rumble_thrill}    ${safari_date}
@@ -76,14 +38,6 @@ The Date Of The Safari Bookings Are Correct
     Check Cart Items Order Info    ${safari_keyword_1}    ${expected_safari_date}    ${cart_tab_xpath}    ${cart_list_xpath}
 	Check Cart Items Order Info    ${safari_keyword_2}    ${expected_safari_date}    ${cart_tab_xpath}    ${cart_list_xpath}
 
-User Books A Ticket
-    [Arguments]    ${cat}    ${type}    ${type_field}    ${cat_field}    ${input_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Click Specific Button    ${buy_ticket_button}
-    Sleep    5
-    Select From List By Value    ${type_field}    ${type} 
-    Select From List By Value    ${cat_field}    ${cat}
-    Sleep    5
-    Click Button    ${add_to_cart_button}
 
 User Booking Goes Through
     [Arguments]    ${add_to_cart_message_successful}
@@ -91,29 +45,23 @@ User Booking Goes Through
 	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
 
 User Buys Every Combination Of Ticket
-    [Arguments]    ${VIP_ticket}    ${regular_ticket}    ${senior_ticket_type}    ${adult_ticket_type}    ${child_ticket_type}    ${5}    ${4}    ${3}    ${2}    ${1}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}    ${cart_nav_button}    ${pro_to_checkout_button}    
-    Buy More Than One Ticket    ${vip_ticket}    ${senior_ticket_type}    ${5}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Buy More Than One Ticket    ${regular_ticket}    ${senior_ticket_type}    ${4}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Buy More Than One Ticket    ${vip_ticket}    ${child_ticket_type}    ${3}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Buy More Than One Ticket    ${regular_ticket}    ${child_ticket_type}    ${2}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Buy More Than One Ticket    ${vip_ticket}    ${adult_ticket_type}    ${1}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Buy A Ticket    ${regular_ticket}    ${adult_ticket_type}    ${ticket_type_field}    ${ticket_cat_field}    ${input_of_ticket_counter}    ${buy_ticket_button}    ${add_to_cart_button}    ${add_to_cart_message_successful}
-    Click Element   ${cart_nav_button}
-    Sleep    5
-    Click Element    ${pro_to_checkout_button}
-    Sleep    5
+    [Arguments]
+    Buy Entrance Tickets    ${senior_ticket_type}    ${vip_ticket}    5 
+    Buy Entrance Tickets    ${senior_ticket_type}    ${regular_ticket}    4  
+    Buy Entrance Tickets    ${adult_ticket_type}    ${vip_ticket}    3
+    Buy Entrance Tickets    ${adult_ticket_type}    ${regular_ticket}    2
+    Buy Entrance Tickets    ${child_ticket_type}    ${vip_ticket}    1
+    Buy Entrance Tickets    ${child_ticket_type}    ${regular_ticket}    4
+
  
  User Books A Safari
-    [Tags]    safari    new-feature
-    [Arguments]    ${safari_button}    ${safari_date_field}    ${date_for_booking}    ${safari_type_field}    ${safari_type_t_rex_rumble}    ${safari_submit_button}    ${add_to_cart_message_successful}    ${cart_nav_button}    ${pro_to_checkout_button} 
-    Book safari    ${safari_type_t_rex_rumble}    ${date_for_booking}
-    Sleep    5
-    Click Element   ${cart_nav_button}
-    Sleep    5
-    Click Element    ${pro_to_checkout_button}
+    [Tags]    safari
+    [Arguments]    ${safari_type}        ${safari_date} 
+    Book safari    ${safari_type}    ${safari_date}
+
 
 User Book Every Typ Of Safari
-    [Tags]    safari    new-feature
+    [Tags]    safari
     [Arguments]   
     Book safari    ${safari_type_t_rex_rumble}    ${date_for_booking}
     Book safari    ${safari_type_herbivor_tour}    ${date_for_booking}

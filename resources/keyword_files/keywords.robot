@@ -22,14 +22,6 @@ Increase value
 
 
 
-
-
-
-
-
-
-
-
 The User Proceeds To The Cart    
     [Arguments]    ${cart_nav_button}
 	Click Specific Button    ${cart_nav_button}

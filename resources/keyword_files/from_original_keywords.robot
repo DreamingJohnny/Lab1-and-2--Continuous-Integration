@@ -11,7 +11,6 @@ Variables    ../util/variables.py
 
 *** Keywords ***
 
-
 Increase value
     [Arguments]    ${input_id}    ${direction}
     Press Keys  ${input_id}  ${direction} 
@@ -22,13 +21,11 @@ The User Kim Buys Tickets For Their Family
     Buy Entrance Tickets    ${adult_ticket_type}    ${vip_ticket}    1
     Buy Entrance Tickets    ${child_ticket_type}    ${vip_ticket}    2    
 
-
 The User Kim Books Weekend Safaris For Their Family
     [Tags]    safari
     [Arguments]    ${safari_date}    
 	Book Safari    ${safari_type_herbivor_tour_feeding}    ${safari_date}
 	Book Safari    ${safari_type_t_rex_rumble_thrill}    ${safari_date}
-
 
 The Date Of The Safari Bookings Are Correct
     [Tags]    refactor-me
@@ -37,7 +34,6 @@ The Date Of The Safari Bookings Are Correct
 
     Check Cart Items Order Info    ${safari_keyword_1}    ${expected_safari_date}    ${cart_tab_xpath}    ${cart_list_xpath}
 	Check Cart Items Order Info    ${safari_keyword_2}    ${expected_safari_date}    ${cart_tab_xpath}    ${cart_list_xpath}
-
 
 User Booking Goes Through
     [Arguments]    ${add_to_cart_message_successful}

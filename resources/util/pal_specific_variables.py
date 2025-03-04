@@ -26,7 +26,3 @@ pal_total_desctiption = "Total: $320"
 # Herbivore Tour on 2025-03-19 - $120 
 # T-Rex Rumble on 2025-03-19 - $150 
 # Total: $320
-
-#Hej
-
-

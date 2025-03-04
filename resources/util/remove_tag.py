@@ -70,4 +70,3 @@ for filename in os.listdir(keyword_directory):
             print(f"Tag '{tag_to_remove}' removed from {filename}")
         else:
             print(f"No tag '{tag_to_remove}' to remove in {filename}")
-

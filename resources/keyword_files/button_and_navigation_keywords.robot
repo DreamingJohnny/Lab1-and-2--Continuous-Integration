@@ -3,7 +3,6 @@ Library    SeleniumLibrary
 Library    Collections
 Library    String
 
-
 Variables    ../util/variables.py
 
 *** Keywords ***

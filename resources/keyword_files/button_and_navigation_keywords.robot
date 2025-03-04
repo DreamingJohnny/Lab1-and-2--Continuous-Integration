@@ -3,7 +3,6 @@ Library    SeleniumLibrary
 Library    Collections
 Library    String
 
-#Resource    login_and_registration_keywords.robot
 
 Variables    ../util/variables.py
 

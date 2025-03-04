@@ -28,7 +28,7 @@ User Registers Username
     [Documentation]    This keyword executes registration process of user, without verification.
     [Arguments]    ${username}    ${password}
     User Navigates To Register Section
-    Sleep    1
+    Page Is Opened To Registration Section
     User Enters Registration Credentials    ${username}    ${password}
     Press Register Submit Button
 

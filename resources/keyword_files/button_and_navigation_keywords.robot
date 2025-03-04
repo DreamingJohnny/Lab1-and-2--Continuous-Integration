@@ -10,7 +10,7 @@ Variables    ../util/variables.py
 
 *** Keywords ***
 
-###  Buttons ###
+###  Navigation ###
 
 User Navigates To Login Section
     Press Login Button    
@@ -32,6 +32,8 @@ User Navigates To Cart Section
     Press Cart Button
     Wait Until Page Contains Element    ${cart_section}
 
+### Buttons ###
+
 User Presses Submit Registration Button
     [Documentation]    This keyword executes pressing registration submit button.
     Press Register Submit Button
@@ -51,11 +53,15 @@ User Presses Proceed To Checkout
     User Navigates To Cart Section
     Press Proceed to checkout button
 
+### Buttons should be visible ###
+
 Login Button Should Be Visible
     Element Should Be Visible    ${login_button}
 
 Logout Button Should Be Visible
     Element Should Be Visible    ${logout_button}
+
+### Pressing buttons ###
 
 Press Login Button
     Click Specific Button    ${login_button}
@@ -93,7 +99,6 @@ Press Add Ticket To Cart Button
     Click Specific Button    ${add_to_cart_button}
     Sleep    2
 
-
 Press Register Submit Button
     Click Specific Button    ${reg_submit_button}
     Sleep    2
@@ -102,7 +107,7 @@ Press Proceed To Checkout Button
     Click Specific Button    ${pro_to_checkout_button}
     Sleep    2
 
-
+### Page is opened to.. ###
 
 
 Page Is Opened To Login Page

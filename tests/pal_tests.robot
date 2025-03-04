@@ -56,7 +56,7 @@ Pal Books Safaris
 
 Pal Checks Out
     [Documentation]    This test verifies the checkout process for user pal, and that summary is correct.
-    [Tags]    Kristin   Cart   CostTotal    Checkout    Dates    Summary    Demo
+    [Tags]    Kristin    Cart    CostTotal    Checkout    Dates    Summary    Demo
     Given User Pal Is Logged In
     And Pals Items Are Added To Cart
     When User Presses Proceed To Checkout

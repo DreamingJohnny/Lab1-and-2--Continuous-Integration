@@ -21,7 +21,6 @@ User Enters Login Credentials
     [Arguments]    ${username}    ${password}
     Input Credentials    ${username}    ${login_username_text_box}    ${password}    ${login_password_text_box}
 
-
 User Registers Username
     [Documentation]    This keyword executes registration process of user, without verification.
     [Arguments]    ${username}    ${password}
@@ -38,7 +37,6 @@ User Should Be Registered
     ...    let users = getUsers();
         ...    return users.some(u => u.username === '${username}');
     Should Be True    ${userRegistered}
-
 
 User Is Registered
     [Documentation]    This keyword executes and verifies user registration.
@@ -91,13 +89,12 @@ Input Credentials
     Input Text    ${username_space}    ${username}
     Input Text    ${password_space}    ${password}
 
-
-
 Registration
     [Arguments]    ${username}    ${username_text_box}    ${password}    ${password_text_box}    ${regin_button}    ${reg_sub_button}
     Click Specific Button    ${regin_button}
     Input Credentials    ${username}    ${username_text_box}    ${password}    ${password_text_box}
     Click Element    ${reg_sub_button}
+
 Logout
     [Arguments]    ${button}
     Click Specific Button    ${button}
@@ -112,7 +109,7 @@ The User Is Logged In To Their Account
 	Click Specific Button    ${submit_login_button}
 	Sleep    3
 
-##Not used, cannot press register, is alerted "fyll i det här fältet" first
+## Not used, cannot press register, is alerted "fyll i det här fältet" first
 User Enters Only Username And No Password
     Input Text    ${reg_username_text_box}    ${valid_username}
 

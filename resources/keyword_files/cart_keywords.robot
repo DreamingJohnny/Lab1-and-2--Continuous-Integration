@@ -38,24 +38,10 @@ Check Cart Items Order Info
         Should Contain    ${item}    ${expected_text}
     END
 
-
-
-
-
-
-
-
-
-
 Cart Should be Empty
     [Documentation]    This keyword verifies that cart is empty.
     ${cart} =    Execute JavaScript    return getCart();
     Should Be Empty    ${cart}
-
-
-
-
-
 
 Total Cart Cost Should Be Correct
     [Documentation]    This keyword verifies that total cart cost is same as expected, by looping through cart, 
@@ -86,7 +72,6 @@ Get Cart Item Descriptions
         Append To List    ${cartItemDescriptions}    ${temp}
     END
     RETURN    ${cartItemDescriptions}
-
 
 Get Cart Item Dates
     [Documentation]    This keyword fetches a list of dates of all safaris in cart, 

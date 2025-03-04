@@ -28,17 +28,17 @@ def remove_specific_tag_from_file(file_path):
             # Remove the specific tag from the tags line
             tags = line.strip().split()
             tags2 = [tag for tag in tags if tag != tag_to_remove]
-            if tags != tags2:   #write back new tag section
+            if tags != tags2:   #If tag section is changed, write back new tag section
                 cleaned_content.append(f"\t{'    '.join(tags2)}\n")
                 file_changed = True
-            else:    # Else, do not change line
+            else:    # Else, write line unchanged
                 cleaned_content.append(line)
             continue
 
         # Add the other lines unchanged
         cleaned_content.append(line)
 
-    # Write the cleaned content back to the file
+    # If tag was removed, Write the cleaned content back to the file
     if file_changed:
         with open(file_path, 'w', encoding='utf-8') as file:
             file.writelines(cleaned_content)
@@ -51,9 +51,9 @@ for filename in os.listdir(test_directory):
 
     # Only process .robot files
     if os.path.isfile(file_path) and filename.endswith('.robot'):
-        changed = remove_specific_tag_from_file(file_path)
+        tag_is_removed = remove_specific_tag_from_file(file_path)
         
-        if changed:
+        if tag_is_removed:
             print(f"Tag '{tag_to_remove}' removed from {filename}")
         else:
             print(f"No tag '{tag_to_remove}' to remove in {filename}")
@@ -65,8 +65,8 @@ for filename in os.listdir(keyword_directory):
 
     # Only process .robot files
     if os.path.isfile(file_path) and filename.endswith('.robot'):
-        changed = remove_specific_tag_from_file(file_path)
-        if changed:
+        tag_is_removed = remove_specific_tag_from_file(file_path)
+        if tag_is_removed:
             print(f"Tag '{tag_to_remove}' removed from {filename}")
         else:
             print(f"No tag '{tag_to_remove}' to remove in {filename}")

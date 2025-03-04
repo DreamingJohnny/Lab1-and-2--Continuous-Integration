@@ -11,16 +11,16 @@ Test Setup    Setup Suite    ${url_demo}    ${browser}    ${title_demo}    ${val
 #Test teardown that closes the browser, made as a suite incase we want to add more functions to it. (by Wille)
 Test Teardown    Teardown Suite 
 *** Test Cases ***
-#Invalid login test to see if the page need correct credentials. 
+#Invalid login test to see if the page need correct credentials.
 Invalid browser login
-    [Tags]    [Wille Virtanen]
+    [Tags]    Wille-Virtanen new-feature
     Click Specific Button    ${login_button}
     Input Credentials    ${invalid_username}    ${login_username_text_box}    ${invalid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
 #Valid login test to see that login works with valid credentials.
     Message Should Be Visible    ${error_message_element_demo}    ${error_message_demo}    ${standard_timeout}    ${verifying_message}
 Valid browser login
-    [Tags]    [Wille Virtanen]
+    [Tags]    Wille-Virtanen new-feature
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element    ${login_submit_button}   

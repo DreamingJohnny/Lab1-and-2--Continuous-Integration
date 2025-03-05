@@ -13,10 +13,6 @@ Resource    from_original_keywords.robot
 Variables    ../util/variables.py
 
 
-*** Variables ***
-
-${BROWSER_from_Azuredev}           ${BROWSER}
-${OPTIONS_from_Azuredev}           ${OPTIONS}
 
 
 *** Keywords ***
@@ -25,18 +21,18 @@ ${OPTIONS_from_Azuredev}           ${OPTIONS}
 
 Setup Suite Open Page
     [Documentation]    This setup opens browser to JurasStina-Kalle park home page.
-    Open Browser     ${url_demo}    ${BROWSER_from_Azuredev}    ${OPTIONS_from_Azuredev}    
+    Open Browser     ${url_demo}    ${browser}    ${browser_options}    
 
 Setup Suite Open Page And Register User
     [Documentation]    This setup opens browser to JurasStina-Kalle park home page and registers user.
     [Arguments]    ${username}    ${password}   
-    Open Browser     ${url_demo}    ${BROWSER_from_Azuredev}    ${OPTIONS_from_Azuredev}    
+    Open Browser     ${url_demo}    ${browser}    ${browser_options}    
     User Is Registered    ${username}    ${password}   
 
 Setup Suite Open Page Register And Login User
     [Documentation]    This setup opens browser to JurasStina-Kalle park home page, registers, and logs in user.
     [Arguments]    ${username}    ${password}   
-    Open Browser     ${url_demo}    ${BROWSER_from_Azuredev}    ${OPTIONS_from_Azuredev}    
+    Open Browser     ${url_demo}    ${browser}    ${browser_options}    
     User Is Registered    ${username}    ${password} 
     Log In User    ${username}    ${password} 
 

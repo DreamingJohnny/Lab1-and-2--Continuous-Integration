@@ -15,7 +15,7 @@ steps:
 
   # Run all tests
   - script: |
-      robot --variable BROWSER:chrome --variable OPTIONS:"--headless --disable-gpu" \
+      robot --variable BROWSER:chrome --variable OPTIONS:"--headless --disable-gpu --incognito" \
       --output results/logs/output_all_test.xml --log results/logs/log_all_test.html --report results/logs/report_all_test.html tests/
     displayName: 'Run All Tests'
 

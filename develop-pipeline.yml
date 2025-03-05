@@ -19,7 +19,7 @@ steps:
     displayName: 'Removing tag "new-feature" from keywords and test'
 
   - script: |
-      robot --variable BROWSER:chrome --variable OPTIONS:"--headless --disable-gpu" \
+      robot --variable BROWSER:chrome --variable OPTIONS:"--headless --disable-gpu --incognito" \
       --output results/logs/output_kim_test.xml --log results/logs/log_kim_test.html --report results/logs/report_kim_test.html tests/kim_tests.robot
     displayName: 'Run Test File "Kim"'
 

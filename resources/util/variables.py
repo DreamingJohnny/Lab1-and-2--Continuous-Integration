@@ -6,7 +6,7 @@ current_directory = os.getcwd().replace('\\', '/')
 #Site specifics
 temp_dir = tempfile.mkdtemp()
 browser = "headlesschrome"
-browser_options =  "--headless --disable-gpu --incognito ----user-data-dir=${temp_dir}"
+browser_options =  "--headless --disable-gpu --incognito --user-data-dir=${temp_dir}"
 
 url_demo = f"file:///{current_directory}/webpage\jurap.html"
 title_demo = "Jura-Stina-Kalle Park"

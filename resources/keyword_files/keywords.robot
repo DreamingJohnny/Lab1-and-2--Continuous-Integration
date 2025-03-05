@@ -38,7 +38,6 @@ Teardown Suite
 
 ###########
 
-
 Increase value
     [Arguments]    ${input_id}    ${direction}
     Press Keys  ${input_id}  ${direction} 
@@ -66,25 +65,7 @@ The Price In The Popup Is Correct
 	${alert_text}    Handle Alert
 	Should Contain    ${alert_text}    ${expected_cost_total}
 
-
 User Booking Goes Through
     [Arguments]    ${add_to_cart_message_successful}
     ${alert_text}    Handle Alert    action=DISMISS
 	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-

@@ -4,6 +4,8 @@ current_directory = os.getcwd().replace('\\', '/')
 
 #Site specifics
 browser = "headlesschrome"
+browser_options =  "--headless --disable-gpu --incognito"
+
 url_demo = f"file:///{current_directory}/webpage\jurap.html"
 title_demo = "Jura-Stina-Kalle Park"
 

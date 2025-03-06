@@ -5,6 +5,7 @@ Library    Collections
 Library    String
 
 Resource    button_and_navigation_keywords.robot
+
 Variables    ../util/variables.py
 
 
@@ -110,6 +111,7 @@ The User Is Logged In To Their Account
 	Sleep    3
 
 ## Not used, cannot press register, is alerted "fyll i det här fältet" first
+
 User Enters Only Username And No Password
     Input Text    ${reg_username_text_box}    ${valid_username}
 

@@ -1,4 +1,3 @@
-
 # Group 2: Wille, Johan, Kristin 
 # This file is created, tested, refactored by Kristin
 
@@ -18,7 +17,7 @@ Test Teardown    Teardown Suite
 *** Test Cases ***
 Register User Pal
     [Documentation]    This test verifies the registration process for user pal.
-    [Tags]    Kristin    Registration    Credentials
+    [Tags]    Kristin    Registration    Credentials    new-feature
     Given Page Is Opened To Registration Section
     When User Pal Enters Registration Credentials
     And User Presses Submit Registration Button
@@ -37,7 +36,7 @@ Log In User Pal
 Pal Buys Entrance Ticket
     [Documentation]    This test verifies that pal can buy entrance ticket when logged in,
     ...    that item is added to cart, and cart total is correct.
-    [Tags]    Kristin    Ticket    BookingProcess    Cart    CostTotal    Demo    new-feature
+    [Tags]    Kristin    Ticket    BookingProcess    Cart    CostTotal    Demo
     Given User Pal Is Logged In
     When Pal Buys Entrance Ticket
     Then Pal Entrance Ticket Should be Added To Cart

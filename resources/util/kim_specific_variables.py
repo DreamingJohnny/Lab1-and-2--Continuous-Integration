@@ -12,13 +12,3 @@ kim_expected_ticket_cost_total = "$270"
 kim_safari_date = "002025-03-15"
 kim_expected_safari_date = "2025-03-15"
 kim_expected_vacation_cost_total = "$670"
-
-kim_order_info = [
-		["VIP Adult Ticket","100"],
-		["Regular Adult Ticket","50"],
-		["VIP Child Ticket","60"],
-		["Herbivor Tour with Feeding", kim_expected_safari_date],
-		["T-Rex Rumble eXtreme Thrill Pack", kim_expected_safari_date],
-		["Herbivor Tour with Feeding", "180"],
-		["T-Rex Rumble eXtreme Thrill Pack", "220"]
-	]

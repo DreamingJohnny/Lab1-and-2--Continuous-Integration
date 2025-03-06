@@ -12,6 +12,9 @@ Resource    from_original_keywords.robot
 
 Variables    ../util/variables.py
 
+
+
+
 *** Keywords ***
 
 #Setup and Teardown
@@ -43,20 +46,17 @@ Increase value
     Press Keys  ${input_id}  ${direction} 
 
 The User Proceeds To The Cart    
-    [Arguments]    ${cart_nav_button}
 	Click Specific Button    ${cart_nav_button}
 
-The The Total Price Is Correct
-    [Arguments]    ${cart_tab_xpath}    ${kim_expected_ticket_cost_total}    ${cart_total_xpath}
-	Check Shopping Cart Total    ${kim_expected_ticket_cost_total}    ${cart_tab_xpath}    ${cart_total_xpath}
+Total Cart Price Should Be Correct
+    [Arguments]    ${expected_ticket_cost_total}
+	Check Shopping Cart Total    ${expected_ticket_cost_total}    ${cart_tab_xpath}    ${cart_total_xpath}
 
 The User Purchases The Tickets
-    [Arguments]    ${cart_tab_xpath}    ${proceed_to_checkout_button}
 	Click Specific Button    ${cart_tab_xpath}
 	Click Specific Button    ${proceed_to_checkout_button}
 
 The User Purchases The Safaris
-    [Arguments]    ${cart_tab_xpath}    ${proceed_to_checkout_button}
 	Click Specific Button    ${cart_tab_xpath}
 	Click Specific Button    ${proceed_to_checkout_button}
 

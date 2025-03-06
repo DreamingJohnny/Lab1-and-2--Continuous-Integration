@@ -1,4 +1,3 @@
-
 # Group 2: Wille, Johan, Kristin 
 # This file is created, tested, refactored by Kristin
 

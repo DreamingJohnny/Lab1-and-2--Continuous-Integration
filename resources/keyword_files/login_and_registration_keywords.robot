@@ -5,6 +5,7 @@ Library    Collections
 Library    String
 
 Resource    button_and_navigation_keywords.robot
+
 Variables    ../util/variables.py
 
 
@@ -104,13 +105,6 @@ Logout
     Sleep    3
     Handle Alert    action=DISMISS
     Sleep    3
-
-The User Is Logged In To Their Account
-    [Arguments]    ${login_tab}    ${username}    ${password}    ${username_field}    ${password_field}    ${submit_login_button}
-	Click Specific Button    ${login_tab}
-	Input Credentials    ${username}    ${username_field}    ${password}    ${password_field}
-	Click Specific Button    ${submit_login_button}
-	Sleep    3
 
 ##Not used, cannot press register, is alerted "fyll i det här fältet" first
 User Enters Only Username And No Password

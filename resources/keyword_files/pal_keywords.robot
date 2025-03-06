@@ -14,7 +14,6 @@ Variables    ../resources/util/pal_specific_variables.py
 
 *** Keywords ***
 
-
 ### Registration ###
 
 User Pal Enters Registration Credentials

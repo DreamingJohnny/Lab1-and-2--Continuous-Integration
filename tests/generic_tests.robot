@@ -14,7 +14,7 @@ Test Teardown    Teardown Suite
 *** Test Cases ***
 #Invalid login test to see if the page need correct credentials.
 Invalid browser login
-    [Tags]    Wille-Virtanen
+    [Tags]    Wille-Virtanen    new-feature
     Click Specific Button    ${login_button}
     Input Credentials    ${invalid_username}    ${login_username_text_box}    ${invalid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}

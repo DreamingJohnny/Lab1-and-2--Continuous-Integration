@@ -10,7 +10,7 @@ Library    XML
 
 Resource    keywords.robot
 
-Variables    ../resources/util/pal_specific_variables.py
+Variables    ../util/pal_specific_variables.py
 
 *** Keywords ***
 
@@ -56,9 +56,7 @@ User Pal Is Logged In
     Log In User Pal
     User Pal Should Be Logged In
 
-
 ### Buying entrance ticket ###
-
 
 Pal Buys Entrance Ticket 
     [Documentation]    This keyword executes and verifies adding entrance ticket of pal's choice to cart.
@@ -103,7 +101,6 @@ Pals Items Are Added To Cart
 Dates For Pal Safaris Should Be Correct
     [Documentation]    This keyword verifies that the dates for pal's safaris are the same as expected.
     Dates for safaris in cart are the same and as expected    ${pal_expected_safari_date}
-    
 
 Dates for safaris in cart are the same
     [Documentation]    This keyword verifies that all safari dates in cart are the same.
@@ -122,7 +119,6 @@ Dates for safaris in cart are the same and as expected
         Should Be Equal    ${expectedDate}   ${datesInCartList}[${i}]
     END
 
-
 Checkout Summary Alert Should Show Correct Pal Info
     [Documentation]    This keyword verifies that the checkout summary alert 
     ...    contains pal's order info.
@@ -132,9 +128,3 @@ Checkout Summary Alert Should Show Correct Pal Info
     Should Contain X Times   ${alert_text}    ${pal_safari1_description}    1
     Should Contain X Times    ${alert_text}    ${pal_safari2_description}    1
     Should Contain X Times    ${alert_text}    ${pal_total_desctiption}    1
-
-
-
-
-
-

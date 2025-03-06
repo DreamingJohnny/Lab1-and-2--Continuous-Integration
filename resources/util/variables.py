@@ -1,10 +1,16 @@
 import os
+import tempfile
 
 current_directory = os.getcwd().replace('\\', '/')
+
 #Site specifics
+temp_dir = tempfile.mkdtemp()
 browser = "headlesschrome"
+browser_options =  "--headless --disable-gpu --incognito --user-data-dir=${temp_dir}"
+
 url_demo = f"file:///{current_directory}/webpage\jurap.html"
 title_demo = "Jura-Stina-Kalle Park"
+
 #Sections
 home_section = "id=home-section"
 login_section = "id=login-section"
@@ -12,23 +18,28 @@ reg_section = "id=register-form"
 tickets_section = "id=tickets-section"
 safari_section = "id=safari-section"
 cart_section = "id=safari-section"
+
 #Login specifics
 login_button = "login-nav"
 login_username_text_box = "login-username"
 login_password_text_box = "login-password"
+
 #Valid login
 valid_username = "testUser2"
 valid_password = "testPassword2"
 verifying_message = "Verifying credentials..."
 login_submit_button = "xpath=/html/body/main/article[3]/section/form/button"
+
 #Invalid login
 invalid_username = "XXXXXXXX"
 invalid_password = "YYYYYYYY"
 error_message_element_demo = "id=login-message"
 error_message_demo = "Invalid username or password."
+
 #Logout specifics
 logout_button = "logout-nav"
 logout_message = "You have been logged out."
+
 #Registration
 reg_button = "xpath=/html/body/header/div/nav/ul/li[2]/a"
 reg_username_text_box = "reg-username"
@@ -39,9 +50,11 @@ reg_success_message = "Registration successful! Redirecting to login..."
 reg_error_message_already_exists = "Username already exists. Please choose another."
 reg_error_empty_field = "Please enter both a username and password."
 reg_error_password_too_short = "Password must be at least 8 characters long."
+
 #Misc
 standard_timeout = "5s"
 logout_button = "logout-link"
+
 #Buying tickets
 buy_ticket_button = "xpath=/html/body/header/div/nav/ul/li[4]/a"
 ticket_type_field = "id=ticket-type"    #"xpath=/html/body/main/article[4]/section/form/select[1]"
@@ -61,6 +74,7 @@ input_of_ticket_counter = "id=ticket-quantity"
 cart_nav_button = "xpath=/html/body/header/div/nav/ul/li[6]"
 pro_to_checkout_button = "xpath=/html/body/main/article[6]/section/button"
 ticket_login_error_message = "You must be logged in to purchase tickets."
+
 #Booking safaris
 safari_button = "xpath=/html/body/header/div/nav/ul/li[5]/a"
 safari_date_field = "id=safari-date"
@@ -81,12 +95,12 @@ safari_message_element = "id=safari-message"
 safari_VIP_error_message = "Only VIP users can book the selected safari option."
 safari_weekend_without_VIP_error_message = "VIP tickets required to book safaris on weekends."
 safari_login_error_message = "You must be logged in to book a safari."
+
 #Removing from cart
 first_object_in_cart = "xpath=/html/body/main/article[6]/section/div/ul/li[1]/button"
 second_object_in_cart = "xpath=/html/body/main/article[6]/section/div/ul/li[2]/button"
 
 #Shopping cart
-#TODO: Check, is it necessary to have xpath= in the beginning here to help the system read it?
 cart_total_xpath = "xpath=//*[@id=\"cart-total\"]"
 
 cart_tab_xpath = "xpath=//*[@id=\"cart-nav\"]"
@@ -94,7 +108,6 @@ cart_tab_xpath = "xpath=//*[@id=\"cart-nav\"]"
 cart_list_xpath = "xpath=//*[@id=\"cart-details\"]/ul/li"
 
 proceed_to_checkout_button = "xpath=//*[@id=\"checkout-button\"]"
-
 
 #Wille VG Variables
 

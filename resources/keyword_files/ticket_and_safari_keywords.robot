@@ -13,7 +13,6 @@ Variables    ../util/variables.py
 
 ##Det finns ett js-script där man kan jämföra dag och se om det är en helg eller vardag. day == 1 eller 6 är söndag resp lördag.
 
-
 Buy Entrance Tickets
     [Documentation]    This keyword executes and verifies adding entrance ticket(s) to cart. 
     [Arguments]    ${selected_type}    ${selected_category}     ${selected_quantity}
@@ -34,7 +33,6 @@ Buy Entrance Tickets Without Verification
     Select From List By Value    ${ticket_cat_field}    ${selected_category}
     Input Text  ${input_of_ticket_counter}   ${selected_quantity}
     Press Add Ticket To Cart Button
-
 
 Book Safari
     [Documentation]    This keyword executes and verifies the "book safari" process

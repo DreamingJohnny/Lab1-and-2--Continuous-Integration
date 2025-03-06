@@ -18,14 +18,12 @@ steps:
       python resources/util/remove_tag.py
     displayName: 'Removing tag "new-feature" from keywords and test'
 
-  - script: |
-      robot --variable BROWSER:chrome --variable OPTIONS:"--headless --disable-gpu" \
-      --output results/logs/output_kim_test.xml --log results/logs/log_kim_test.html --report results/logs/report_kim_test.html tests/kim_tests.robot
+  - script: 
+      robot --output results/logs/output_kim_test.xml --log results/logs/log_kim_test.html --report results/logs/report_kim_test.html tests/kim_tests.robot
     displayName: 'Run Test File "Kim"'
 
-  - script: |
-      robot --variable BROWSER:chrome --variable OPTIONS:"--headless --disable-gpu" \
-      --output results/logs/output_pal_test.xml --log results/logs/log_pal_test.html --report results/logs/report_pal_test.html tests/pal_tests.robot
+  - script: 
+      robot --output results/logs/output_pal_test.xml --log results/logs/log_pal_test.html --report results/logs/report_pal_test.html tests/pal_tests.robot
     displayName: 'Run Test File "Pal"'
 
 

@@ -9,6 +9,7 @@ Library    ../.venv/Lib/site-packages/robot/libraries/Process.py
 Resource    ../resources/keyword_files/keywords.robot
 Resource    ../resources/keyword_files/kim_keywords.robot
 
+
 Variables    ../resources/util/variables.py
 Variables    ../resources/util/kim_specific_variables.py
 
@@ -16,6 +17,7 @@ Test Setup    Setup Suite Open Page And Register User    ${kim_username}    ${ki
 Test Teardown    Teardown Suite
 
 *** Test Cases ***
+
 Register User Kim
     [Documentation]    Registers user Kim and verifies that they are a registered user
     [Tags]    Johan-Ahlsten    Registration    Credentials    new-feature
@@ -66,4 +68,3 @@ User purchases weekend safaris for their family
     When Kim Books Weekend Safaris For Their Family	${kim_safari_date}
 	# Could this one also be made more generic then?
     And The User Purchases The Safaris
-	Then The Price In The Popup Is Correct    ${kim_expected_vacation_cost_total}

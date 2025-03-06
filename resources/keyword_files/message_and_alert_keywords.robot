@@ -3,7 +3,6 @@ Library    SeleniumLibrary
 Library    Collections
 Library    String
 
-
 Variables    ../util/variables.py
 
 *** Keywords ***
@@ -36,4 +35,3 @@ User Should Get Message That Only VIP User Can Book VIP Safaris
 
 User Should Get Message That VIP Ticket Is Required
     Message Should Be Displayed   ${safari_message_element}    ${safari_weekend_without_VIP_error_message}
-

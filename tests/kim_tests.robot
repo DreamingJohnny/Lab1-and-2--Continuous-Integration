@@ -4,7 +4,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    OperatingSystem
-Library    ../.venv/Lib/site-packages/robot/libraries/Process.py
+Library    Process
 
 Resource    ../resources/keyword_files/keywords.robot
 Resource    ../resources/keyword_files/kim_keywords.robot

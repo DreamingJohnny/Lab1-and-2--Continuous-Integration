@@ -12,7 +12,8 @@ Resource    from_original_keywords.robot
 
 Variables    ../util/variables.py
 
-
+*** Variables ***
+${html_path}    file:///${EXECDIR}/webpage/jurap.html
 
 
 *** Keywords ***
@@ -21,18 +22,18 @@ Variables    ../util/variables.py
 
 Setup Suite Open Page
     [Documentation]    This setup opens browser to JurasStina-Kalle park home page.
-    Open Browser     ${url_demo}    ${browser}    ${browser_options}    
+    Open Browser     ${html_path}    ${browser}    ${browser_options}    
 
 Setup Suite Open Page And Register User
     [Documentation]    This setup opens browser to JurasStina-Kalle park home page and registers user.
     [Arguments]    ${username}    ${password}   
-    Open Browser     ${url_demo}    ${browser}    ${browser_options}    
+    Open Browser     ${html_path}    ${browser}    ${browser_options}    
     User Is Registered    ${username}    ${password}   
 
 Setup Suite Open Page Register And Login User
     [Documentation]    This setup opens browser to JurasStina-Kalle park home page, registers, and logs in user.
     [Arguments]    ${username}    ${password}   
-    Open Browser     ${url_demo}    ${browser}    ${browser_options}    
+    Open Browser     ${html_path}    ${browser}    ${browser_options}    
     User Is Registered    ${username}    ${password} 
     Log In User    ${username}    ${password} 
 

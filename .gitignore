@@ -2,7 +2,7 @@
 *.png
 
 # Logging files
-results/
+#results/
 *.xml
 *.html
 

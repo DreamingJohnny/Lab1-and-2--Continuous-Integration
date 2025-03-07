@@ -5,6 +5,7 @@ Library    String
 
 Resource    login_and_registration_keywords.robot
 Resource    button_and_navigation_keywords.robot
+Resource    message_and_alert_keywords.robot
 
 Variables    ../util/variables.py
 

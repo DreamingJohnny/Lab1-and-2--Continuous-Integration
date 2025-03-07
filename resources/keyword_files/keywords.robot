@@ -63,10 +63,8 @@ The User Purchases The Safaris
 
 The Price In The Popup Is Correct
     [Arguments]    ${expected_cost_total}
-	${alert_text}    Handle Alert
-	Should Contain    ${alert_text}    ${expected_cost_total}
+	User Should Recieve Alert With Expected Text    ${expected_cost_total}
 
 User Booking Goes Through
     [Arguments]    ${add_to_cart_message_successful}
-    ${alert_text}    Handle Alert    action=DISMISS
-	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
+	User Should Recieve Alert With Expected Text    ${add_to_cart_message_successful}

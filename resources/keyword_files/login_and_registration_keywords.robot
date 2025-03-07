@@ -5,6 +5,7 @@ Library    Collections
 Library    String
 
 Resource    button_and_navigation_keywords.robot
+Resource    message_and_alert_keywords.robot
 
 Variables    ../util/variables.py
 
@@ -77,8 +78,12 @@ No One Is Logged In
 Log Out User
     [Documentation]    This keyword executes and verifies user logout.
     Press Logout Button
-    ${alert_text}    Handle Alert    action=DISMISS
-    Should Contain    ${alert_text}    ${logout_message}
+    User Should Recieve Alert With Expected Text    ${logout_message}
+	
+	# ${alert_text}    Handle Alert    action=DISMISS
+    # Should Contain    ${alert_text}    ${logout_message}
+	
+	# TODO: Look at if this line is really neccessary here? Should we have a wait here?
     Wait Until Element Is Visible    ${login_button}
 
 

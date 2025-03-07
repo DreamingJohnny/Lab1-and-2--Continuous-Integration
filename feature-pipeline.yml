@@ -14,10 +14,13 @@ steps:
 
   - template: templates/install-dependencies.yaml
 
-  - script: |
-      TEMP_DIR=$(mktemp -d)  # Creates a temporary directory
-      robot --variable BROWSER:chrome --variable OPTIONS:"--headless --disable-gpu --incognito --user-data-dir=${TEMP_DIR}" \
-      --include new-feature --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html tests/
+  # Step to create and store logs in the working directory
+  - script:
+      mkdir -p $(System.DefaultWorkingDirectory)/results/logs
+    displayName: 'Create Logs Directory'
+
+  - script:
+      robot --include new-feature --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html tests/
     displayName: 'Run Tests tagged with new-feature'
 
 

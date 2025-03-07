@@ -23,7 +23,7 @@ ${keyword_path}    ${EXECDIR}/resources/keyword_files/
 *** Test Cases ***
 #Invalid login test to see if the page need correct credentials.
 Invalid browser login
-    [Tags]    Wille-Virtanen
+    [Tags]    Wille-Virtanen    new-feature
     Click Specific Button    ${login_button}
     Input Credentials    ${invalid_username}    ${login_username_text_box}    ${invalid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
@@ -84,7 +84,7 @@ User Can Not Register Username That Already Exists
 
 User That Is Not Logged In Can Not Add Ticket To Cart
     [Documentation]    This test verifies that an error alert is displayed if user that is not logged in tries to buy entrance ticket. 
-    [Tags]    Kristin    new-feature    
+    [Tags]    Kristin    
     Given No one is logged in
     When User Buys Ticket
     Then User Should Recieve Alert    ${ticket_login_error_message}
@@ -98,7 +98,7 @@ User That Is Not Logged In Can Not Book Safari
 
 User With Regular Ticket Can Not Book VIP Safari
     [Documentation]    This test verifies that an error message is displayed if user tries to book VIP safari without VIP ticket.
-    [Tags]    Kristin    new-feature
+    [Tags]    Kristin
     Given User Is Logged In    ${valid_username}    ${valid_password}
     And Regular Entrance Ticket is Added To Cart
     When User books VIP safari

@@ -13,14 +13,15 @@ pool:
 steps:
   - template: templates/install-dependencies.yaml
 
-
+  # Step to create and store logs in the working directory
+  - script:
+      mkdir -p $(System.DefaultWorkingDirectory)/results/logs
+    displayName: 'Create Logs Directory'
 
 
   # Run all tests
-  - script: |
-      TEMP_DIR=$(mktemp -d)  # Creates a temporary directory
-      robot --variable BROWSER:chrome --variable OPTIONS:"--headless --disable-gpu --incognito --user-data-dir=${TEMP_DIR}" \
-      --output results/logs/output_all_test.xml --log results/logs/log_all_test.html --report results/logs/report_all_test.html tests/
+  - script: 
+      robot --output results/logs/output_all_test.xml --log results/logs/log_all_test.html --report results/logs/report_all_test.html tests/
     displayName: 'Run All Tests'
 
   # Publish the Robot Framework reports as pipeline artifacts.

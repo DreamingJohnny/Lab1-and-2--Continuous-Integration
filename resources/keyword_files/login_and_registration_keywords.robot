@@ -57,7 +57,7 @@ Log In User
     User Navigates To Login Section
     User Enters Login Credentials    ${username}    ${password}
     User Presses Login Submit Button
-    Wait Until Page Contains Element    ${logout_button}    5s
+    Wait Until Element Is Visible    ${logout_button}    ${standard_timeout}
     User Should Be Logged In    ${username}
 
 User Should Be Logged In

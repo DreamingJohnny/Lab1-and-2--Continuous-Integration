@@ -60,7 +60,7 @@ Removing object from cart
     Book Safari    ${safari_type_t_rex_rumble}    ${date_for_booking}
     User Navigates To Cart Section
     Click Element    ${second_object_in_cart}
-    Wait Until Element Is Visible    ${pro_to_checkout_button}    5s
+    Wait Until Element Is Visible    ${pro_to_checkout_button}    ${standard_timeout}
 	Click Element    ${pro_to_checkout_button}
     Handle Alert    action=DISMISS
 

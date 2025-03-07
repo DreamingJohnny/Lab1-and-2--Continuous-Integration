@@ -3,6 +3,7 @@ Library    SeleniumLibrary
 Library    Collections
 Library    String
 
+
 Resource    login_and_registration_keywords.robot
 Resource    cart_keywords.robot
 Resource    message_and_alert_keywords.robot
@@ -10,7 +11,9 @@ Resource    ticket_and_safari_keywords.robot
 Resource    button_and_navigation_keywords.robot
 Resource    from_original_keywords.robot
 
-Variables    ../util/variables.py
+*** Variables ***
+${VARIABLES_PATH}    ${EXECDIR}/util/variables.py
+
 
 *** Keywords ***
 

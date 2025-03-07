@@ -1,15 +1,24 @@
 *** Settings ***
-Library    SeleniumLibrary
+Library    SeleniumLibrary  
 
-Resource    ../resources/keyword_files/keywords.robot
-Resource    ../resources/keyword_files/from_original_keywords.robot
-Variables    ../resources/util/variables.py
+Resource    ${RESOURCE_PATH}/keyword_files/keywords.robot
+Resource    ${EXECDIR}/resources/keyword_files/from_original_keywords.robot
+Resource    ${keyword_path}/keywords.robot
+
+Variables    ${resource_path}/util/variables.py
+Variables    ${util_path}/pal_specific_variables.py
 
 Documentation   Grupp 2 Wille, Johan och Kristin. Generic test suite for general test functions as a base library.
 
 #Test setup that starts up the page in a browser and registers a user. (by Wille)
 Test Setup    Setup Suite Open Page And Register User    ${valid_username}    ${valid_password}
 Test Teardown    Teardown Suite 
+*** Variables ***
+${util_path}    ${EXECDIR}/resources/util/
+${resource_path}    ${EXECDIR}/resources/
+${keyword_path}    ${EXECDIR}/resources/keyword_files/
+
+
 
 *** Test Cases ***
 #Invalid login test to see if the page need correct credentials.

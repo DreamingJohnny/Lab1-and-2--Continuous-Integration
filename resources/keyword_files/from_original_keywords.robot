@@ -42,6 +42,5 @@ User Book Every Typ Of Safari
     Book safari    ${safari_type_herbivor_tour}    ${date_for_booking}
     Book safari    ${safari_type_t_rex_rumble_thrill}    ${date_for_booking}
     Click Element   ${cart_nav_button}
-    Sleep    5
-    Click Element    ${pro_to_checkout_button}
-    Sleep    5
+    Wait Until Element Is Visible    ${pro_to_checkout_button}
+	Click Element    ${pro_to_checkout_button}

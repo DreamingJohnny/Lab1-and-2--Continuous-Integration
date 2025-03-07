@@ -16,7 +16,7 @@ login_section = "id=login-section"
 reg_section = "id=register-form"
 tickets_section = "id=tickets-section"
 safari_section = "id=safari-section"
-cart_section = "id=safari-section"
+cart_section = "id=cart-section"
 
 #Login specifics
 login_button = "login-nav"

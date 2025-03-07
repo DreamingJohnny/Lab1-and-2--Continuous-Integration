@@ -9,11 +9,15 @@ Variables    ../util/variables.py
 
 Message Should Be Visible
     [Arguments]    ${error_message_element}    ${error_message_text}    ${timeout}    ${good_mess}
-    Wait Until Element Is Visible    ${error_message_element}    ${timeout}
-    Element Text Should Be    ${error_message_element}    ${good_mess}
-    Sleep    2
-    Wait Until Element Is Visible    ${error_message_element}    ${timeout}
-    Element Text Should Be    ${error_message_element}    ${error_message_text}
+	# Replaces the two rows below
+	Wait Until Element Contains    ${error_message_element}    ${good_mess}    ${timeout}
+    # Wait Until Element Is Visible    ${error_message_element}    ${timeout}
+    # Element Text Should Be    ${error_message_element}    ${good_mess}
+    
+	Wait Until Element Contains    ${error_message_element}    ${error_message_text}    ${timeout}
+	#Wait Until Element Is Visible    ${error_message_element}    ${timeout}
+	# So, this is still verifying credentials... so instead it needs to wait until the text is correct...
+    #Element Text Should Be    ${error_message_element}    ${error_message_text}
 
 User Should Recieve Alert
     [Documentation]    This keyword verifies message of an alert box.
@@ -22,6 +26,8 @@ User Should Recieve Alert
     Should Contain    ${alert_text}    ${expected_alert_text}
 
 Message Should Be Displayed
+    # TODO: Should Element Text Should Be here maybe instead be contains? Or should otherwise the documentation change?
+
     [Documentation]    This keyword verifies that a specific element contains a specific message.  
     [Arguments]    ${element}    ${message}
     Wait Until Element Is Visible    ${element}    ${standard_timeout}

@@ -39,7 +39,7 @@ Log In User Kim
 Kim Purchases Tickets For Their Family
     [Documentation]    Logs in as user Kim and buys the specified number of tickets for the family. Verifies that the ticket price in the pop-up is as expected.
     [Tags]    Johan-Ahlsten    Ticket    Popup
-    Given Given Kim Is Logged In To Their Account
+    Given Kim Is Logged In To Their Account
     When Kim Buys Tickets For Their Family
 	And The User Purchases The Tickets
 	Then The Price In The Popup Is Correct    ${kim_expected_ticket_cost_total}
@@ -47,7 +47,7 @@ Kim Purchases Tickets For Their Family
 Kim Sees The Correct Price Total On Tickets In Cart
     [Documentation]    Logs in as user Kim and buys the specified number of tickets for the family. Verifies that the total ticket price on the cart is as expected.
     [Tags]    Johan-Ahlsten    Ticket    BookingProcess    Cart    CostTotal
-    Given Given Kim Is Logged In To Their Account
+    Given Kim Is Logged In To Their Account
     When Kim Buys Tickets For Their Family
     Then Total Cart Price Should Be Correct    ${kim_expected_ticket_cost_total}
 

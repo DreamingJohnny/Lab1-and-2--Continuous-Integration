@@ -17,7 +17,7 @@ User Navigates To Register Section
      
 User Navigates To Buy Ticket Section
     Press Ticket Button
-	
+
 User Navigates To Safari Section
     Press Safari Button
     

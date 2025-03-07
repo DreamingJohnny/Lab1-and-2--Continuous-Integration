@@ -18,36 +18,38 @@ Invalid browser login
     Click Specific Button    ${login_button}
     Input Credentials    ${invalid_username}    ${login_username_text_box}    ${invalid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
+
 #Valid login test to see that login works with valid credentials.
     User Should Recieve Expected Message    ${error_message_element_demo}    ${verifying_message}
+
 Valid browser login
     [Tags]    Wille-Virtanen
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element    ${login_submit_button}   
-    Sleep    3
+
 #Logout test to see that the logout feature of the page works.
 Valid browser logout
     [Tags]    Wille-Virtanen
     Click Specific Button    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
-    Sleep    3
+    Wait Until Element Is Visible    ${logout_button}    ${standard_timeout}
     Logout    ${logout_button}
 #Test for booking an buying a regular adult ticket.
 Booking 1 regular adult ticket
-    [Tags]    Wille-Virtanen Johan-Ahlsten
+    [Tags]    Wille-Virtanen    Johan-Ahlsten
     Log In User    ${valid_username}    ${valid_password}
     Buy Entrance Tickets    ${adult_ticket_type}    ${regular_ticket}    1
 
 Booking 2 regular adult ticket
-    [Tags]    Wille Virtanen Johan-Ahlsten
+    [Tags]    Wille Virtanen    Johan-Ahlsten
     Log In User    ${valid_username}    ${valid_password}
     Buy Entrance Tickets    ${adult_ticket_type}    ${regular_ticket}    2
 
 #Test for booking and buying Safari.
 Booking Safari
-    [Tags]    Wille-Virtanen Johan-Ahlsten
+    [Tags]    Wille-Virtanen    Johan-Ahlsten
     Log In User    ${valid_username}    ${valid_password}
     Buy Entrance Tickets    ${senior_ticket_type}    ${vip_ticket}    1
     Book Safari    ${safari_type_herbivor_tour}    ${date_for_booking}
@@ -60,11 +62,9 @@ Removing object from cart
     Book Safari    ${safari_type_t_rex_rumble}    ${date_for_booking}
     User Navigates To Cart Section
     Click Element    ${second_object_in_cart}
-    Sleep    5
-    Click Element    ${pro_to_checkout_button}
-    Sleep    5
+    Wait Until Element Is Visible    ${pro_to_checkout_button}    ${standard_timeout}
+	Click Element    ${pro_to_checkout_button}
     Handle Alert    action=DISMISS
-    Sleep    5
 
 User Can Not Register Username That Already Exists
     [Documentation]    This test verifies that an error message is displayed if user tries to register an already registered username.

@@ -15,6 +15,7 @@ User Should Recieve Expected Message
 
 User Should Recieve Alert With Expected Text
     [Documentation]    This keyword verifies that the message of an alert box contains the expected text. Also dismisses the alert.
+
     [Arguments]    ${expected_alert_text}
     ${alert_text}    Handle Alert    DISMISS    ${standard_timeout}
     Should Contain    ${alert_text}    ${expected_alert_text}

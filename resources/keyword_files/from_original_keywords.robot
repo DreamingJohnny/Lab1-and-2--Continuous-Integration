@@ -6,6 +6,7 @@ Library    String
 Resource    login_and_registration_keywords.robot
 Resource    cart_keywords.robot
 Resource    ticket_and_safari_keywords.robot
+Resource    message_and_alert_keywords.robot
 
 Variables    ../util/variables.py
 Variables    ../util/kim_specific_variables.py
@@ -18,8 +19,7 @@ Increase value
 
 User Booking Goes Through
     [Arguments]    ${add_to_cart_message_successful}
-    ${alert_text}    Handle Alert    action=DISMISS
-	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
+    User Should Recieve Alert With Expected Text    ${add_to_cart_message_successful}
 
 User Buys Every Combination Of Ticket
     [Arguments]

@@ -18,8 +18,10 @@ Invalid browser login
     Click Specific Button    ${login_button}
     Input Credentials    ${invalid_username}    ${login_username_text_box}    ${invalid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
-    Message Should Be Visible    ${error_message_element_demo}    ${error_message_demo}    ${standard_timeout}    ${verifying_message}
+
 #Valid login test to see that login works with valid credentials.
+    User Should Recieve Expected Message    ${error_message_element_demo}    ${verifying_message}
+
 Valid browser login
     [Tags]    Wille-Virtanen
     Click Specific Button    ${login_button}
@@ -76,14 +78,14 @@ User That Is Not Logged In Can Not Add Ticket To Cart
     [Tags]    Kristin    
     Given No one is logged in
     When User Buys Ticket
-    Then User Should Recieve Alert    ${ticket_login_error_message}
+    Then User Should Recieve Alert With Expected Text    ${ticket_login_error_message}
 
 User That Is Not Logged In Can Not Book Safari
     [Documentation]    This test verifies that an error alert is displayed if user that is not logged in tries to book a safari. 
     [Tags]    Kristin
     Given No one is logged in
     When User Books Safari
-    Then User Should Recieve Alert    ${safari_login_error_message}
+    Then User Should Recieve Alert With Expected Text    ${safari_login_error_message}
 
 User With Regular Ticket Can Not Book VIP Safari
     [Documentation]    This test verifies that an error message is displayed if user tries to book VIP safari without VIP ticket.

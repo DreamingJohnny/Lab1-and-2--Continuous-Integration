@@ -13,6 +13,11 @@ pool:
 steps:
   - template: templates/install-dependencies.yaml
 
+  # Step to create and store logs in the working directory
+  - script:
+      mkdir -p $(System.DefaultWorkingDirectory)/results/logs
+    displayName: 'Create Logs Directory'
+
   # Scripts for running all tests in a file and to run tests based on test case name (integration testing)
   - script:
       python resources/util/remove_tag.py

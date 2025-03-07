@@ -9,8 +9,9 @@ Library    XML
 
 Resource    keywords.robot
 
-Variables    ../resources/util/kim_specific_variables.py
-Variables    ../resources/util/variables.py
+Variables    ../util/kim_specific_variables.py
+Variables    ../util/variables.py
+
 
 *** Keywords ***
 

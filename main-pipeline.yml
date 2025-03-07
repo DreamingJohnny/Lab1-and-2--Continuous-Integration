@@ -13,7 +13,10 @@ pool:
 steps:
   - template: templates/install-dependencies.yaml
 
-
+  # Step to create and store logs in the working directory
+  - script:
+      mkdir -p $(System.DefaultWorkingDirectory)/results/logs
+    displayName: 'Create Logs Directory'
 
 
   # Run all tests

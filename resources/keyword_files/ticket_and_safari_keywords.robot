@@ -5,6 +5,7 @@ Library    String
 
 Resource    login_and_registration_keywords.robot
 Resource    button_and_navigation_keywords.robot
+Resource    message_and_alert_keywords.robot
 
 Variables    ../util/variables.py
 
@@ -21,8 +22,7 @@ Buy Entrance Tickets
     Select From List By Value    ${ticket_cat_field}    ${selected_category}
     Input Text  ${input_of_ticket_counter}   ${selected_quantity}
     Press Add Ticket To Cart Button
-     ${alert_text}    Handle Alert    action=DISMISS
-	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
+	User Should Recieve Alert With Expected Text    ${add_to_cart_message_successful}
 
 Buy Entrance Tickets Without Verification
     [Documentation]    This keyword executes and verifies adding entrance ticket(s) to cart, without verification. 
@@ -41,8 +41,7 @@ Book Safari
     Input Text    ${safari_date_field}    ${safari_date}
     Select From List By Value    ${safari_type_field}    ${safari_type}
     Press Add Safari To Cart Button
-    ${alert_text}    Handle Alert    action=DISMISS
-    Should Contain    ${alert_text}    ${add_to_cart_message_successful}
+    User Should Recieve Alert With Expected Text    ${add_to_cart_message_successful}
 
 Book Safari Without Verification
     [Documentation]    This keyword executes safari booking process, without verification. 

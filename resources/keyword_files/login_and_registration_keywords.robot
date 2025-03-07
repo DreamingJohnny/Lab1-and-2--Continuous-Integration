@@ -5,8 +5,9 @@ Library    Collections
 Library    String
 
 Resource    button_and_navigation_keywords.robot
-Variables    ../util/variables.py
+Resource    message_and_alert_keywords.robot
 
+Variables    ../util/variables.py
 
 *** Keywords ***
 
@@ -57,7 +58,7 @@ Log In User
     User Navigates To Login Section
     User Enters Login Credentials    ${username}    ${password}
     User Presses Login Submit Button
-    Wait Until Page Contains Element    ${logout_button}
+    Wait Until Element Is Visible    ${logout_button}    ${standard_timeout}
     User Should Be Logged In    ${username}
 
 User Should Be Logged In
@@ -76,8 +77,12 @@ No One Is Logged In
 Log Out User
     [Documentation]    This keyword executes and verifies user logout.
     Press Logout Button
-    ${alert_text}    Handle Alert    action=DISMISS
-    Should Contain    ${alert_text}    ${logout_message}
+    User Should Recieve Alert With Expected Text    ${logout_message}
+	
+	# ${alert_text}    Handle Alert    action=DISMISS
+    # Should Contain    ${alert_text}    ${logout_message}
+	
+	# TODO: Look at if this line is really neccessary here? Should we have a wait here?
     Wait Until Element Is Visible    ${login_button}
 
 
@@ -98,18 +103,16 @@ Registration
 Logout
     [Arguments]    ${button}
     Click Specific Button    ${button}
-    Sleep    3
     Handle Alert    action=DISMISS
-    Sleep    3
 
 The User Is Logged In To Their Account
     [Arguments]    ${login_tab}    ${username}    ${password}    ${username_field}    ${password_field}    ${submit_login_button}
 	Click Specific Button    ${login_tab}
 	Input Credentials    ${username}    ${username_field}    ${password}    ${password_field}
 	Click Specific Button    ${submit_login_button}
-	Sleep    3
 
 ## Not used, cannot press register, is alerted "fyll i det här fältet" first
+
 User Enters Only Username And No Password
     Input Text    ${reg_username_text_box}    ${valid_username}
 

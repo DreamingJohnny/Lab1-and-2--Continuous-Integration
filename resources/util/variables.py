@@ -4,11 +4,10 @@ import tempfile
 current_directory = os.getcwd().replace('\\', '/')
 
 #Site specifics
-temp_dir = tempfile.mkdtemp()
 browser = "headlesschrome"
-browser_options =  "--headless --disable-gpu --incognito --user-data-dir=${temp_dir}"
+browser_options =  "--headless"
 
-url_demo = f"file:///{current_directory}/webpage\jurap.html"
+#url_demo = f"file:///${EXECDIR}/webpage/jurap.html"
 title_demo = "Jura-Stina-Kalle Park"
 
 #Sections
@@ -17,7 +16,7 @@ login_section = "id=login-section"
 reg_section = "id=register-form"
 tickets_section = "id=tickets-section"
 safari_section = "id=safari-section"
-cart_section = "id=safari-section"
+cart_section = "id=cart-section"
 
 #Login specifics
 login_button = "login-nav"

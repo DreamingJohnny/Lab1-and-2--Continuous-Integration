@@ -40,7 +40,8 @@ User Pal Is Registered
 Log In User Pal
     User Navigates To Login Section
     User Pal Enters Login Credentials
-    Press Login Submit Button
+	# I changed this to User Presses Login Submit Button, so it includes the new dynamic wait function
+    User Presses Login Submit Button
 
 User Pal Enters Login Credentials
     [Documentation]    This keyword enters pal's login credentials into login fields.
@@ -48,6 +49,7 @@ User Pal Enters Login Credentials
 
 User Pal Should Be Logged In
     [Documentation]    This keyword verifies that user pal is logged in.
+
     User Should Be Logged In    ${pal_username}
 
 User Pal Is Logged In

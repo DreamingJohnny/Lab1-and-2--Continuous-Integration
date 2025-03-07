@@ -1,4 +1,3 @@
-
 # Group 2: Wille, Johan, Kristin 
 # This file is created, tested, refactored by Kristin
 
@@ -46,7 +45,7 @@ Pal Buys Entrance Ticket
 Pal Books Safaris
     [Documentation]    This test verifies the safari booking process for user pal, 
     ...    and that cart total price is correct.
-    [Tags]    Kristin    Safari    BookingProcess    Cart    CostTotal    Demo
+    [Tags]    Kristin    Safari    pipeline_testing
     Given User Pal Is Logged In
     And Pal Entrance Ticket Is Added To Cart
     When Pal Books Safaris 
@@ -56,7 +55,7 @@ Pal Books Safaris
 
 Pal Checks Out
     [Documentation]    This test verifies the checkout process for user pal, and that summary is correct.
-    [Tags]    Kristin    Cart    CostTotal    Checkout    Dates    Summary    Demo
+    [Tags]    Kristin    pipeline-testing
     Given User Pal Is Logged In
     And Pals Items Are Added To Cart
     When User Presses Proceed To Checkout

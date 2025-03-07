@@ -17,9 +17,9 @@ Check Shopping Cart Total
 	Should Contain    ${actual_text}    ${expected_total}
 
 Check Cart Items Order Info
-    [Arguments]    ${item_to_check}    ${expected_text}    ${cart_tab}    ${cart_list_xpath}
+    [Arguments]    ${item_to_check}    ${expected_text}
 	
-	Click Specific Button    ${cart_tab}
+	Click Specific Button    ${cart_nav_button}
 
     ${elements}    Get WebElements    ${cart_list_xpath}
     

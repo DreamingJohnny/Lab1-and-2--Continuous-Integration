@@ -1,8 +1,14 @@
+# Group 2: Wille, Johan, Kristin 
+# This file is created by Johan
+
 *** Settings ***
 Library    SeleniumLibrary
 Library    OperatingSystem
+Library    Process
 
 Resource    ../resources/keyword_files/keywords.robot
+Resource    ../resources/keyword_files/kim_keywords.robot
+
 
 Variables    ../resources/util/variables.py
 Variables    ../resources/util/kim_specific_variables.py
@@ -11,42 +17,54 @@ Test Setup    Setup Suite Open Page And Register User    ${kim_username}    ${ki
 Test Teardown    Teardown Suite
 
 *** Test Cases ***
-Valid browser login
-    [Tags]    Johan-Ahlsten    refactor-me
-    Click Specific Button    ${login_button}
-	Input Credentials    ${kim_username}    ${login_username_text_box}    ${kim_password}    ${login_password_text_box}
-    Click Element    ${login_submit_button}
-	Sleep    3
 
-User sees the correct price total on tickets in cart
-    [Tags]    Johan-Ahlsten    refactor-me
-    Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
-	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
-    When The User Kim Buys Tickets For Their Family
-    Then The The Total Price Is Correct    ${cart_tab_xpath}    ${kim_expected_ticket_cost_total}    ${cart_total_xpath}
+Register User Kim
+    [Documentation]    Registers user Kim and verifies that they are a registered user
+    [Tags]    Johan-Ahlsten    Registration    Credentials    new-feature
+	Given Page Is Opened To Registration Section
+    When Kim Enters Registration Credentials
+    And User Presses Submit Registration Button
+    Then Kim Should be Registered
 
-User purchase tickets for their family
-    [Tags]    Johan-Ahlsten    refactor-me
-    Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
-	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
-    When The User Kim Buys Tickets For Their Family
-	And The User Purchases The Tickets    ${cart_tab_xpath}    ${proceed_to_checkout_button}
+Log In User Kim
+    [Documentation]    Logs in user Kim and verifies that they are logged in
+    [Tags]    Johan-Ahlsten    Login    Credentials
+    Given Kim Is Registered
+    And Page Is Opened To Login Page
+    And No One Is Logged In
+    When Kim Enters Login Credentials
+    And User Presses Login Submit Button
+    Then Kim Should Be Logged In
+
+Kim Purchases Tickets For Their Family
+    [Documentation]    Logs in as user Kim and buys the specified number of tickets for the family. Verifies that the ticket price in the pop-up is as expected.
+    [Tags]    Johan-Ahlsten    Ticket    Popup
+    Given Kim Is Logged In To Their Account
+    When Kim Buys Tickets For Their Family
+	And The User Purchases The Tickets
 	Then The Price In The Popup Is Correct    ${kim_expected_ticket_cost_total}
 
-User books weekend safaris for their family
-    [Tags]    Johan-Ahlstene    refactor-me
-    Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
-	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
-	And The User Kim Buys Tickets For Their Family
-    When The User Kim Books Weekend Safaris For Their Family    ${kim_safari_date}
-    Then The Date Of The Safari Bookings Are Correct    ${cart_list_xpath}    ${cart_tab_xpath}    ${safari_type_herbivor_tour_feeding}
-	...    ${safari_type_t_rex_rumble_thrill}    ${kim_expected_safari_date}
+Kim Sees The Correct Price Total On Tickets In Cart
+    [Documentation]    Logs in as user Kim and buys the specified number of tickets for the family. Verifies that the total ticket price on the cart is as expected.
+    [Tags]    Johan-Ahlsten    Ticket    BookingProcess    Cart    CostTotal
+    Given Kim Is Logged In To Their Account
+    When Kim Buys Tickets For Their Family
+    Then Total Cart Price Should Be Correct    ${kim_expected_ticket_cost_total}
+
+Kim Books Weekend Safaris For Their Family
+    [Documentation]    Logs in as user Kim, buys tickets and books safaris. Verifies that the cart shows the expected dates for the safaris.
+    [Tags]    Johan-Ahlsten    safari    BookingProcess
+    Given Kim Is Logged In To Their Account
+	And Kim Buys Tickets For Their Family
+    When Kim Books Weekend Safaris For Their Family    ${kim_safari_date}
+    # See if this needs to be specified then so the next one is correct?
+	Then The Date Of Kims Safari Bookings Are Correct
 
 User purchases weekend safaris for their family
-    [Tags]    Johan-Ahlsten    refactor-me
-    Given The User Is Logged In To Their Account    ${login_button}    ${kim_username}    ${kim_password}    
-	...    ${login_username_text_box}    ${login_password_text_box}    ${login_submit_button}
-	And The User Kim Buys Tickets For Their Family
-    When The User Kim Books Weekend Safaris For Their Family	${kim_safari_date}
-    And The User Purchases The Safaris    ${cart_tab_xpath}    ${proceed_to_checkout_button}
-	Then The Price In The Popup Is Correct    ${kim_expected_vacation_cost_total}
+    [Documentation]        Logs in as user Kim, buys tickets and books safaris. Verifies that the price of their safari booking in the popup is as expected.
+    [Tags]    Johan-Ahlsten    safari    BookingProcess    CostTotal    Popup
+    Given Kim Is Logged In To Their Account
+	And Kim Buys Tickets For Their Family
+    When Kim Books Weekend Safaris For Their Family	${kim_safari_date}
+	# Could this one also be made more generic then?
+    And The User Purchases The Safaris

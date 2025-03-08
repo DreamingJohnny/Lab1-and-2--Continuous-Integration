@@ -3,13 +3,15 @@ Library    SeleniumLibrary
 Library    Collections
 Library    String
 
-Resource    login_and_registration_keywords.robot
-Resource    cart_keywords.robot
-Resource    ticket_and_safari_keywords.robot
+Resource    ${keyword_path}login_and_registration_keywords.robot
+Resource    ${keyword_path}cart_keywords.robot
+Resource    ${keyword_path}ticket_and_safari_keywords.robot
 
-Variables    ../util/variables.py
-Variables    ../util/kim_specific_variables.py
-
+Variables    ${util_path}variables.py
+Variables    ${util_path}kim_specific_variables.py
+*** Variables ***
+${util_path}    ${EXECDIR}/resources/util/
+${keyword_path}    ${EXECDIR}/resources/keyword_files/
 *** Keywords ***
 
 Increase value

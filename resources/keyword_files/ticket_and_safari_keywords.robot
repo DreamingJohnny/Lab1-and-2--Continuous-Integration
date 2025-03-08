@@ -3,12 +3,14 @@ Library    SeleniumLibrary
 Library    Collections
 Library    String
 
-Resource    login_and_registration_keywords.robot
-Resource    button_and_navigation_keywords.robot
+Resource    ${keyword_path}login_and_registration_keywords.robot
+Resource    ${keyword_path}button_and_navigation_keywords.robot
 
-Variables    ../util/variables.py
+Variables    ${util_path}variables.py
 
-
+*** Variables ***
+${util_path}    ${EXECDIR}/resources/util/
+${keyword_path}    ${EXECDIR}/resources/keyword_files/
 *** Keywords ***
 
 ##Det finns ett js-script där man kan jämföra dag och se om det är en helg eller vardag. day == 1 eller 6 är söndag resp lördag.

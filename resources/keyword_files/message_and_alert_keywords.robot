@@ -3,8 +3,9 @@ Library    SeleniumLibrary
 Library    Collections
 Library    String
 
-Variables    ../util/variables.py
-
+Variables    ${util_path}variables.py
+*** Variables ***
+${util_path}    ${EXECDIR}/resources/util/
 *** Keywords ***
 
 Message Should Be Visible

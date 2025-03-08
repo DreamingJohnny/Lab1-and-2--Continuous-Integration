@@ -3,11 +3,14 @@ Library    SeleniumLibrary
 Library    Collections
 Library    String
 
-Resource    login_and_registration_keywords.robot
-Resource    button_and_navigation_keywords.robot
+Resource    ${keyword_path}login_and_registration_keywords.robot
+Resource    ${keyword_path}button_and_navigation_keywords.robot
 
-Variables    ../util/variables.py
+Variables    ${util_path}variables.py
 
+*** Variables ***
+${util_path}    ${EXECDIR}/resources/util/
+${keyword_path}    ${EXECDIR}/resources/keyword_files/
 *** Keywords ***
 
 Check Shopping Cart Total

@@ -7,11 +7,13 @@ Library    SeleniumLibrary
 Library    Collections
 Library    XML
 
-Resource    keywords.robot
+Resource    ${keyword_path}keywords.robot
 
-Variables    ../util/kim_specific_variables.py
-Variables    ../util/variables.py
-
+Variables    ${util_path}kim_specific_variables.py
+Variables    ${util_path}variables.py
+*** Variables ***
+${util_path}    ${EXECDIR}/resources/util/
+${keyword_path}    ${EXECDIR}/resources/keyword_files/
 
 *** Keywords ***
 

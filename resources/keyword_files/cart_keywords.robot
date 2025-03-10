@@ -89,10 +89,13 @@ Get Cart Item Dates
         ...    else {    
         ...        return "";   
         ...    }
-
-        Run Keyword If    '${date}' != ''    Append To List   ${datesList}    ${date}
+        ${date_strlen} =     Get Length    ${date}
+        IF    ${date_strlen} > 10
+            ${date} =     Convert wrong Datetime Format    ${date}
+        END
+        Run Keyword If    '${date}' != ''    Append To List    ${datesList}    ${date}
     END
-    RETURN    ${datesList}
+    RETURN    ${datesList} 
 
 Dates for safaris in cart are the same
     [Documentation]    This keyword verifies that all safari dates in cart are the same.
@@ -110,3 +113,16 @@ Dates for safaris in cart are the same and as expected
     FOR     ${i}    IN RANGE     0    ${listLength}
         Should Be Equal    ${expectedDate}   ${datesInCartList}[${i}]
     END
+
+
+Convert wrong Datetime Format
+    [Arguments]    ${input_datetime}
+    Log    ${input_datetime}
+
+    ${century} =     Set Variable    20  
+    ${decade} =     Get Substring    ${input_datetime}    0    2      
+    ${year} =   Catenate	SEPARATOR=   ${century}    ${decade}
+    ${month} =    Get Substring    ${input_datetime}    2    4
+    ${day} =    Get Substring    ${input_datetime}    4    6
+    ${formatted_date}=    Catenate	SEPARATOR=-   ${year}    ${month}    ${day}
+    RETURN    ${formatted_date}

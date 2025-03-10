@@ -90,8 +90,13 @@ Pal Entrance Ticket Is Added To Cart
 Pal Safaris Should Be Added To Cart
     [Documentation]    This keyword verifies that the safaris of pal's choice is in cart.
     ${cartItemDescriptioins} =    Get Cart Item Descriptions
-    Should Contain X Times    ${cartItemDescriptioins}       Herbivore Tour on 2025-03-19    1
-    Should Contain X Times    ${cartItemDescriptioins}       T-Rex Rumble on 2025-03-19    1
+    ${joinedString} =     Catenate    ,     @{cartItemDescriptioins}
+    Should Contain X Times    '${joinedString}'       ${pal_safari1_description}    1
+    Should Contain X Times    '${joinedString}'       ${pal_safari2_description}    1
+    Should Not Contain    ${joinedString}    ${safari_type_herbivor_tour_feeding}
+    Should Not Contain    ${joinedString}    ${safari_type_t_rex_rumble_thrill}
+
+
 
 Pals Items Are Added To Cart
     [Documentation]    This keyword executes and verifies adding pal's entrance ticket and 

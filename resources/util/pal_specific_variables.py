@@ -17,8 +17,8 @@ pal_number_of_tickets = "1"
 
 ### Pal checkout summary ###
 pal_ticket_description = "1 Regular Adult Ticket(s) - $50"
-pal_safari1_description = "Herbivore Tour on 2025-03-19 - $120"
-pal_safari2_description = "T-Rex Rumble on 2025-03-19 - $150"
+pal_safari1_description = "Herbivore Tour" # on 2025-03-19 - $120"
+pal_safari2_description = "T-Rex Rumble" # on 2025-03-19 - $150"
 pal_total_desctiption = "Total: $320"
 
 # Checkout Summary: 

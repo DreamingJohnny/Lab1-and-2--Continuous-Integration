@@ -18,11 +18,6 @@ steps:
       mkdir -p $(System.DefaultWorkingDirectory)/results/logs
     displayName: 'Create Logs Directory'
 
-  # Scripts for running all tests in a file and to run tests based on test case name (integration testing)
-  - script:
-      python resources/util/remove_tag.py
-    displayName: 'Removing tag "new-feature" from keywords and test'
-
   - script: 
       robot --output results/logs/output_kim_test.xml --log results/logs/log_kim_test.html --report results/logs/report_kim_test.html tests/kim_tests.robot
     displayName: 'Run Test File "Kim"'

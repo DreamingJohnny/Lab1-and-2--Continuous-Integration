@@ -46,6 +46,7 @@ Pal Books Safaris
     [Documentation]    This test verifies the safari booking process for user pal, 
     ...    and that cart total price is correct.
     [Tags]    Kristin    Safari    pipeline_testing    new-feature
+    Given User Pal Is Logged In
     And Pal Entrance Ticket Is Added To Cart
     When Pal Books Safaris 
     Then Pal Safaris Should Be Added To Cart

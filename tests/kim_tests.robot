@@ -57,7 +57,6 @@ Kim Books Weekend Safaris For Their Family
     Given Kim Is Logged In To Their Account
 	And Kim Buys Tickets For Their Family
     When Kim Books Weekend Safaris For Their Family    ${kim_safari_date}
-    # See if this needs to be specified then so the next one is correct?
 	Then The Date Of Kims Safari Bookings Are Correct
 
 User purchases weekend safaris for their family
@@ -66,5 +65,5 @@ User purchases weekend safaris for their family
     Given Kim Is Logged In To Their Account
 	And Kim Buys Tickets For Their Family
     When Kim Books Weekend Safaris For Their Family	${kim_safari_date}
-	# Could this one also be made more generic then?
     And The User Purchases The Safaris
+	Then The Checkout Summary Alert Should Show Correct Kim Info

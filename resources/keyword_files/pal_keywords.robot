@@ -9,6 +9,7 @@ Library    Collections
 Library    XML
 
 Resource    keywords.robot
+Resource    cart_keywords.robot
 
 Variables    ../util/pal_specific_variables.py
 
@@ -103,23 +104,6 @@ Pals Items Are Added To Cart
 Dates For Pal Safaris Should Be Correct
     [Documentation]    This keyword verifies that the dates for pal's safaris are the same as expected.
     Dates for safaris in cart are the same and as expected    ${pal_expected_safari_date}
-
-Dates for safaris in cart are the same
-    [Documentation]    This keyword verifies that all safari dates in cart are the same.
-    ${datesInCartList} =  Get Cart Item Dates
-    ${listLength} =     Get Length    ${datesInCartList}
-    FOR     ${i}    IN RANGE     0    ${listLength}
-        Should Be Equal    ${datesInCartList}[0]    ${datesInCartList}[${i}]
-    END
-
-Dates for safaris in cart are the same and as expected
-    [Documentation]    This keyword verifies that all safari dates in cart are the same as the date in argument.
-    [Arguments]     ${expectedDate}
-    ${datesInCartList} =  Get Cart Item Dates
-    ${listLength} =     Get Length    ${datesInCartList}
-    FOR     ${i}    IN RANGE     0    ${listLength}
-        Should Be Equal    ${expectedDate}   ${datesInCartList}[${i}]
-    END
 
 Checkout Summary Alert Should Show Correct Pal Info
     [Documentation]    This keyword verifies that the checkout summary alert 

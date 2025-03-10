@@ -20,7 +20,7 @@ Test Teardown    Teardown Suite
 
 Register User Kim
     [Documentation]    Registers user Kim and verifies that they are a registered user
-    [Tags]    Johan-Ahlsten    Registration    Credentials    new-feature
+    [Tags]    Johan-Ahlsten    Registration    Credentials 
 	Given Page Is Opened To Registration Section
     When Kim Enters Registration Credentials
     And User Presses Submit Registration Button

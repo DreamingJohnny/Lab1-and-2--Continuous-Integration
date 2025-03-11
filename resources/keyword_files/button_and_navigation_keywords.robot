@@ -14,23 +14,18 @@ ${util_path}    ${EXECDIR}/resources/util/
 
 User Navigates To Login Section
     Press Login Button    
-    Wait Until Page Contains Element    ${login_section}
 
 User Navigates To Register Section
     Press Register Button
-    Wait Until Page Contains Element    ${reg_section}
      
 User Navigates To Buy Ticket Section
     Press Ticket Button
-    Wait Until Page Contains Element    ${tickets_section} 
 
 User Navigates To Safari Section
     Press Safari Button
-    Wait Until Page Contains Element    ${safari_section}
- 
+    
 User Navigates To Cart Section
     Press Cart Button
-    Wait Until Page Contains Element    ${cart_section}
 
 ### Buttons ###
 
@@ -41,6 +36,7 @@ User Presses Submit Registration Button
 User Presses Login Submit Button
     [Documentation]    This keyword executes pressing login button.
     Press Login Submit Button
+	Wait Until Element Is Visible    ${logout_button}    ${standard_timeout}
 
 User Presses Safari "Add To Cart" Button
     Press Add Safari To Cart Button
@@ -56,7 +52,7 @@ User Presses Proceed To Checkout
 ### Buttons should be visible ###
 
 Login Button Should Be Visible
-    Element Should Be Visible    ${login_button}
+    Element Should Be Visible    ${login_button}    
 
 Logout Button Should Be Visible
     Element Should Be Visible    ${logout_button}
@@ -65,64 +61,65 @@ Logout Button Should Be Visible
 
 Press Login Button
     Click Specific Button    ${login_button}
-    Wait Until Page Contains Element    ${login_section}
+    Wait Until Element Is Visible    ${login_section}    ${standard_timeout}
 
 Press Ticket Button
     Click Specific Button    ${buy_ticket_button}
-    Wait Until Page Contains Element    ${tickets_section}
+    Wait Until Element Is Visible     ${tickets_section}    ${standard_timeout}
 
 Press Safari Button
     Click Specific Button    ${safari_button}
-    Wait Until Page Contains Element    ${safari_section}
+    Wait Until Element Is Visible    ${safari_section}    ${standard_timeout}
 
 Press Cart Button
     Click Specific Button    ${cart_nav_button}
-    Wait Until Page Contains Element    ${cart_section}
+    Wait Until Element Is Visible    ${cart_section}    ${standard_timeout}
 
 Press Logout Button
+	Wait Until Element Is Enabled    ${logout_button}    ${standard_timeout}
     Click Specific Button    ${logout_button}
-    Sleep    2
 
 Press Register Button
-    Click Specific Button    ${reg_button}
-    Sleep    2
+    Wait Until Element Is Enabled    ${reg_button}    ${standard_timeout}
+	Click Specific Button    ${reg_button}
 
 Press Login Submit Button
+    Wait Until Element Is Enabled    ${login_submit_button}    ${standard_timeout}
     Click Specific Button    ${login_submit_button}
-    Sleep    2
 
 Press Add Safari To Cart Button
+    Wait Until Element Is Enabled    ${safari_submit_button}    ${standard_timeout}
     Click Specific Button    ${safari_submit_button}
-    Sleep    2
 
 Press Add Ticket To Cart Button
+    Wait Until Element Is Enabled    ${add_to_cart_button}    ${standard_timeout}
     Click Specific Button    ${add_to_cart_button}
-    Sleep    2
 
 Press Register Submit Button
+    Wait Until Element Is Enabled    ${reg_submit_button}    ${standard_timeout}
     Click Specific Button    ${reg_submit_button}
-    Sleep    2
 
 Press Proceed To Checkout Button
+    Wait Until Element Is Enabled    ${pro_to_checkout_button}    ${standard_timeout}
     Click Specific Button    ${pro_to_checkout_button}
-    Sleep    2
 
 ### Page is opened to.. ###
 
 Page Is Opened To Login Page
     [Documentation]    This keyword executes and verifies navigation to login section. 
     User Navigates To Login Section
-    Page Should Contain Element    ${login_section}
+	# I'm changing these to element visible, I think they are more robust, and better checks what we want to verify
+    Wait Until Element Is Visible    ${login_section}    ${standard_timeout}
 
 Page Is Opened To Registration Section
     [Documentation]    This keyword executes and verifies navigation to user registration section.
     Press Register Button
-    Page Should Contain Element    ${reg_section}
+    Wait Until Element Is Visible    ${reg_section}    ${standard_timeout}
 
 Page Is Opened To Safari Section
     [Documentation]    This keyword executes and verifies navigation to safari booking section.
     Press Safari Button
-    Page Should Contain Element    ${safari_section}
+    Wait Until Element Is Visible    ${safari_section}    ${standard_timeout}
 
 ###### From original 
 
@@ -130,6 +127,7 @@ Open Browser To Page
     [Arguments]    ${url}    ${browser}    ${title}
     Open Browser    ${url}    ${browser}
     Title Should Be    ${title}
+
 Click Specific Button
     [Arguments]    ${button}
     Click Element    ${button}

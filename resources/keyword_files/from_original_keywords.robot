@@ -20,8 +20,7 @@ Increase value
 
 User Booking Goes Through
     [Arguments]    ${add_to_cart_message_successful}
-    ${alert_text}    Handle Alert    action=DISMISS
-	Should Contain    ${alert_text}    ${add_to_cart_message_successful}
+    User Should Recieve Alert With Expected Text    ${add_to_cart_message_successful}
 
 User Buys Every Combination Of Ticket
     [Arguments]
@@ -44,6 +43,5 @@ User Book Every Typ Of Safari
     Book safari    ${safari_type_herbivor_tour}    ${date_for_booking}
     Book safari    ${safari_type_t_rex_rumble_thrill}    ${date_for_booking}
     Click Element   ${cart_nav_button}
-    Sleep    5
-    Click Element    ${pro_to_checkout_button}
-    Sleep    5
+    Wait Until Element Is Visible    ${pro_to_checkout_button}
+	Click Element    ${pro_to_checkout_button}

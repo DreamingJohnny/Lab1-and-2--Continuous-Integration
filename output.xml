@@ -18,6 +18,12 @@
 <kw name="User Pal Is Registered" owner="pal_keywords">
 <kw name="User Navigates To Register Section" owner="button_and_navigation_keywords">
 <kw name="Press Register Button" owner="button_and_navigation_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${reg_button}</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-07T09:36:45.497717" elapsed="0.061238"/>
+</kw>
 <kw name="Click Specific Button" owner="button_and_navigation_keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
 <msg time="2025-03-08T13:10:02.007338" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[2]/a'.</msg>
@@ -38,6 +44,7 @@
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${reg_section}</arg>
+<arg>5s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
 <status status="PASS" start="2025-03-08T13:10:04.076860" elapsed="0.008072"/>
 </kw>
@@ -75,6 +82,12 @@
 <status status="PASS" start="2025-03-08T13:10:04.085315" elapsed="0.098236"/>
 </kw>
 <kw name="Press Register Submit Button" owner="button_and_navigation_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${reg_submit_button}</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-07T09:36:45.914449" elapsed="0.022467"/>
+</kw>
 <kw name="Click Specific Button" owner="button_and_navigation_keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
 <msg time="2025-03-08T13:10:04.184497" level="INFO">Clicking element 'xpath=/html/body/main/article[2]/section/form/button'.</msg>
@@ -132,6 +145,7 @@ by fetching list of users with javascript and finding pal's username in list.</d
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${login_section}</arg>
+<arg>5s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
 <status status="PASS" start="2025-03-08T13:10:06.270691" elapsed="0.007673"/>
 </kw>
@@ -139,6 +153,7 @@ by fetching list of users with javascript and finding pal's username in list.</d
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${login_section}</arg>
+<arg>5s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
 <status status="PASS" start="2025-03-08T13:10:06.278719" elapsed="0.004653"/>
 </kw>
@@ -175,7 +190,14 @@ by fetching list of users with javascript and finding pal's username in list.</d
 <doc>This keyword enters pal's login credentials into login fields.</doc>
 <status status="PASS" start="2025-03-08T13:10:06.283735" elapsed="0.088506"/>
 </kw>
+<kw name="User Presses Login Submit Button" owner="button_and_navigation_keywords">
 <kw name="Press Login Submit Button" owner="button_and_navigation_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${login_submit_button}</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-07T09:36:46.398263" elapsed="0.017821"/>
+</kw>
 <kw name="Click Specific Button" owner="button_and_navigation_keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
 <msg time="2025-03-08T13:10:06.373155" level="INFO">Clicking element 'xpath=/html/body/main/article[3]/section/form/button'.</msg>
@@ -239,6 +261,7 @@ by using javascript to fetch the username of the current logged in user.</doc>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${tickets_section}</arg>
+<arg>5s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
 <status status="PASS" start="2025-03-08T13:10:08.472777" elapsed="0.006998"/>
 </kw>

@@ -21,6 +21,7 @@ Kim Enters Registration Credentials
     [Documentation]
     User Enters Registration Credentials    ${kim_username}    ${kim_password}
 
+# TODO: Fix this, there is one to easily use!
 Kim Should be Registered
     #TODO: Look at if this method can gen become generic and receive argument instead?
     [Documentation]    This keyword verifies that user with username "kimSvensson" is registered as a user,
@@ -38,34 +39,45 @@ Kim Is Registered
     Press Register Submit Button
     Kim Should be Registered
 
-Given Kim Is Logged In To Their Account
+Kim Is Logged In To Their Account
     User Navigates To Login Section
     Kim Enters Login Credentials
-    Press Login Submit Button
+    User Presses Login Submit Button
+	Kim Should Be Logged In
 
 Kim Enters Login Credentials
     User Enters Login Credentials    ${kim_username}    ${kim_password}
 
-Kim Should Be Logged In   
+Kim Should Be Logged In
     User Should Be Logged In    ${kim_username}
 
 Kim Buys Tickets For Their Family
     [Documentation]
     [Tags]    tickets
+
 	Buy Entrance Tickets    ${adult_ticket_type}    ${regular_ticket}    1
     Buy Entrance Tickets    ${adult_ticket_type}    ${vip_ticket}    1
     Buy Entrance Tickets    ${child_ticket_type}    ${vip_ticket}    2    
 
 Kim Books Weekend Safaris For Their Family
     [Documentation]
-    [Tags]    safari
+    [Tags]    safari    BookingProcess
     [Arguments]    ${safari_date}    
 	Book Safari    ${safari_type_herbivor_tour_feeding}    ${safari_date}
 	Book Safari    ${safari_type_t_rex_rumble_thrill}    ${safari_date}
 
 The Date Of Kims Safari Bookings Are Correct
     [Documentation]
-    [Tags]    safari    refactor-me
-    
-    Check Cart Items Order Info    ${safari_type_herbivor_tour_feeding}    ${kim_expected_safari_date}
-	Check Cart Items Order Info    ${safari_type_t_rex_rumble_thrill}    ${kim_expected_safari_date}
+    [Tags]    safari    BookingProcess
+
+	Dates for safaris in cart are the same and as expected    ${kim_expected_safari_date}
+
+The Checkout Summary Alert Should Show Correct Kim Info
+    [Documentation]
+	[Tags]    Popup
+
+    ${alert_text} =     Handle Alert    timeout=${standard_timeout}
+    Log    ${alert_text}
+    Should Contain    ${alert_text}    ${safari_type_herbivor_tour_feeding}
+    Should Contain   ${alert_text}    ${safari_type_t_rex_rumble_thrill}
+	Should Contain    ${alert_text}    ${kim_expected_vacation_cost_total}

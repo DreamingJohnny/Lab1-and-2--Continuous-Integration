@@ -8,6 +8,7 @@ Library    SeleniumLibrary
 Library    Collections
 Library    XML
 
+
 Resource    ${keyword_path}keywords.robot
 
 Variables    ${util_path}pal_specific_variables.py
@@ -43,7 +44,8 @@ User Pal Is Registered
 Log In User Pal
     User Navigates To Login Section
     User Pal Enters Login Credentials
-    Press Login Submit Button
+	# I changed this to User Presses Login Submit Button, so it includes the new dynamic wait function
+    User Presses Login Submit Button
 
 User Pal Enters Login Credentials
     [Documentation]    This keyword enters pal's login credentials into login fields.
@@ -51,6 +53,7 @@ User Pal Enters Login Credentials
 
 User Pal Should Be Logged In
     [Documentation]    This keyword verifies that user pal is logged in.
+
     User Should Be Logged In    ${pal_username}
 
 User Pal Is Logged In
@@ -90,8 +93,13 @@ Pal Entrance Ticket Is Added To Cart
 Pal Safaris Should Be Added To Cart
     [Documentation]    This keyword verifies that the safaris of pal's choice is in cart.
     ${cartItemDescriptioins} =    Get Cart Item Descriptions
-    Should Contain X Times    ${cartItemDescriptioins}       Herbivore Tour on 2025-03-19    1
-    Should Contain X Times    ${cartItemDescriptioins}       T-Rex Rumble on 2025-03-19    1
+    ${joinedString} =     Catenate    ,     @{cartItemDescriptioins}
+    Should Contain X Times    '${joinedString}'       ${pal_safari1_description}    1
+    Should Contain X Times    '${joinedString}'       ${pal_safari2_description}    1
+    Should Not Contain    ${joinedString}    ${safari_type_herbivor_tour_feeding}
+    Should Not Contain    ${joinedString}    ${safari_type_t_rex_rumble_thrill}
+
+
 
 Pals Items Are Added To Cart
     [Documentation]    This keyword executes and verifies adding pal's entrance ticket and 
@@ -104,23 +112,6 @@ Pals Items Are Added To Cart
 Dates For Pal Safaris Should Be Correct
     [Documentation]    This keyword verifies that the dates for pal's safaris are the same as expected.
     Dates for safaris in cart are the same and as expected    ${pal_expected_safari_date}
-
-Dates for safaris in cart are the same
-    [Documentation]    This keyword verifies that all safari dates in cart are the same.
-    ${datesInCartList} =  Get Cart Item Dates
-    ${listLength} =     Get Length    ${datesInCartList}
-    FOR     ${i}    IN RANGE     0    ${listLength}
-        Should Be Equal    ${datesInCartList}[0]    ${datesInCartList}[${i}]
-    END
-
-Dates for safaris in cart are the same and as expected
-    [Documentation]    This keyword verifies that all safari dates in cart are the same as the date in argument.
-    [Arguments]     ${expectedDate}
-    ${datesInCartList} =  Get Cart Item Dates
-    ${listLength} =     Get Length    ${datesInCartList}
-    FOR     ${i}    IN RANGE     0    ${listLength}
-        Should Be Equal    ${expectedDate}   ${datesInCartList}[${i}]
-    END
 
 Checkout Summary Alert Should Show Correct Pal Info
     [Documentation]    This keyword verifies that the checkout summary alert 

@@ -42,7 +42,7 @@ Log In User Kim
 Kim Purchases Tickets For Their Family
     [Documentation]    Logs in as user Kim and buys the specified number of tickets for the family. Verifies that the ticket price in the pop-up is as expected.
     [Tags]    Johan-Ahlsten    Ticket    Popup
-    Given Given Kim Is Logged In To Their Account
+    Given Kim Is Logged In To Their Account
     When Kim Buys Tickets For Their Family
 	And The User Purchases The Tickets
 	Then The Price In The Popup Is Correct    ${kim_expected_ticket_cost_total}
@@ -50,7 +50,7 @@ Kim Purchases Tickets For Their Family
 Kim Sees The Correct Price Total On Tickets In Cart
     [Documentation]    Logs in as user Kim and buys the specified number of tickets for the family. Verifies that the total ticket price on the cart is as expected.
     [Tags]    Johan-Ahlsten    Ticket    BookingProcess    Cart    CostTotal
-    Given Given Kim Is Logged In To Their Account
+    Given Kim Is Logged In To Their Account
     When Kim Buys Tickets For Their Family
     Then Total Cart Price Should Be Correct    ${kim_expected_ticket_cost_total}
 
@@ -60,7 +60,6 @@ Kim Books Weekend Safaris For Their Family
     Given Kim Is Logged In To Their Account
 	And Kim Buys Tickets For Their Family
     When Kim Books Weekend Safaris For Their Family    ${kim_safari_date}
-    # See if this needs to be specified then so the next one is correct?
 	Then The Date Of Kims Safari Bookings Are Correct
 
 User purchases weekend safaris for their family
@@ -69,5 +68,5 @@ User purchases weekend safaris for their family
     Given Kim Is Logged In To Their Account
 	And Kim Buys Tickets For Their Family
     When Kim Books Weekend Safaris For Their Family	${kim_safari_date}
-	# Could this one also be made more generic then?
     And The User Purchases The Safaris
+	Then The Checkout Summary Alert Should Show Correct Kim Info

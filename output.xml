@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-03-07T09:36:42.141525" rpa="false" schemaversion="5">
-<suite id="s1" name="Generic Tests" source="c:\Users\johan\GitHub\Lab1-Continuous-Integration\tests\generic_tests.robot">
-<test id="s1-t1" name="Booking 1 regular adult ticket" line="38">
-<kw name="Setup Suite Open Page And Register User" owner="keywords" type="SETUP">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-03-08T13:10:00.399648" rpa="false" schemaversion="5">
+<suite id="s1" name="Pal Tests" source="c:\Users\wille\Documents\github repos\Lab1-Continuous-Integration\tests\pal_tests.robot">
+<test id="s1-t1" name="Pal Books Safaris" line="48">
+<kw name="Setup Suite Open Page" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:42.704918" level="INFO">Opening browser 'headlesschrome' to base url 'file:///C:\Users\johan\GitHub\Lab1-Continuous-Integration/webpage/jurap.html'.</msg>
-<msg time="2025-03-07T09:36:43.120307" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\johan\Desktop\DevTools\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.143); currently, chromedriver 133.0.6943.141 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-03-08T13:10:00.724761" level="INFO">Opening browser 'headlesschrome' to base url 'file:///C:\Users\wille\Documents\github repos\Lab1-Continuous-Integration/webpage/jurap.html'.</msg>
 <arg>${html_path}</arg>
 <arg>${browser}</arg>
 <arg>${browser_options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-07T09:36:42.704552" elapsed="2.785593"/>
+<status status="PASS" start="2025-03-08T13:10:00.724447" elapsed="1.279409"/>
 </kw>
-<kw name="User Is Registered" owner="login_and_registration_keywords">
-<kw name="User Registers Username" owner="login_and_registration_keywords">
+<doc>This setup opens browser to JurasStina-Kalle park home page.</doc>
+<status status="PASS" start="2025-03-08T13:10:00.723665" elapsed="1.280570"/>
+</kw>
+<kw name="Given User Pal Is Logged In" owner="pal_keywords">
+<kw name="User Pal Is Registered" owner="pal_keywords">
 <kw name="User Navigates To Register Section" owner="button_and_navigation_keywords">
 <kw name="Press Register Button" owner="button_and_navigation_keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
@@ -24,80 +26,60 @@
 </kw>
 <kw name="Click Specific Button" owner="button_and_navigation_keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:45.559926" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[2]/a'.</msg>
+<msg time="2025-03-08T13:10:02.007338" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[2]/a'.</msg>
 <arg>${button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-07T09:36:45.559679" elapsed="0.073667"/>
+<status status="PASS" start="2025-03-08T13:10:02.006873" elapsed="0.068182"/>
 </kw>
 <arg>${reg_button}</arg>
-<status status="PASS" start="2025-03-07T09:36:45.559285" elapsed="0.074301"/>
+<status status="PASS" start="2025-03-08T13:10:02.006453" elapsed="0.068805"/>
 </kw>
-<status status="PASS" start="2025-03-07T09:36:45.496851" elapsed="0.136900"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-08T13:10:04.076310" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-08T13:10:02.075447" elapsed="2.001097"/>
+</kw>
+<status status="PASS" start="2025-03-08T13:10:02.006041" elapsed="2.070641"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${reg_section}</arg>
 <arg>5s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-03-07T09:36:45.633983" elapsed="0.014328"/>
+<status status="PASS" start="2025-03-08T13:10:04.076860" elapsed="0.008072"/>
 </kw>
-<status status="PASS" start="2025-03-07T09:36:45.495559" elapsed="0.153017"/>
+<status status="PASS" start="2025-03-08T13:10:02.005691" elapsed="2.079420"/>
 </kw>
-<kw name="Page Is Opened To Registration Section" owner="button_and_navigation_keywords">
-<kw name="Press Register Button" owner="button_and_navigation_keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${reg_button}</arg>
-<arg>2s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-07T09:36:45.649491" elapsed="0.016794"/>
-</kw>
-<kw name="Click Specific Button" owner="button_and_navigation_keywords">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:45.668780" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[2]/a'.</msg>
-<arg>${button}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-07T09:36:45.668165" elapsed="0.049242"/>
-</kw>
-<arg>${reg_button}</arg>
-<status status="PASS" start="2025-03-07T09:36:45.666872" elapsed="0.050997"/>
-</kw>
-<status status="PASS" start="2025-03-07T09:36:45.649203" elapsed="0.068910"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:45.729267" level="INFO">Current page contains element 'id=register-form'.</msg>
-<arg>${reg_section}</arg>
-<arg>5s</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-03-07T09:36:45.718450" elapsed="0.011079"/>
-</kw>
-<doc>This keyword executes and verifies navigation to user registration section.</doc>
-<status status="PASS" start="2025-03-07T09:36:45.648846" elapsed="0.080844"/>
-</kw>
+<kw name="User Pal Enters Registration Credentials" owner="pal_keywords">
 <kw name="User Enters Registration Credentials" owner="login_and_registration_keywords">
 <kw name="Input Credentials" owner="login_and_registration_keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:45.731160" level="INFO">Typing text 'testUser2' into text field 'reg-username'.</msg>
+<msg time="2025-03-08T13:10:04.086544" level="INFO">Typing text 'StinaPalle' into text field 'reg-username'.</msg>
 <arg>${username_space}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-07T09:36:45.730875" elapsed="0.099062"/>
+<status status="PASS" start="2025-03-08T13:10:04.086308" elapsed="0.052869"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:45.830685" level="INFO">Typing text 'testPassword2' into text field 'reg-password'.</msg>
+<msg time="2025-03-08T13:10:04.139694" level="INFO">Typing text 'thePaleontoligist' into text field 'reg-password'.</msg>
 <arg>${password_space}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-07T09:36:45.830308" elapsed="0.083231"/>
+<status status="PASS" start="2025-03-08T13:10:04.139425" elapsed="0.043735"/>
 </kw>
 <arg>${username}</arg>
 <arg>${reg_username_text_box}</arg>
 <arg>${password}</arg>
 <arg>${reg_password_text_box}</arg>
-<status status="PASS" start="2025-03-07T09:36:45.730433" elapsed="0.183352"/>
+<status status="PASS" start="2025-03-08T13:10:04.085931" elapsed="0.097410"/>
 </kw>
-<arg>${username}</arg>
-<arg>${password}</arg>
+<arg>${pal_username}</arg>
+<arg>${pal_password}</arg>
 <doc>This keyword enters username and password into registration fields.</doc>
-<status status="PASS" start="2025-03-07T09:36:45.729953" elapsed="0.183967"/>
+<status status="PASS" start="2025-03-08T13:10:04.085609" elapsed="0.097839"/>
+</kw>
+<doc>This keyword enters pal's registration credentials into registration fields.</doc>
+<status status="PASS" start="2025-03-08T13:10:04.085315" elapsed="0.098236"/>
 </kw>
 <kw name="Press Register Submit Button" owner="button_and_navigation_keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
@@ -108,108 +90,105 @@
 </kw>
 <kw name="Click Specific Button" owner="button_and_navigation_keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:45.938408" level="INFO">Clicking element 'xpath=/html/body/main/article[2]/section/form/button'.</msg>
+<msg time="2025-03-08T13:10:04.184497" level="INFO">Clicking element 'xpath=/html/body/main/article[2]/section/form/button'.</msg>
 <arg>${button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-07T09:36:45.938182" elapsed="0.064113"/>
+<status status="PASS" start="2025-03-08T13:10:04.184302" elapsed="0.037107"/>
 </kw>
 <arg>${reg_submit_button}</arg>
-<status status="PASS" start="2025-03-07T09:36:45.937699" elapsed="0.064860"/>
+<status status="PASS" start="2025-03-08T13:10:04.184022" elapsed="0.037561"/>
 </kw>
-<status status="PASS" start="2025-03-07T09:36:45.914132" elapsed="0.088560"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-08T13:10:06.222416" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-08T13:10:04.221755" elapsed="2.000986"/>
 </kw>
-<arg>${username}</arg>
-<arg>${password}</arg>
-<doc>This keyword executes registration process of user, without verification.</doc>
-<status status="PASS" start="2025-03-07T09:36:45.494141" elapsed="0.508660"/>
+<status status="PASS" start="2025-03-08T13:10:04.183747" elapsed="2.039176"/>
 </kw>
-<kw name="User Should Be Registered" owner="login_and_registration_keywords">
+<kw name="User Pal Should be Registered" owner="pal_keywords">
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:46.004419" level="INFO">Executing JavaScript:
-let users = getUsers();return users.some(u =&gt; u.username === 'testUser2');
+<msg time="2025-03-08T13:10:06.224102" level="INFO">Executing JavaScript:
+let users = getUsers();return users.some(u =&gt; u.username === 'StinaPalle');
 Without any arguments.</msg>
-<msg time="2025-03-07T09:36:46.015783" level="INFO">${userRegistered} = True</msg>
+<msg time="2025-03-08T13:10:06.230642" level="INFO">${userRegistered} = True</msg>
 <var>${userRegistered}</var>
 <arg>let users = getUsers();</arg>
-<arg>return users.some(u =&gt; u.username === '${username}');</arg>
+<arg>return users.some(u =&gt; u.username === 'StinaPalle');</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-03-07T09:36:46.003621" elapsed="0.012466"/>
+<status status="PASS" start="2025-03-08T13:10:06.223608" elapsed="0.007222"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${userRegistered}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-03-07T09:36:46.016453" elapsed="0.000385"/>
+<status status="PASS" start="2025-03-08T13:10:06.231052" elapsed="0.000210"/>
 </kw>
-<arg>${username}</arg>
-<doc>This keyword verifies that user is registerd as a user,
-by fetching list of users with javascript and finding username in list.</doc>
-<status status="PASS" start="2025-03-07T09:36:46.003050" elapsed="0.013948"/>
+<doc>This keyword verifies that user pal is registerd as a user,
+by fetching list of users with javascript and finding pal's username in list.</doc>
+<status status="PASS" start="2025-03-08T13:10:06.223201" elapsed="0.008181"/>
 </kw>
-<arg>${username}</arg>
-<arg>${password}</arg>
-<doc>This keyword executes and verifies user registration.</doc>
-<status status="PASS" start="2025-03-07T09:36:45.492085" elapsed="0.525030"/>
+<doc>This keyword executes and verifies user pal registration.</doc>
+<status status="PASS" start="2025-03-08T13:10:02.005307" elapsed="4.226172"/>
 </kw>
-<arg>${valid_username}</arg>
-<arg>${valid_password}</arg>
-<doc>This setup opens browser to JurasStina-Kalle park home page and registers user.</doc>
-<status status="PASS" start="2025-03-07T09:36:42.703618" elapsed="3.313995"/>
-</kw>
-<kw name="Log In User" owner="login_and_registration_keywords">
+<kw name="Log In User Pal" owner="pal_keywords">
 <kw name="User Navigates To Login Section" owner="button_and_navigation_keywords">
 <kw name="Press Login Button" owner="button_and_navigation_keywords">
 <kw name="Click Specific Button" owner="button_and_navigation_keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:46.021616" level="INFO">Clicking element 'login-nav'.</msg>
+<msg time="2025-03-08T13:10:06.233137" level="INFO">Clicking element 'login-nav'.</msg>
 <arg>${button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-07T09:36:46.021034" elapsed="0.117252"/>
+<status status="PASS" start="2025-03-08T13:10:06.232880" elapsed="0.037448"/>
 </kw>
 <arg>${login_button}</arg>
-<status status="PASS" start="2025-03-07T09:36:46.020221" elapsed="0.118510"/>
+<status status="PASS" start="2025-03-08T13:10:06.232519" elapsed="0.037988"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${login_section}</arg>
 <arg>5s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-03-07T09:36:46.139151" elapsed="0.012248"/>
+<status status="PASS" start="2025-03-08T13:10:06.270691" elapsed="0.007673"/>
 </kw>
-<status status="PASS" start="2025-03-07T09:36:46.019549" elapsed="0.132072"/>
+<status status="PASS" start="2025-03-08T13:10:06.232277" elapsed="0.046268"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${login_section}</arg>
 <arg>5s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-03-07T09:36:46.151830" elapsed="0.007758"/>
+<status status="PASS" start="2025-03-08T13:10:06.278719" elapsed="0.004653"/>
 </kw>
-<status status="PASS" start="2025-03-07T09:36:46.019082" elapsed="0.140717"/>
+<status status="PASS" start="2025-03-08T13:10:06.232025" elapsed="0.051516"/>
 </kw>
+<kw name="User Pal Enters Login Credentials" owner="pal_keywords">
 <kw name="User Enters Login Credentials" owner="login_and_registration_keywords">
 <kw name="Input Credentials" owner="login_and_registration_keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:46.161180" level="INFO">Typing text 'testUser2' into text field 'login-username'.</msg>
+<msg time="2025-03-08T13:10:06.284937" level="INFO">Typing text 'StinaPalle' into text field 'login-username'.</msg>
 <arg>${username_space}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-07T09:36:46.160915" elapsed="0.160469"/>
+<status status="PASS" start="2025-03-08T13:10:06.284695" elapsed="0.042635"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:46.321991" level="INFO">Typing text 'testPassword2' into text field 'login-password'.</msg>
+<msg time="2025-03-08T13:10:06.328208" level="INFO">Typing text 'thePaleontoligist' into text field 'login-password'.</msg>
 <arg>${password_space}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-07T09:36:46.321655" elapsed="0.075445"/>
+<status status="PASS" start="2025-03-08T13:10:06.327680" elapsed="0.044178"/>
 </kw>
 <arg>${username}</arg>
 <arg>${login_username_text_box}</arg>
 <arg>${password}</arg>
 <arg>${login_password_text_box}</arg>
-<status status="PASS" start="2025-03-07T09:36:46.160442" elapsed="0.236860"/>
+<status status="PASS" start="2025-03-08T13:10:06.284334" elapsed="0.087708"/>
 </kw>
-<arg>${username}</arg>
-<arg>${password}</arg>
+<arg>${pal_username}</arg>
+<arg>${pal_password}</arg>
 <doc>This keyword enters username and password into login fields.</doc>
-<status status="PASS" start="2025-03-07T09:36:46.160022" elapsed="0.237415"/>
+<status status="PASS" start="2025-03-08T13:10:06.284028" elapsed="0.088118"/>
+</kw>
+<doc>This keyword enters pal's login credentials into login fields.</doc>
+<status status="PASS" start="2025-03-08T13:10:06.283735" elapsed="0.088506"/>
 </kw>
 <kw name="User Presses Login Submit Button" owner="button_and_navigation_keywords">
 <kw name="Press Login Submit Button" owner="button_and_navigation_keywords">
@@ -221,174 +200,853 @@ by fetching list of users with javascript and finding username in list.</doc>
 </kw>
 <kw name="Click Specific Button" owner="button_and_navigation_keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:46.417111" level="INFO">Clicking element 'xpath=/html/body/main/article[3]/section/form/button'.</msg>
+<msg time="2025-03-08T13:10:06.373155" level="INFO">Clicking element 'xpath=/html/body/main/article[3]/section/form/button'.</msg>
 <arg>${button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-07T09:36:46.416856" elapsed="0.055843"/>
+<status status="PASS" start="2025-03-08T13:10:06.372970" elapsed="0.049548"/>
 </kw>
 <arg>${login_submit_button}</arg>
-<status status="PASS" start="2025-03-07T09:36:46.416385" elapsed="0.056510"/>
+<status status="PASS" start="2025-03-08T13:10:06.372701" elapsed="0.050004"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-07T09:36:48.474014" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-03-08T13:10:08.423453" level="INFO">Slept 2 seconds.</msg>
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-07T09:36:46.473088" elapsed="2.001338"/>
+<status status="PASS" start="2025-03-08T13:10:06.422879" elapsed="2.000816"/>
 </kw>
-<status status="PASS" start="2025-03-07T09:36:46.397988" elapsed="2.076717"/>
+<status status="PASS" start="2025-03-08T13:10:06.372429" elapsed="2.051414"/>
 </kw>
-<doc>This keyword executes pressing login button.</doc>
-<status status="PASS" start="2025-03-07T09:36:46.397656" elapsed="2.077307"/>
+<status status="PASS" start="2025-03-08T13:10:06.231684" elapsed="2.192263"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${logout_button}</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.475385" elapsed="0.020776"/>
-</kw>
+<kw name="User Pal Should Be Logged In" owner="pal_keywords">
 <kw name="User Should Be Logged In" owner="login_and_registration_keywords">
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:48.497870" level="INFO">Executing JavaScript:
+<msg time="2025-03-08T13:10:08.425073" level="INFO">Executing JavaScript:
 return currentUser.username;
 Without any arguments.</msg>
-<msg time="2025-03-07T09:36:48.505717" level="INFO">${UserLoggedIn} = testUser2</msg>
+<msg time="2025-03-08T13:10:08.431760" level="INFO">${UserLoggedIn} = StinaPalle</msg>
 <var>${UserLoggedIn}</var>
 <arg>return currentUser.username;</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.497302" elapsed="0.008711"/>
+<status status="PASS" start="2025-03-08T13:10:08.424748" elapsed="0.007195"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${UserLoggedIn}</arg>
 <arg>${username}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.506266" elapsed="0.000340"/>
+<status status="PASS" start="2025-03-08T13:10:08.432191" elapsed="0.000379"/>
 </kw>
-<arg>${username}</arg>
+<arg>${pal_username}</arg>
 <doc>This keyword verifies that user is logged in,
 by using javascript to fetch the username of the current logged in user.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.496609" elapsed="0.010142"/>
+<status status="PASS" start="2025-03-08T13:10:08.424465" elapsed="0.008221"/>
 </kw>
-<arg>${valid_username}</arg>
-<arg>${valid_password}</arg>
-<doc>This keyword executes and verifies user login.</doc>
-<status status="PASS" start="2025-03-07T09:36:46.018601" elapsed="2.488295"/>
+<doc>This keyword verifies that user pal is logged in.</doc>
+<status status="PASS" start="2025-03-08T13:10:08.424161" elapsed="0.008623"/>
 </kw>
+<doc>This keyword executes and verifies user pal login.</doc>
+<status status="PASS" start="2025-03-08T13:10:02.004835" elapsed="6.428040"/>
+</kw>
+<kw name="And Pal Entrance Ticket Is Added To Cart" owner="pal_keywords">
+<kw name="Press Ticket Button" owner="button_and_navigation_keywords">
+<kw name="Click Specific Button" owner="button_and_navigation_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:08.434942" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[4]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T13:10:08.434626" elapsed="0.037658"/>
+</kw>
+<arg>${buy_ticket_button}</arg>
+<status status="PASS" start="2025-03-08T13:10:08.434199" elapsed="0.038337"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${tickets_section}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-08T13:10:08.472777" elapsed="0.006998"/>
+</kw>
+<status status="PASS" start="2025-03-08T13:10:08.433886" elapsed="0.046081"/>
+</kw>
+<kw name="Pal Buys Entrance Ticket" owner="pal_keywords">
 <kw name="Buy Entrance Tickets" owner="ticket_and_safari_keywords">
 <kw name="User Navigates To Buy Ticket Section" owner="button_and_navigation_keywords">
 <kw name="Press Ticket Button" owner="button_and_navigation_keywords">
 <kw name="Click Specific Button" owner="button_and_navigation_keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:48.511647" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[4]/a'.</msg>
+<msg time="2025-03-08T13:10:08.483321" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[4]/a'.</msg>
 <arg>${button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.511084" elapsed="0.095039"/>
+<status status="PASS" start="2025-03-08T13:10:08.483079" elapsed="0.029585"/>
 </kw>
 <arg>${buy_ticket_button}</arg>
-<status status="PASS" start="2025-03-07T09:36:48.510378" elapsed="0.096522"/>
+<status status="PASS" start="2025-03-08T13:10:08.482757" elapsed="0.030151"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${tickets_section}</arg>
-<arg>5s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.607692" elapsed="0.015835"/>
+<status status="PASS" start="2025-03-08T13:10:08.513106" elapsed="0.004556"/>
 </kw>
-<status status="PASS" start="2025-03-07T09:36:48.509829" elapsed="0.114119"/>
+<status status="PASS" start="2025-03-08T13:10:08.482526" elapsed="0.035300"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${tickets_section}</arg>
-<arg>5s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.624356" elapsed="0.008058"/>
+<status status="PASS" start="2025-03-08T13:10:08.517990" elapsed="0.004008"/>
 </kw>
-<status status="PASS" start="2025-03-07T09:36:48.508935" elapsed="0.123677"/>
+<status status="PASS" start="2025-03-08T13:10:08.482270" elapsed="0.039876"/>
 </kw>
 <kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:48.633114" level="INFO">Selecting options from selection list 'id=ticket-type' by value Adult.</msg>
+<msg time="2025-03-08T13:10:08.522572" level="INFO">Selecting options from selection list 'id=ticket-type' by value Adult.</msg>
 <arg>${ticket_type_field}</arg>
 <arg>${selected_type}</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.632804" elapsed="0.039575"/>
+<status status="PASS" start="2025-03-08T13:10:08.522308" elapsed="0.026496"/>
 </kw>
 <kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:48.673622" level="INFO">Selecting options from selection list 'id=ticket-category' by value Regular.</msg>
+<msg time="2025-03-08T13:10:08.549370" level="INFO">Selecting options from selection list 'id=ticket-category' by value Regular.</msg>
 <arg>${ticket_cat_field}</arg>
 <arg>${selected_category}</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.672954" elapsed="0.049571"/>
+<status status="PASS" start="2025-03-08T13:10:08.549057" elapsed="0.026544"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:48.723132" level="INFO">Typing text '1' into text field 'id=ticket-quantity'.</msg>
+<msg time="2025-03-08T13:10:08.576117" level="INFO">Typing text '1' into text field 'id=ticket-quantity'.</msg>
 <arg>${input_of_ticket_counter}</arg>
 <arg>${selected_quantity}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.722803" elapsed="0.059402"/>
+<status status="PASS" start="2025-03-08T13:10:08.575843" elapsed="0.039192"/>
 </kw>
 <kw name="Press Add Ticket To Cart Button" owner="button_and_navigation_keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${add_to_cart_button}</arg>
-<arg>2s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.782867" elapsed="0.016063"/>
-</kw>
 <kw name="Click Specific Button" owner="button_and_navigation_keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:48.799933" level="INFO">Clicking element 'xpath=/html/body/main/article[4]/section/form/button'.</msg>
+<msg time="2025-03-08T13:10:08.616075" level="INFO">Clicking element 'xpath=/html/body/main/article[4]/section/form/button'.</msg>
 <arg>${button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.799682" elapsed="0.059075"/>
+<status status="PASS" start="2025-03-08T13:10:08.615884" elapsed="0.040541"/>
 </kw>
 <arg>${add_to_cart_button}</arg>
-<status status="PASS" start="2025-03-07T09:36:48.799244" elapsed="0.059713"/>
+<status status="PASS" start="2025-03-08T13:10:08.615605" elapsed="0.041002"/>
 </kw>
-<status status="PASS" start="2025-03-07T09:36:48.782504" elapsed="0.076576"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-08T13:10:10.657716" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-08T13:10:08.656784" elapsed="2.001267"/>
+</kw>
+<status status="PASS" start="2025-03-08T13:10:08.615314" elapsed="2.042877"/>
 </kw>
 <kw name="Handle Alert" owner="SeleniumLibrary">
-<msg time="2025-03-07T09:36:48.859588" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<msg time="2025-03-07T09:36:48.864411" level="INFO">${alert_text} = Item added to cart!</msg>
+<msg time="2025-03-08T13:10:10.658573" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2025-03-08T13:10:10.661781" level="INFO">${alert_text} = Item added to cart!</msg>
 <var>${alert_text}</var>
 <arg>action=DISMISS</arg>
 <doc>Handles the current alert and returns its message.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.859267" elapsed="0.005593"/>
+<status status="PASS" start="2025-03-08T13:10:10.658362" elapsed="0.003630"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${alert_text}</arg>
 <arg>${add_to_cart_message_successful}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.865545" elapsed="0.000614"/>
+<status status="PASS" start="2025-03-08T13:10:10.662258" elapsed="0.000301"/>
 </kw>
-<arg>${adult_ticket_type}</arg>
-<arg>${regular_ticket}</arg>
-<arg>1</arg>
+<arg>${pal_ticket_type}</arg>
+<arg>${pal_ticket_category}</arg>
+<arg>${1}</arg>
 <doc>This keyword executes and verifies adding entrance ticket(s) to cart.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.507783" elapsed="0.358646"/>
+<status status="PASS" start="2025-03-08T13:10:08.480625" elapsed="2.182102"/>
+</kw>
+<doc>This keyword executes and verifies adding entrance ticket of pal's choice to cart.</doc>
+<status status="PASS" start="2025-03-08T13:10:08.480175" elapsed="2.182717"/>
+</kw>
+<kw name="Pal Entrance Ticket Should be Added To Cart" owner="pal_keywords">
+<kw name="Get Cart Item Descriptions" owner="cart_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:10.664050" level="INFO">Executing JavaScript:
+return getCart();
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:10.669956" level="INFO">${cart} = [{'category': 'Regular', 'description': '1 Regular Adult Ticket(s)', 'itemType': 'ticket', 'price': 50, 'quantity': 1}]</msg>
+<var>${cart}</var>
+<arg>return getCart();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.663705" elapsed="0.006453"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-03-08T13:10:10.670761" level="INFO">Length is 1.</msg>
+<msg time="2025-03-08T13:10:10.670940" level="INFO">${cartLength} = 1</msg>
+<var>${cartLength}</var>
+<arg>${cart}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.670473" elapsed="0.000580"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-08T13:10:10.671453" level="INFO">${cartItemDescriptions} = []</msg>
+<var>${cartItemDescriptions}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.671245" elapsed="0.000321"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:10.672821" level="INFO">Executing JavaScript:
+let item = {'category': 'Regular', 'description': '1 Regular Adult Ticket(s)', 'itemType': 'ticket', 'price': 50, 'quantity': 1};return item.description;
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:10.686892" level="INFO">${temp} = 1 Regular Adult Ticket(s)</msg>
+<var>${temp}</var>
+<arg>let item = ${cart}[${i}];</arg>
+<arg>return item.description;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.672265" elapsed="0.014850"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cartItemDescriptions}</arg>
+<arg>${temp}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.687405" elapsed="0.000322"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-03-08T13:10:10.672047" elapsed="0.015806"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${cartLength}</value>
+<status status="PASS" start="2025-03-08T13:10:10.671718" elapsed="0.016284"/>
+</for>
+<return>
+<value>${cartItemDescriptions}</value>
+<status status="PASS" start="2025-03-08T13:10:10.688171" elapsed="0.000132"/>
+</return>
+<msg time="2025-03-08T13:10:10.688561" level="INFO">${listOfCartItemDescriptioins} = ['1 Regular Adult Ticket(s)']</msg>
+<var>${listOfCartItemDescriptioins}</var>
+<doc>This keyword fetches a list of descriptions of all items in cart,
+using javascript to fetch items in cart and their respective descriptions.
+(With more time, I would have liked a general "Get list by property" keyword)</doc>
+<status status="PASS" start="2025-03-08T13:10:10.663457" elapsed="0.025243"/>
+</kw>
+<kw name="Should Contain X Times" owner="BuiltIn">
+<msg time="2025-03-08T13:10:10.689193" level="INFO">Item found from container 1 time.</msg>
+<arg>${listOfCartItemDescriptioins}</arg>
+<arg>1 Regular Adult Ticket(s)</arg>
+<arg>1</arg>
+<doc>Fails if ``container`` does not contain ``item`` ``count`` times.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.688913" elapsed="0.000472"/>
+</kw>
+<doc>This keyword verifies that pal's entrance ticket is in cart.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.663117" elapsed="0.026417"/>
+</kw>
+<doc>This keyword executes and verifies adding pal's entrance ticket to cart.</doc>
+<status status="PASS" start="2025-03-08T13:10:08.433512" elapsed="2.256155"/>
+</kw>
+<kw name="When Pal Books Safaris" owner="pal_keywords">
+<kw name="Book Safari" owner="ticket_and_safari_keywords">
+<kw name="Press Safari Button" owner="button_and_navigation_keywords">
+<kw name="Click Specific Button" owner="button_and_navigation_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:10.694437" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[5]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.694126" elapsed="0.051258"/>
+</kw>
+<arg>${safari_button}</arg>
+<status status="PASS" start="2025-03-08T13:10:10.693750" elapsed="0.051810"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${safari_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.745741" elapsed="0.007635"/>
+</kw>
+<status status="PASS" start="2025-03-08T13:10:10.693453" elapsed="0.060126"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:10.754059" level="INFO">Typing text '002025-03-19' into text field 'id=safari-date'.</msg>
+<arg>${safari_date_field}</arg>
+<arg>${safari_date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.753778" elapsed="0.041562"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:10.795859" level="INFO">Selecting options from selection list 'xpath=/html/body/main/article[5]/section/form/select' by value T-Rex Rumble.</msg>
+<arg>${safari_type_field}</arg>
+<arg>${safari_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.795581" elapsed="0.042146"/>
+</kw>
+<kw name="Press Add Safari To Cart Button" owner="button_and_navigation_keywords">
+<kw name="Click Specific Button" owner="button_and_navigation_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:10.838848" level="INFO">Clicking element 'xpath=/html/body/main/article[5]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.838637" elapsed="0.037372"/>
+</kw>
+<arg>${safari_submit_button}</arg>
+<status status="PASS" start="2025-03-08T13:10:10.838364" elapsed="0.037825"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-08T13:10:12.876777" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.876357" elapsed="2.000646"/>
+</kw>
+<status status="PASS" start="2025-03-08T13:10:10.838073" elapsed="2.039152"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:12.877597" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2025-03-08T13:10:12.880844" level="INFO">${alert_text} = Item added to cart!</msg>
+<var>${alert_text}</var>
+<arg>action=DISMISS</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-03-08T13:10:12.877402" elapsed="0.003619"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${alert_text}</arg>
+<arg>${add_to_cart_message_successful}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-03-08T13:10:12.881279" elapsed="0.000310"/>
+</kw>
+<arg>${safari_type_t_rex_rumble}</arg>
+<arg>${pal_safari_date}</arg>
+<doc>This keyword executes and verifies the "book safari" process</doc>
+<status status="PASS" start="2025-03-08T13:10:10.693023" elapsed="2.188723"/>
+</kw>
+<kw name="Book Safari" owner="ticket_and_safari_keywords">
+<kw name="Press Safari Button" owner="button_and_navigation_keywords">
+<kw name="Click Specific Button" owner="button_and_navigation_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:12.883219" level="INFO">Clicking element 'xpath=/html/body/header/div/nav/ul/li[5]/a'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T13:10:12.882982" elapsed="0.038630"/>
+</kw>
+<arg>${safari_button}</arg>
+<status status="PASS" start="2025-03-08T13:10:12.882631" elapsed="0.039197"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${safari_section}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-08T13:10:12.922079" elapsed="0.005058"/>
+</kw>
+<status status="PASS" start="2025-03-08T13:10:12.882397" elapsed="0.044915"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:12.927835" level="INFO">Typing text '002025-03-19' into text field 'id=safari-date'.</msg>
+<arg>${safari_date_field}</arg>
+<arg>${safari_date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T13:10:12.927483" elapsed="0.044549"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:12.972554" level="INFO">Selecting options from selection list 'xpath=/html/body/main/article[5]/section/form/select' by value Herbivore Tour.</msg>
+<arg>${safari_type_field}</arg>
+<arg>${safari_type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-03-08T13:10:12.972285" elapsed="0.028059"/>
+</kw>
+<kw name="Press Add Safari To Cart Button" owner="button_and_navigation_keywords">
+<kw name="Click Specific Button" owner="button_and_navigation_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:13.001812" level="INFO">Clicking element 'xpath=/html/body/main/article[5]/section/form/button'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T13:10:13.001530" elapsed="0.037715"/>
+</kw>
+<arg>${safari_submit_button}</arg>
+<status status="PASS" start="2025-03-08T13:10:13.001155" elapsed="0.038278"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.039871" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-08T13:10:13.039602" elapsed="2.000532"/>
+</kw>
+<status status="PASS" start="2025-03-08T13:10:13.000744" elapsed="2.039548"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:15.040716" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2025-03-08T13:10:15.043629" level="INFO">${alert_text} = Item added to cart!</msg>
+<var>${alert_text}</var>
+<arg>action=DISMISS</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.040496" elapsed="0.003299"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${alert_text}</arg>
+<arg>${add_to_cart_message_successful}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.044064" elapsed="0.000304"/>
+</kw>
+<arg>${safari_type_herbivor_tour}</arg>
+<arg>${pal_safari_date}</arg>
+<doc>This keyword executes and verifies the "book safari" process</doc>
+<status status="PASS" start="2025-03-08T13:10:12.881991" elapsed="2.162535"/>
+</kw>
+<doc>This keyword executes and verifies the booking process
+of pal's selected safari types and date.</doc>
+<status status="PASS" start="2025-03-08T13:10:10.692519" elapsed="4.352152"/>
+</kw>
+<kw name="Then Pal Safaris Should Be Added To Cart" owner="pal_keywords">
+<kw name="Get Cart Item Descriptions" owner="cart_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:15.046446" level="INFO">Executing JavaScript:
+return getCart();
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:15.050578" level="INFO">${cart} = [{'category': 'Regular', 'description': '1 Regular Adult Ticket(s)', 'itemType': 'ticket', 'price': 50, 'quantity': 1}, {'date': '2025-03-19', 'description': 'T-Rex Rumble on 2025-03-19', 'itemType': ...</msg>
+<var>${cart}</var>
+<arg>return getCart();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.046072" elapsed="0.004709"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.051190" level="INFO">Length is 3.</msg>
+<msg time="2025-03-08T13:10:15.051313" level="INFO">${cartLength} = 3</msg>
+<var>${cartLength}</var>
+<arg>${cart}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.050998" elapsed="0.000391"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.051674" level="INFO">${cartItemDescriptions} = []</msg>
+<var>${cartItemDescriptions}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.051527" elapsed="0.000224"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:15.052703" level="INFO">Executing JavaScript:
+let item = {'category': 'Regular', 'description': '1 Regular Adult Ticket(s)', 'itemType': 'ticket', 'price': 50, 'quantity': 1};return item.description;
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:15.056218" level="INFO">${temp} = 1 Regular Adult Ticket(s)</msg>
+<var>${temp}</var>
+<arg>let item = ${cart}[${i}];</arg>
+<arg>return item.description;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.052228" elapsed="0.004227"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cartItemDescriptions}</arg>
+<arg>${temp}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.056832" elapsed="0.000401"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-03-08T13:10:15.052083" elapsed="0.005258"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:15.058240" level="INFO">Executing JavaScript:
+let item = {'date': '2025-03-19', 'description': 'T-Rex Rumble on 2025-03-19', 'itemType': 'safari', 'price': 150, 'type': 'T-Rex Rumble'};return item.description;
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:15.062407" level="INFO">${temp} = T-Rex Rumble on 2025-03-19</msg>
+<var>${temp}</var>
+<arg>let item = ${cart}[${i}];</arg>
+<arg>return item.description;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.057642" elapsed="0.004959"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cartItemDescriptions}</arg>
+<arg>${temp}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.062963" elapsed="0.000271"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-03-08T13:10:15.057495" elapsed="0.005849"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:15.064678" level="INFO">Executing JavaScript:
+let item = {'date': '2025-03-19', 'description': 'Herbivore Tour on 2025-03-19', 'itemType': 'safari', 'price': 120, 'type': 'Herbivore Tour'};return item.description;
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:15.068289" level="INFO">${temp} = Herbivore Tour on 2025-03-19</msg>
+<var>${temp}</var>
+<arg>let item = ${cart}[${i}];</arg>
+<arg>return item.description;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.063714" elapsed="0.004761"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cartItemDescriptions}</arg>
+<arg>${temp}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.068702" elapsed="0.000221"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2025-03-08T13:10:15.063530" elapsed="0.005480"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${cartLength}</value>
+<status status="PASS" start="2025-03-08T13:10:15.051863" elapsed="0.017236"/>
+</for>
+<return>
+<value>${cartItemDescriptions}</value>
+<status status="PASS" start="2025-03-08T13:10:15.069237" elapsed="0.000131"/>
+</return>
+<msg time="2025-03-08T13:10:15.069624" level="INFO">${cartItemDescriptioins} = ['1 Regular Adult Ticket(s)', 'T-Rex Rumble on 2025-03-19', 'Herbivore Tour on 2025-03-19']</msg>
+<var>${cartItemDescriptioins}</var>
+<doc>This keyword fetches a list of descriptions of all items in cart,
+using javascript to fetch items in cart and their respective descriptions.
+(With more time, I would have liked a general "Get list by property" keyword)</doc>
+<status status="PASS" start="2025-03-08T13:10:15.045734" elapsed="0.024039"/>
+</kw>
+<kw name="Should Contain X Times" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.070303" level="INFO">Item found from container 1 time.</msg>
+<arg>${cartItemDescriptioins}</arg>
+<arg>Herbivore Tour on 2025-03-19</arg>
+<arg>1</arg>
+<doc>Fails if ``container`` does not contain ``item`` ``count`` times.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.070013" elapsed="0.000467"/>
+</kw>
+<kw name="Should Contain X Times" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.070913" level="INFO">Item found from container 1 time.</msg>
+<arg>${cartItemDescriptioins}</arg>
+<arg>T-Rex Rumble on 2025-03-19</arg>
+<arg>1</arg>
+<doc>Fails if ``container`` does not contain ``item`` ``count`` times.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.070681" elapsed="0.000382"/>
+</kw>
+<doc>This keyword verifies that the safaris of pal's choice is in cart.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.045269" elapsed="0.025938"/>
+</kw>
+<kw name="And Dates For Pal Safaris Should Be Correct" owner="pal_keywords">
+<kw name="Dates for safaris in cart are the same and as expected" owner="pal_keywords">
+<kw name="Get Cart Item Dates" owner="cart_keywords">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.078806" level="INFO">${datesList} = []</msg>
+<var>${datesList}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.078569" elapsed="0.000395"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:15.079636" level="INFO">Executing JavaScript:
+return getCart();
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:15.084249" level="INFO">${cart} = [{'category': 'Regular', 'description': '1 Regular Adult Ticket(s)', 'itemType': 'ticket', 'price': 50, 'quantity': 1}, {'date': '2025-03-19', 'description': 'T-Rex Rumble on 2025-03-19', 'itemType': ...</msg>
+<var>${cart}</var>
+<arg>return getCart();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.079171" elapsed="0.005275"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.084938" level="INFO">Length is 3.</msg>
+<msg time="2025-03-08T13:10:15.085085" level="INFO">${cartLength} = 3</msg>
+<var>${cartLength}</var>
+<arg>${cart}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.084705" elapsed="0.000469"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.086142" level="INFO">${temp} = ''</msg>
+<var>${temp}</var>
+<arg>''</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.085750" elapsed="0.000635"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:15.088217" level="INFO">Executing JavaScript:
+let item = {'category': 'Regular', 'description': '1 Regular Adult Ticket(s)', 'itemType': 'ticket', 'price': 50, 'quantity': 1};if (item.hasOwnProperty('date')){return item.date;}else {return "";}
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:15.095312" level="INFO">${date} = </msg>
+<var>${date}</var>
+<arg>let item = ${cart}[${i}];</arg>
+<arg>if (item.hasOwnProperty('date')){</arg>
+<arg>return item.date;</arg>
+<arg>}</arg>
+<arg>else {</arg>
+<arg>return "";</arg>
+<arg>}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.086699" elapsed="0.008822"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${date}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${datesList}</arg>
+<arg>${date}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.095848" elapsed="0.000296"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-03-08T13:10:15.085569" elapsed="0.010851"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.097248" level="INFO">${temp} = ''</msg>
+<var>${temp}</var>
+<arg>''</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.096967" elapsed="0.000433"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:15.098336" level="INFO">Executing JavaScript:
+let item = {'date': '2025-03-19', 'description': 'T-Rex Rumble on 2025-03-19', 'itemType': 'safari', 'price': 150, 'type': 'T-Rex Rumble'};if (item.hasOwnProperty('date')){return item.date;}else {return "";}
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:15.105760" level="INFO">${date} = 2025-03-19</msg>
+<var>${date}</var>
+<arg>let item = ${cart}[${i}];</arg>
+<arg>if (item.hasOwnProperty('date')){</arg>
+<arg>return item.date;</arg>
+<arg>}</arg>
+<arg>else {</arg>
+<arg>return "";</arg>
+<arg>}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.097640" elapsed="0.008380"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${datesList}</arg>
+<arg>${date}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.106731" elapsed="0.000280"/>
+</kw>
+<arg>'${date}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${datesList}</arg>
+<arg>${date}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.106360" elapsed="0.000766"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-03-08T13:10:15.096698" elapsed="0.010513"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.107762" level="INFO">${temp} = ''</msg>
+<var>${temp}</var>
+<arg>''</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.107597" elapsed="0.000253"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:15.108427" level="INFO">Executing JavaScript:
+let item = {'date': '2025-03-19', 'description': 'Herbivore Tour on 2025-03-19', 'itemType': 'safari', 'price': 120, 'type': 'Herbivore Tour'};if (item.hasOwnProperty('date')){return item.date;}else {return "";}
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:15.112165" level="INFO">${date} = 2025-03-19</msg>
+<var>${date}</var>
+<arg>let item = ${cart}[${i}];</arg>
+<arg>if (item.hasOwnProperty('date')){</arg>
+<arg>return item.date;</arg>
+<arg>}</arg>
+<arg>else {</arg>
+<arg>return "";</arg>
+<arg>}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.108000" elapsed="0.004313"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${datesList}</arg>
+<arg>${date}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.113000" elapsed="0.000293"/>
+</kw>
+<arg>'${date}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${datesList}</arg>
+<arg>${date}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.112564" elapsed="0.000856"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2025-03-08T13:10:15.107447" elapsed="0.006060"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${cartLength}</value>
+<status status="PASS" start="2025-03-08T13:10:15.085302" elapsed="0.028298"/>
+</for>
+<return>
+<value>${datesList}</value>
+<status status="PASS" start="2025-03-08T13:10:15.113713" elapsed="0.000079"/>
+</return>
+<msg time="2025-03-08T13:10:15.113996" level="INFO">${datesInCartList} = ['2025-03-19', '2025-03-19']</msg>
+<var>${datesInCartList}</var>
+<doc>This keyword fetches a list of dates of all safaris in cart,
+using javascript to fetch items in cart and their respective dates.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.078220" elapsed="0.035880"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.114410" level="INFO">Length is 2.</msg>
+<msg time="2025-03-08T13:10:15.114533" level="INFO">${listLength} = 2</msg>
+<var>${listLength}</var>
+<arg>${datesInCartList}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.114251" elapsed="0.000359"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${expectedDate}</arg>
+<arg>${datesInCartList}[${i}]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.115042" elapsed="0.000228"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-03-08T13:10:15.114908" elapsed="0.000448"/>
+</iter>
+<iter>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${expectedDate}</arg>
+<arg>${datesInCartList}[${i}]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.115595" elapsed="0.000217"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-03-08T13:10:15.115474" elapsed="0.000424"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${listLength}</value>
+<status status="PASS" start="2025-03-08T13:10:15.114706" elapsed="0.001275"/>
+</for>
+<arg>${pal_expected_safari_date}</arg>
+<doc>This keyword verifies that all safari dates in cart are the same as the date in argument.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.077745" elapsed="0.038346"/>
+</kw>
+<doc>This keyword verifies that the dates for pal's safaris are the same as expected.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.077175" elapsed="0.039011"/>
+</kw>
+<kw name="And Total Cart Cost Should Be Correct" owner="cart_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:15.118419" level="INFO">Executing JavaScript:
+return getCart();
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:15.122521" level="INFO">${cart} = [{'category': 'Regular', 'description': '1 Regular Adult Ticket(s)', 'itemType': 'ticket', 'price': 50, 'quantity': 1}, {'date': '2025-03-19', 'description': 'T-Rex Rumble on 2025-03-19', 'itemType': ...</msg>
+<var>${cart}</var>
+<arg>return getCart();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.118048" elapsed="0.004623"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.123161" level="INFO">${totalPriceInCart} = 0</msg>
+<var>${totalPriceInCart}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.122923" elapsed="0.000354"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.123591" level="INFO">Length is 3.</msg>
+<msg time="2025-03-08T13:10:15.123767" level="INFO">${cartLength} = 3</msg>
+<var>${cartLength}</var>
+<arg>${cart}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.123423" elapsed="0.000462"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:15.125024" level="INFO">Executing JavaScript:
+let item = {'category': 'Regular', 'description': '1 Regular Adult Ticket(s)', 'itemType': 'ticket', 'price': 50, 'quantity': 1};return item.price;
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:15.128773" level="INFO">${tempItemPrice} = 50</msg>
+<var>${tempItemPrice}</var>
+<arg>let item = ${cart}[${i}];</arg>
+<arg>return item.price;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.124511" elapsed="0.004476"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.129654" level="INFO">${totalPriceInCart} = 50</msg>
+<var>${totalPriceInCart}</var>
+<arg>${totalPriceInCart} + ${tempItemPrice}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.129279" elapsed="0.000466"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-03-08T13:10:15.124320" elapsed="0.005510"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:15.130511" level="INFO">Executing JavaScript:
+let item = {'date': '2025-03-19', 'description': 'T-Rex Rumble on 2025-03-19', 'itemType': 'safari', 'price': 150, 'type': 'T-Rex Rumble'};return item.price;
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:15.135524" level="INFO">${tempItemPrice} = 150</msg>
+<var>${tempItemPrice}</var>
+<arg>let item = ${cart}[${i}];</arg>
+<arg>return item.price;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.130125" elapsed="0.005687"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.136675" level="INFO">${totalPriceInCart} = 200</msg>
+<var>${totalPriceInCart}</var>
+<arg>${totalPriceInCart} + ${tempItemPrice}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.136201" elapsed="0.000607"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-03-08T13:10:15.129973" elapsed="0.006956"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-08T13:10:15.137933" level="INFO">Executing JavaScript:
+let item = {'date': '2025-03-19', 'description': 'Herbivore Tour on 2025-03-19', 'itemType': 'safari', 'price': 120, 'type': 'Herbivore Tour'};return item.price;
+Without any arguments.</msg>
+<msg time="2025-03-08T13:10:15.141847" level="INFO">${tempItemPrice} = 120</msg>
+<var>${tempItemPrice}</var>
+<arg>let item = ${cart}[${i}];</arg>
+<arg>return item.price;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.137392" elapsed="0.004660"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-03-08T13:10:15.142737" level="INFO">${totalPriceInCart} = 320</msg>
+<var>${totalPriceInCart}</var>
+<arg>${totalPriceInCart} + ${tempItemPrice}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.142338" elapsed="0.000529"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2025-03-08T13:10:15.137149" elapsed="0.005848"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${cartLength}</value>
+<status status="PASS" start="2025-03-08T13:10:15.124046" elapsed="0.019083"/>
+</for>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${totalPriceInCart}</arg>
+<arg>${expectedCost}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.143369" elapsed="0.000339"/>
+</kw>
+<arg>${320}</arg>
+<doc>This keyword verifies that total cart cost is same as expected, by looping through cart,
+add all prices up, using javascript to fetch items in cart and their prices.</doc>
+<status status="PASS" start="2025-03-08T13:10:15.116884" elapsed="0.026995"/>
 </kw>
 <kw name="Teardown Suite" owner="keywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-07T09:36:48.869148" elapsed="2.236561"/>
+<status status="PASS" start="2025-03-08T13:10:15.144847" elapsed="2.113328"/>
 </kw>
-<status status="PASS" start="2025-03-07T09:36:48.867989" elapsed="2.237986"/>
+<status status="PASS" start="2025-03-08T13:10:15.144478" elapsed="2.113891"/>
 </kw>
-<tag>Johan-Ahlsten</tag>
-<tag>Wille-Virtanen</tag>
-<status status="PASS" start="2025-03-07T09:36:42.702552" elapsed="8.404072"/>
+<doc>This test verifies the safari booking process for user pal,
+and that cart total price is correct.</doc>
+<tag>Kristin</tag>
+<tag>pipeline_testing</tag>
+<tag>Safari</tag>
+<status status="PASS" start="2025-03-08T13:10:00.722477" elapsed="16.536335"/>
 </test>
-<doc>Grupp 2 Wille, Johan och Kristin. Generic test suite for general test functions as a base library.</doc>
-<status status="PASS" start="2025-03-07T09:36:42.147129" elapsed="8.962676"/>
+<status status="PASS" start="2025-03-08T13:10:00.403968" elapsed="16.855867"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Johan-Ahlsten</stat>
-<stat pass="1" fail="0" skip="0">Wille-Virtanen</stat>
+<stat pass="1" fail="0" skip="0">Kristin</stat>
+<stat pass="1" fail="0" skip="0">pipeline_testing</stat>
+<stat pass="1" fail="0" skip="0">Safari</stat>
 </tag>
 <suite>
-<stat name="Generic Tests" id="s1" pass="1" fail="0" skip="0">Generic Tests</stat>
+<stat name="Pal Tests" id="s1" pass="1" fail="0" skip="0">Pal Tests</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-03-07T09:36:43.120307" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\johan\Desktop\DevTools\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.143); currently, chromedriver 133.0.6943.141 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>

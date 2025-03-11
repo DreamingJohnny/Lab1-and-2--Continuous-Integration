@@ -8,11 +8,14 @@ Library    SeleniumLibrary
 Library    Collections
 Library    XML
 
-Resource    keywords.robot
-Resource    cart_keywords.robot
 
-Variables    ../util/pal_specific_variables.py
+Resource    ${keyword_path}keywords.robot
 
+Variables    ${util_path}pal_specific_variables.py
+
+*** Variables ***
+${util_path}    ${EXECDIR}/resources/util/
+${keyword_path}    ${EXECDIR}/resources/keyword_files/
 *** Keywords ***
 
 ### Registration ###

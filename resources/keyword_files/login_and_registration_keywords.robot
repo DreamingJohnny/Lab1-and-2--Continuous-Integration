@@ -4,10 +4,14 @@ Library    SeleniumLibrary
 Library    Collections
 Library    String
 
-Resource    button_and_navigation_keywords.robot
-Resource    message_and_alert_keywords.robot
 
-Variables    ../util/variables.py
+Resource    ${keyword_path}button_and_navigation_keywords.robot
+
+Variables    ${util_path}variables.py
+
+*** Variables ***
+${util_path}    ${EXECDIR}/resources/util/
+${keyword_path}    ${EXECDIR}/resources/keyword_files/
 
 *** Keywords ***
 

@@ -6,15 +6,18 @@ Library    SeleniumLibrary
 Library    OperatingSystem
 Library    Process
 
-Resource    ../resources/keyword_files/keywords.robot
-Resource    ../resources/keyword_files/kim_keywords.robot
+Resource    ${keyword_path}keywords.robot
+Resource    ${keyword_path}kim_keywords.robot
 
 
-Variables    ../resources/util/variables.py
-Variables    ../resources/util/kim_specific_variables.py
+Variables    ${util_path}variables.py
+Variables    ${util_path}kim_specific_variables.py
 
 Test Setup    Setup Suite Open Page And Register User    ${kim_username}    ${kim_password}
 Test Teardown    Teardown Suite
+*** Variables ***
+${keyword_path}    ${EXECDIR}/resources/keyword_files/
+${util_path}    ${EXECDIR}/resources/util/
 
 *** Test Cases ***
 

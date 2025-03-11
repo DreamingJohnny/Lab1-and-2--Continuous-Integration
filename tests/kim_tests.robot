@@ -56,7 +56,7 @@ Kim Sees The Correct Price Total On Tickets In Cart
 
 Kim Books Weekend Safaris For Their Family
     [Documentation]    Logs in as user Kim, buys tickets and books safaris. Verifies that the cart shows the expected dates for the safaris.
-    [Tags]    Johan-Ahlsten    safari    BookingProcess
+    [Tags]    Johan-Ahlsten    safari    BookingProcess    new-feature
     Given Kim Is Logged In To Their Account
 	And Kim Buys Tickets For Their Family
     When Kim Books Weekend Safaris For Their Family    ${kim_safari_date}

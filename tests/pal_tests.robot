@@ -5,14 +5,17 @@
 
 Library    SeleniumLibrary
 
-Resource    ../resources/keyword_files/keywords.robot
-Resource    ../resources/keyword_files/pal_keywords.robot
+Resource    ${keyword_path}keywords.robot
+Resource    ${keyword_path}pal_keywords.robot
 
-Variables    ../resources/util/variables.py
-Variables    ../resources/util/pal_specific_variables.py
+Variables    ${util_path}variables.py
+Variables    ${util_path}pal_specific_variables.py
 
 Test Setup    Setup Suite Open Page
 Test Teardown    Teardown Suite
+*** Variables ***
+${util_path}    ${EXECDIR}/resources/util/
+${keyword_path}    ${EXECDIR}/resources/keyword_files/
 
 *** Test Cases ***
 Register User Pal

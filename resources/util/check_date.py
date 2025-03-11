@@ -8,7 +8,20 @@ def get_date_format():
     """
     loc = locale.getdefaultlocale()[0]
     if loc == 'sv_SE':
+        return "%Y-%m-%d"  # Swedish format
+    else:
+        return "%m/%d/%Y"  # US format
+    
+
+def get_date_format_00():
+    """
+    Determine the date format based on the system's locale.
+    Returns the date format string.
+    If format is yyyy-m-dd, two zeroes are added initially to fit date input format. 
+    """
+    loc = locale.getdefaultlocale()[0]
+    if loc == 'sv_SE':
         return "00%Y-%m-%d"  # Swedish format
     else:
-        return "%m/%d/%Y"  # Default to US format
+        return "%m/%d/%Y"  # US format
 

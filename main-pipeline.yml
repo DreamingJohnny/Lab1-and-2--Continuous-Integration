@@ -1,11 +1,12 @@
-trigger:
+trigger: none
+pr:
   branches:
     include:
       - main
-
     exclude:
       - develop
       - feature/*
+      - hotfix/*
 
 pool:
   vmImage: 'ubuntu-latest'

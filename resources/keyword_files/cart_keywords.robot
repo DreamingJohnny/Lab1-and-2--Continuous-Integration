@@ -114,7 +114,7 @@ Dates for safaris in cart are the same and as expected
     ${datesInCartList} =  Get Cart Item Dates
     ${listLength} =     Get Length    ${datesInCartList}
     FOR     ${i}    IN RANGE     0    ${listLength}
-        Should Be Equal    '${expectedDate}'   ${datesInCartList}[${i}]
+        Should Be Equal    '${expectedDate}'   '${datesInCartList}[${i}]'
     END
 
 

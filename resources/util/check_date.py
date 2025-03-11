@@ -7,10 +7,10 @@ def get_date_format():
     Returns the date format string.
     """
     loc = locale.getdefaultlocale()[0]
-    if loc == 'en_US':
-        return "%m/%d/%Y"  # US format
+    if loc == 'sv_SE':
+        return "%Y-%m-%d"  # Swedish format
     else:
-        return "%Y-%m-%d"  # Default to Swedish format
+        return "%m/%d/%Y"  # US format
     
 
 def get_date_format_00():
@@ -20,8 +20,8 @@ def get_date_format_00():
     If format is yyyy-m-dd, two zeroes are added initially to fit date input format. 
     """
     loc = locale.getdefaultlocale()[0]
-    if loc == 'en_US':
-        return "%m/%d/%Y"  # US format
+    if loc == 'sv_SE':
+        return "00%Y-%m-%d"  # Swedish format
     else:
-        return "00%Y-%m-%d"  # Default to Swedish format
+        return "%m/%d/%Y"  # US format
 

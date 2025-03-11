@@ -42,10 +42,7 @@ User Pal Is Registered
 ### Login ###
 
 Log In User Pal
-    User Navigates To Login Section
-    User Pal Enters Login Credentials
-	# I changed this to User Presses Login Submit Button, so it includes the new dynamic wait function
-    User Presses Login Submit Button
+    Log In User    ${pal_username}    ${pal_password}
 
 User Pal Enters Login Credentials
     [Documentation]    This keyword enters pal's login credentials into login fields.
@@ -53,7 +50,6 @@ User Pal Enters Login Credentials
 
 User Pal Should Be Logged In
     [Documentation]    This keyword verifies that user pal is logged in.
-
     User Should Be Logged In    ${pal_username}
 
 User Pal Is Logged In
@@ -82,7 +78,7 @@ Pal Books Safaris
 Pal Entrance Ticket Should be Added To Cart
     [Documentation]    This keyword verifies that pal's entrance ticket is in cart.
     ${listOfCartItemDescriptioins} =    Get Cart Item Descriptions
-    Should Contain X Times    ${listOfCartItemDescriptioins}       1 Regular Adult Ticket(s)    1
+    Should Contain X Times    ${listOfCartItemDescriptioins}       ${pal_ticket_description}    ${pal_number_of_tickets}
 
 Pal Entrance Ticket Is Added To Cart
     [Documentation]    This keyword executes and verifies adding pal's entrance ticket to cart.
@@ -95,7 +91,6 @@ Pal Safaris Should Be Added To Cart
     ${cartItemDescriptioins} =    Get Cart Item Descriptions
     Should Contain X Times    ${cartItemDescriptioins}       ${pal_safari1_description_with_date}    1
     Should Contain X Times    ${cartItemDescriptioins}       ${pal_safari2_description_with_date}    1
-
 
 Pals Items Are Added To Cart
     [Documentation]    This keyword executes and verifies adding pal's entrance ticket and 

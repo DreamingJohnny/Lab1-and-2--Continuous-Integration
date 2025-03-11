@@ -20,7 +20,7 @@ ${keyword_path}    ${EXECDIR}/resources/keyword_files/
 *** Test Cases ***
 Register User Pal
     [Documentation]    This test verifies the registration process for user pal.
-    [Tags]    Kristin    Registration    Credentials    new-feature
+    [Tags]    Kristin    Registration    Credentials
     Given Page Is Opened To Registration Section
     When User Pal Enters Registration Credentials
     And User Presses Submit Registration Button

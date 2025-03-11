@@ -46,19 +46,19 @@ Increase value
     Press Keys  ${input_id}  ${direction} 
 
 The User Proceeds To The Cart    
-	Click Specific Button    ${cart_nav_button}
+	Click Element    ${cart_nav_button}
 
 Total Cart Price Should Be Correct
     [Arguments]    ${expected_ticket_cost_total}
 	Check Shopping Cart Total    ${expected_ticket_cost_total}    ${cart_tab_xpath}    ${cart_total_xpath}
 
 The User Purchases The Tickets
-	Click Specific Button    ${cart_tab_xpath}
-	Click Specific Button    ${proceed_to_checkout_button}
+	Click Element    ${cart_tab_xpath}
+	Click Element    ${proceed_to_checkout_button}
 
 The User Purchases The Safaris
-	Click Specific Button    ${cart_tab_xpath}
-	Click Specific Button    ${proceed_to_checkout_button}
+	Click Element    ${cart_tab_xpath}
+	Click Element    ${proceed_to_checkout_button}
 
 The Price In The Popup Is Correct
     [Arguments]    ${expected_cost_total}

@@ -60,48 +60,48 @@ Logout Button Should Be Visible
 ### Pressing buttons ###
 
 Press Login Button
-    Click Specific Button    ${login_button}
+    Click Element    ${login_button}
     Wait Until Element Is Visible    ${login_section}    ${standard_timeout}
 
 Press Ticket Button
-    Click Specific Button    ${buy_ticket_button}
+    Click Element    ${buy_ticket_button}
     Wait Until Element Is Visible     ${tickets_section}    ${standard_timeout}
 
 Press Safari Button
-    Click Specific Button    ${safari_button}
+    Click Element    ${safari_button}
     Wait Until Element Is Visible    ${safari_section}    ${standard_timeout}
 
 Press Cart Button
-    Click Specific Button    ${cart_nav_button}
+    Click Element    ${cart_nav_button}
     Wait Until Element Is Visible    ${cart_section}    ${standard_timeout}
 
 Press Logout Button
 	Wait Until Element Is Enabled    ${logout_button}    ${standard_timeout}
-    Click Specific Button    ${logout_button}
+    Click Element    ${logout_button}
 
 Press Register Button
     Wait Until Element Is Enabled    ${reg_button}    ${standard_timeout}
-	Click Specific Button    ${reg_button}
+	Click Element    ${reg_button}
 
 Press Login Submit Button
     Wait Until Element Is Enabled    ${login_submit_button}    ${standard_timeout}
-    Click Specific Button    ${login_submit_button}
+    Click Element    ${login_submit_button}
 
 Press Add Safari To Cart Button
     Wait Until Element Is Enabled    ${safari_submit_button}    ${standard_timeout}
-    Click Specific Button    ${safari_submit_button}
+    Click Element    ${safari_submit_button}
 
 Press Add Ticket To Cart Button
     Wait Until Element Is Enabled    ${add_to_cart_button}    ${standard_timeout}
-    Click Specific Button    ${add_to_cart_button}
+    Click Element    ${add_to_cart_button}
 
 Press Register Submit Button
     Wait Until Element Is Enabled    ${reg_submit_button}    ${standard_timeout}
-    Click Specific Button    ${reg_submit_button}
+    Click Element    ${reg_submit_button}
 
 Press Proceed To Checkout Button
     Wait Until Element Is Enabled    ${pro_to_checkout_button}    ${standard_timeout}
-    Click Specific Button    ${pro_to_checkout_button}
+    Click Element    ${pro_to_checkout_button}
 
 ### Page is opened to.. ###
 
@@ -127,7 +127,3 @@ Open Browser To Page
     [Arguments]    ${url}    ${browser}    ${title}
     Open Browser    ${url}    ${browser}
     Title Should Be    ${title}
-
-Click Specific Button
-    [Arguments]    ${button}
-    Click Element    ${button}

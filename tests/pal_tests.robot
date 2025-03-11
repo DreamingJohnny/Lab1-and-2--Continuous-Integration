@@ -8,9 +8,6 @@ Library    SeleniumLibrary
 Resource    ${keyword_path}keywords.robot
 Resource    ${keyword_path}pal_keywords.robot
 
-Variables    ${util_path}variables.py
-Variables    ${util_path}pal_specific_variables.py
-
 Test Setup    Setup Suite Open Page
 Test Teardown    Teardown Suite
 *** Variables ***

@@ -20,11 +20,13 @@ pal_safari2_price = 150
 
 
 ### Format Pal's safari dates 
-local_safari_date_input_format = check_date.get_date_format()
+local_safari_date_input_format = check_date.get_date_format_00()
+local_safari_date_expected_format = check_date.get_date_format()
+
 
 pal_safari_date = datetime.date(2026,3,19) # date format
-pal_safari_date_00 = pal_safari_date.strftime(local_safari_date_input_format)   # <<<--- This formatting is crucial for the tests to pass in pipeline
-pal_expected_safari_date = pal_safari_date.strftime("%Y-%m-%d") # string format
+pal_safari_date_00 = pal_safari_date.strftime(local_safari_date_input_format)   # If date format is yyyy-mm-dd, '00' is added at start of string to fit date input format
+pal_expected_safari_date = pal_safari_date.strftime(local_safari_date_expected_format) # string format
 
 
 ### Pal checkout summary ###

@@ -15,14 +15,14 @@ ${keyword_path}    ${EXECDIR}/resources/keyword_files/
 
 Check Shopping Cart Total
     [Arguments]    ${expected_total}    ${cart_tab}    ${cart_total_xpath}
-    Click Specific Button    ${cart_tab}
+    Click Element    ${cart_tab}
 	${actual_text}    Get Text    ${cart_total_xpath}
 	Should Contain    ${actual_text}    ${expected_total}
 
 Check Cart Items Order Info
     [Arguments]    ${item_to_check}    ${expected_text}
 	
-	Click Specific Button    ${cart_nav_button}
+	Click Element    ${cart_nav_button}
 
     ${elements}    Get WebElements    ${cart_list_xpath}
     

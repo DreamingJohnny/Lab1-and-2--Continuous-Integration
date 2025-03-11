@@ -9,10 +9,6 @@ Library    Process
 Resource    ${keyword_path}keywords.robot
 Resource    ${keyword_path}kim_keywords.robot
 
-
-Variables    ${util_path}variables.py
-Variables    ${util_path}kim_specific_variables.py
-
 Test Setup    Setup Suite Open Page And Register User    ${kim_username}    ${kim_password}
 Test Teardown    Teardown Suite
 *** Variables ***

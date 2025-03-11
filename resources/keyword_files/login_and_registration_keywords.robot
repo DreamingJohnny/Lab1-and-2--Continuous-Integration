@@ -100,20 +100,20 @@ Input Credentials
 
 Registration
     [Arguments]    ${username}    ${username_text_box}    ${password}    ${password_text_box}    ${regin_button}    ${reg_sub_button}
-    Click Specific Button    ${regin_button}
+    Click Element    ${regin_button}
     Input Credentials    ${username}    ${username_text_box}    ${password}    ${password_text_box}
     Click Element    ${reg_sub_button}
 
 Logout
     [Arguments]    ${button}
-    Click Specific Button    ${button}
+    Click Element    ${button}
     Handle Alert    action=DISMISS
 
 The User Is Logged In To Their Account
     [Arguments]    ${login_tab}    ${username}    ${password}    ${username_field}    ${password_field}    ${submit_login_button}
-	Click Specific Button    ${login_tab}
+	Click Element    ${login_tab}
 	Input Credentials    ${username}    ${username_field}    ${password}    ${password_field}
-	Click Specific Button    ${submit_login_button}
+	Click Element    ${submit_login_button}
 
 ## Not used, cannot press register, is alerted "fyll i det här fältet" first
 

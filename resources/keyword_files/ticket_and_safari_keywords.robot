@@ -52,7 +52,7 @@ Book Safari Without Verification
     User Navigates To Safari Section
     Input Text    ${safari_date_field}    ${safari_date}
     Select From List By Value    ${safari_type_field}    ${safari_type}
-    Click Specific Button    ${safari_submit_button}
+    Click Element    ${safari_submit_button}
 
 User Books Safari On A Weekend
     Book Safari without verification   ${safari_type_herbivor_tour}    ${safari_date_weekend}

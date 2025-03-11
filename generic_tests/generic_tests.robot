@@ -2,10 +2,6 @@
 Library    SeleniumLibrary  
 
 Resource    ${RESOURCE_PATH}/keyword_files/keywords.robot
-Resource    ${EXECDIR}/resources/keyword_files/from_original_keywords.robot
-Resource    ${keyword_path}/keywords.robot
-
-Variables    ${resource_path}/util/variables.py
 Variables    ${util_path}/pal_specific_variables.py
 
 Documentation   Grupp 2 Wille, Johan och Kristin. Generic test suite for general test functions as a base library.
@@ -24,7 +20,7 @@ ${keyword_path}    ${EXECDIR}/resources/keyword_files/
 #Invalid login test to see if the page need correct credentials.
 Invalid browser login
     [Tags]    Wille-Virtanen 
-    Click Specific Button    ${login_button}
+    Click Element    ${login_button}
     Input Credentials    ${invalid_username}    ${login_username_text_box}    ${invalid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
 
@@ -33,14 +29,14 @@ Invalid browser login
 
 Valid browser login
     [Tags]    Wille-Virtanen
-    Click Specific Button    ${login_button}
+    Click Element    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element    ${login_submit_button}   
 
 #Logout test to see that the logout feature of the page works.
 Valid browser logout
     [Tags]    Wille-Virtanen
-    Click Specific Button    ${login_button}
+    Click Element    ${login_button}
     Input Credentials    ${valid_username}    ${login_username_text_box}    ${valid_password}    ${login_password_text_box}
     Click Element   ${login_submit_button}
     Wait Until Element Is Visible    ${logout_button}    ${standard_timeout}

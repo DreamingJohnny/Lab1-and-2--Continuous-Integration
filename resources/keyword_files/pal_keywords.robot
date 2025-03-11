@@ -9,6 +9,7 @@ Library    Collections
 Library    XML
 
 Resource    keywords.robot
+Resource    cart_keywords.robot
 
 Variables    ../util/pal_specific_variables.py
 
@@ -38,10 +39,7 @@ User Pal Is Registered
 ### Login ###
 
 Log In User Pal
-    User Navigates To Login Section
-    User Pal Enters Login Credentials
-	# I changed this to User Presses Login Submit Button, so it includes the new dynamic wait function
-    User Presses Login Submit Button
+    Log In User    ${pal_username}    ${pal_password}
 
 User Pal Enters Login Credentials
     [Documentation]    This keyword enters pal's login credentials into login fields.
@@ -49,7 +47,6 @@ User Pal Enters Login Credentials
 
 User Pal Should Be Logged In
     [Documentation]    This keyword verifies that user pal is logged in.
-
     User Should Be Logged In    ${pal_username}
 
 User Pal Is Logged In
@@ -70,15 +67,15 @@ Pal Buys Entrance Ticket
 Pal Books Safaris
     [Documentation]    This keyword executes and verifies the booking process 
     ...    of pal's selected safari types and date.
-    Book Safari   ${safari_type_t_rex_rumble}    ${pal_safari_date}
-    Book Safari   ${safari_type_herbivor_tour}    ${pal_safari_date}
+    Book Safari   ${safari_type_t_rex_rumble}    ${pal_safari_date_00}
+    Book Safari   ${safari_type_herbivor_tour}    ${pal_safari_date_00} 
 
 ### Cart  and Checkout ###
 
 Pal Entrance Ticket Should be Added To Cart
     [Documentation]    This keyword verifies that pal's entrance ticket is in cart.
     ${listOfCartItemDescriptioins} =    Get Cart Item Descriptions
-    Should Contain X Times    ${listOfCartItemDescriptioins}       1 Regular Adult Ticket(s)    1
+    Should Contain X Times    ${listOfCartItemDescriptioins}       ${pal_ticket_description}    ${pal_number_of_tickets}
 
 Pal Entrance Ticket Is Added To Cart
     [Documentation]    This keyword executes and verifies adding pal's entrance ticket to cart.
@@ -89,8 +86,8 @@ Pal Entrance Ticket Is Added To Cart
 Pal Safaris Should Be Added To Cart
     [Documentation]    This keyword verifies that the safaris of pal's choice is in cart.
     ${cartItemDescriptioins} =    Get Cart Item Descriptions
-    Should Contain X Times    ${cartItemDescriptioins}       Herbivore Tour on 2025-03-19    1
-    Should Contain X Times    ${cartItemDescriptioins}       T-Rex Rumble on 2025-03-19    1
+    Should Contain X Times    ${cartItemDescriptioins}       ${pal_safari1_description_with_date}    1
+    Should Contain X Times    ${cartItemDescriptioins}       ${pal_safari2_description_with_date}    1
 
 Pals Items Are Added To Cart
     [Documentation]    This keyword executes and verifies adding pal's entrance ticket and 
@@ -104,29 +101,13 @@ Dates For Pal Safaris Should Be Correct
     [Documentation]    This keyword verifies that the dates for pal's safaris are the same as expected.
     Dates for safaris in cart are the same and as expected    ${pal_expected_safari_date}
 
-Dates for safaris in cart are the same
-    [Documentation]    This keyword verifies that all safari dates in cart are the same.
-    ${datesInCartList} =  Get Cart Item Dates
-    ${listLength} =     Get Length    ${datesInCartList}
-    FOR     ${i}    IN RANGE     0    ${listLength}
-        Should Be Equal    ${datesInCartList}[0]    ${datesInCartList}[${i}]
-    END
-
-Dates for safaris in cart are the same and as expected
-    [Documentation]    This keyword verifies that all safari dates in cart are the same as the date in argument.
-    [Arguments]     ${expectedDate}
-    ${datesInCartList} =  Get Cart Item Dates
-    ${listLength} =     Get Length    ${datesInCartList}
-    FOR     ${i}    IN RANGE     0    ${listLength}
-        Should Be Equal    ${expectedDate}   ${datesInCartList}[${i}]
-    END
-
 Checkout Summary Alert Should Show Correct Pal Info
     [Documentation]    This keyword verifies that the checkout summary alert 
     ...    contains pal's order info.
     ${alert_text} =     Handle Alert    timeout=4 s
     Log    ${alert_text}
-    Should Contain X Times    ${alert_text}    ${pal_ticket_description}    ${pal_number_of_tickets}
-    Should Contain X Times   ${alert_text}    ${pal_safari1_description}    1
-    Should Contain X Times    ${alert_text}    ${pal_safari2_description}    1
-    Should Contain X Times    ${alert_text}    ${pal_total_desctiption}    1
+    Should Contain X Times    ${alert_text}    ${pal_ticket_description_with_price}    ${pal_number_of_tickets}
+    Should Contain X Times    ${alert_text}    ${pal_safari1_description_with_date_and_price}    1
+    Should Contain X Times    ${alert_text}    ${pal_safari2_description_with_date_and_price}    1
+    Should Contain X Times    ${alert_text}    ${pal_expected_safari_date}    2
+    Should Contain X Times    ${alert_text}    ${pal_total_desctiption_full}    1

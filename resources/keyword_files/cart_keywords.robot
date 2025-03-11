@@ -92,4 +92,21 @@ Get Cart Item Dates
 
         Run Keyword If    '${date}' != ''    Append To List   ${datesList}    ${date}
     END
-    RETURN    ${datesList} 
+    RETURN    ${datesList}
+
+Dates for safaris in cart are the same
+    [Documentation]    This keyword verifies that all safari dates in cart are the same.
+    ${datesInCartList} =  Get Cart Item Dates
+    ${listLength} =     Get Length    ${datesInCartList}
+    FOR     ${i}    IN RANGE     0    ${listLength}
+        Should Be Equal    ${datesInCartList}[0]    ${datesInCartList}[${i}]
+    END
+
+Dates for safaris in cart are the same and as expected
+    [Documentation]    This keyword verifies that all safari dates in cart are the same as the date in argument.
+    [Arguments]     ${expectedDate}
+    ${datesInCartList} =  Get Cart Item Dates
+    ${listLength} =     Get Length    ${datesInCartList}
+    FOR     ${i}    IN RANGE     0    ${listLength}
+        Should Be Equal    '${expectedDate}'   '${datesInCartList}[${i}]'
+    END
